@@ -62,21 +62,27 @@ def diff_readings(readings: dict[str, dict[str, Any]]) -> list[FieldDiff]:
     diffs = []
     for path in paths:
         values = {reader: fields.get(path, "") for reader, fields in flat.items()}
-        counts = Counter(normalize(v) for v in values.values())
-        top = counts.most_common(1)[0][0]  # ties: first seen, i.e. the earliest reader
+        ranked = Counter(normalize(v) for v in values.values()).most_common(2)
+        top = ranked[0][0]
+        # A vote only has a winner when one reading has more votes than any other.
+        # Five readers who all differ have no majority; neither does a 2-2-1 split.
+        tied = len(ranked) > 1 and ranked[0][1] == ranked[1][1]
         diffs.append(
             FieldDiff(
                 path=path,
                 readings=values,
-                plurality=next(v for v in values.values() if normalize(v) == top),
-                unanimous=len(counts) == 1,
+                plurality="" if tied else next(v for v in values.values() if normalize(v) == top),
+                unanimous=len(ranked) == 1,
+                tied=tied,
             )
         )
     return diffs
 
 
 def majority_document(diffs: list[FieldDiff]) -> dict[str, Any]:
-    """The transcription a plain vote produces: the baseline for the adjudicator."""
+    """The transcription a plain vote produces: the baseline for the adjudicator.
+
+    A field with no winning reading is blank, so it scores as missing."""
     return unflatten({d.path: d.plurality for d in diffs})
 
 

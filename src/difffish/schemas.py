@@ -35,8 +35,9 @@ class FieldDiff(BaseModel):
 
     path: str  # e.g. "page_1.locale.county"
     readings: dict[str, str]  # reader label -> value as written
-    plurality: str  # most common reading; ties go to the earliest reader
+    plurality: str  # the reading with the most votes, as written; blank when tied
     unanimous: bool
+    tied: bool = False  # no reading has more votes than every other
 
 
 class Decision(BaseModel):

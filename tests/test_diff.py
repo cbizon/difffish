@@ -53,9 +53,29 @@ def test_diff_plurality_keeps_the_value_as_written():
     assert {d.path: d for d in diff_readings(readings())}["county"].plurality == "Monroe"
 
 
-def test_diff_tie_goes_to_the_earliest_reader():
-    diffs = diff_readings({"Reader A": {"f": "x"}, "Reader B": {"f": "y"}})
+def test_readers_who_all_differ_have_no_majority():
+    diffs = diff_readings({"Reader A": {"f": "x"}, "Reader B": {"f": "y"}, "Reader C": {"f": "z"}})
+    assert diffs[0].tied
+    assert diffs[0].plurality == ""
+
+
+def test_a_split_vote_has_no_majority():
+    votes = {"Reader A": "x", "Reader B": "y", "Reader C": "x", "Reader D": "y", "Reader E": "z"}
+    diffs = diff_readings({reader: {"f": value} for reader, value in votes.items()})
+    assert diffs[0].tied
+    assert diffs[0].plurality == ""
+
+
+def test_a_reading_with_the_most_votes_wins_without_half_the_readers():
+    votes = {"Reader A": "x", "Reader B": "y", "Reader C": "x", "Reader D": "z", "Reader E": "w"}
+    diffs = diff_readings({reader: {"f": value} for reader, value in votes.items()})
+    assert not diffs[0].tied
     assert diffs[0].plurality == "x"
+
+
+def test_a_tied_field_is_blank_in_the_majority_document():
+    diffs = diff_readings({"Reader A": {"f": "x", "g": "1"}, "Reader B": {"f": "y", "g": "1"}})
+    assert majority_document(diffs) == {"f": "", "g": "1"}
 
 
 def test_diff_treats_a_field_one_reader_lacks_as_blank():

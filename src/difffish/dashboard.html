@@ -203,9 +203,15 @@ function readingRows(result, path) {
   return scrollTable(
     [el("tr", {}, el("th", { textContent: "Reader" }), el("th", { textContent: "Transcription" }))],
     [...Object.entries(result.readers).map(([label, model]) => row(model, label, d.readings[label])),
-     row("majority", "plain vote", d.plurality),
+     d.tied ? el("tr", {}, el("td", { className: "field" }, "majority", el("small", { className: "rationale", textContent: "plain vote" })), noMajority())
+            : row("majority", "plain vote", d.plurality),
      el("tr", {}, el("td", { className: "field" }, "reconciled", el("small", { className: "rationale", textContent: "adjudicator" })),
        rulingCell(result, d, decision))]);
+}
+
+// A vote with no winner: every reading has as many votes as the next.
+function noMajority() {
+  return el("td", { className: "value muted", textContent: "no majority" });
 }
 
 function rulingCell(result, d, decision) {
@@ -278,7 +284,7 @@ function transcriptionTable(result) {
     const cell = v => el("td", { className: "value" + (norm(v) === norm(final) ? "" : " differs"), textContent: v });
     return el("tr", { className: d.unanimous ? "" : "contested" },
       el("td", { className: "path pin1", textContent: d.path }),
-      ...readers.map(([label]) => cell(d.readings[label])), cell(d.plurality),
+      ...readers.map(([label]) => cell(d.readings[label])), d.tied ? noMajority() : cell(d.plurality),
       decision ? rulingCell(result, d, decision) : el("td", { className: "value reconciled", textContent: final }));
   });
   return scrollTable([head], rows);

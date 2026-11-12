@@ -2,9 +2,9 @@
 
     START → refresh → score × (N + 2) → collect → END
 
-Use after changing the scorer's prompt or model, or the human records. The
-saved transcriptions and reconciliation are reused, so no reader or adjudicator
-is called.
+Use after changing the scorer's prompt or model, the human records, or how the
+majority vote is counted. The saved transcriptions and reconciliation are
+reused, so no reader or adjudicator is called.
 """
 
 from __future__ import annotations
@@ -16,6 +16,7 @@ from langgraph.graph import END, START, StateGraph
 from langgraph.types import Send
 
 from difffish import documents
+from difffish.diff import diff_readings, majority_document
 from difffish.graph import score, score_tasks
 from difffish.schemas import DocResult, Scorecard
 
@@ -26,9 +27,11 @@ class RescoreState(TypedDict):
 
 
 def refresh(state: RescoreState) -> dict:
-    """Pick up the current human record, which may have changed since the result was saved."""
+    """Bring a saved result up to date with the current human record and vote counting."""
     result = state["result"]
-    return {"result": result.model_copy(update={"human": documents.human_record(result.doc_id)})}
+    diffs = diff_readings({t.reader: t.content for t in result.transcriptions if t.content is not None})
+    current = {"human": documents.human_record(result.doc_id), "diffs": diffs, "majority": majority_document(diffs)}
+    return {"result": result.model_copy(update=current)}
 
 
 def assign_scores(state: RescoreState) -> list[Send]:
