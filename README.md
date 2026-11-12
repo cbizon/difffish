@@ -17,11 +17,14 @@ Document graph, one run per WCS ID (`src/difffish/graph.py`):
 flowchart TD
     pdf[(PDF scan)]
     human[(Human record)]
-    prepare --> |one per reader model| transcribe
+    prepare --> |one per reader model| transcribe["transcribe × N"]
     pdf -.-> transcribe
     transcribe --> |all readings| diff
     diff --> |contested fields| reconcile
-    reconcile --> |readers, majority vote, reconciled| score
+    reconcile --> |one per candidate| score["score × (N + 2)"]
+    transcribe -.-> |each reader's transcription, scored on its own| score
+    diff -.-> |majority vote| score
+    reconcile -.-> |reconciled record| score
     human -.-> score
     score --> compare
     compare --> result([Result for the document])
@@ -32,8 +35,14 @@ flowchart TD
     end
 ```
 
-Solid arrows are graph edges. Dotted arrows show the only nodes that receive
-the scan and the human record.
+Solid arrows are graph edges: the order the nodes run in. Dotted arrows show
+what each node is given.
+
+Every candidate gets its own scorer call against the human record: each of the
+N readers' transcriptions individually, plus the majority vote and the
+reconciled record. Scoring runs after `reconcile` only so that all N + 2 calls
+go out together through the same node; the readers' scores do not depend on the
+adjudicator.
 
 - `prepare` — finds the PDF, its page classifications, and the human record.
 - `transcribe` — one per reader model (`Send`). Renders the pages and asks the
