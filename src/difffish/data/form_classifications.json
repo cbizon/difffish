@@ -1,0 +1,1007 @@
+{
+  "WCS-0005": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0006": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0008": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0011": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0013": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "freeform"
+  },
+  "WCS-0017": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0020": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0021": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "species_list"
+  },
+  "WCS-0024": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0028": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0030": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0037": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0038": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0039": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0042": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0043": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0045": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0046": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0047": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0050": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0054": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0057": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0062": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0063": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0065": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0068": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0137": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list",
+    "page_3": "starnes_card"
+  },
+  "WCS-0186": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0211": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0212": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0213": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0214": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0215": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0216": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0217": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0218": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0219": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0220": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0222": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0225": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0228": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0229": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0257": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0259": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0260": {
+    "page_1": "starnes_card",
+    "page_2": "freeform"
+  },
+  "WCS-0261": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0264": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0265": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-0296": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0320": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0354": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-0363": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0364": {
+    "page_1": "starnes_card",
+    "page_2": "starnes_card",
+    "page_3": "species_list"
+  },
+  "WCS-0373": {
+    "page_1": "freeform",
+    "page_2": "starnes_card"
+  },
+  "WCS-0386": {
+    "page_1": "starnes_card",
+    "page_2": "species_list"
+  },
+  "WCS-0389": {
+    "page_1": "starnes_card",
+    "page_2": "species_list"
+  },
+  "WCS-0390": {
+    "page_1": "starnes_card",
+    "page_2": "starnes_card"
+  },
+  "WCS-0392": {
+    "page_1": "starnes_card",
+    "page_2": "species_list"
+  },
+  "WCS-0395": {
+    "page_1": "starnes_card",
+    "page_2": "species_list"
+  },
+  "WCS-0396": {
+    "page_1": "starnes_card",
+    "page_2": "species_list"
+  },
+  "WCS-0397": {
+    "page_1": "starnes_card",
+    "page_2": "starnes_card"
+  },
+  "WCS-0454": {
+    "page_1": "starnes_card",
+    "page_2": "species_list",
+    "page_3": "starnes_card"
+  },
+  "WCS-0499": {
+    "page_1": "starnes_card",
+    "page_2": "species_list"
+  },
+  "WCS-0502": {
+    "page_1": "starnes_card",
+    "page_2": "collection_card",
+    "page_3": "freeform"
+  },
+  "WCS-0517": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-0524": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0543": {
+    "page_1": "starnes_card",
+    "page_2": "starnes_card"
+  },
+  "WCS-0554": {
+    "page_1": "starnes_card",
+    "page_2": "freeform",
+    "page_3": "species_list"
+  },
+  "WCS-0560": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-0572": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-0573": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0577": {
+    "page_1": "starnes_card",
+    "page_2": "starnes_card"
+  },
+  "WCS-0581": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0582": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0583": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0594": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0601": {
+    "page_1": "starnes_card",
+    "page_2": "species_list"
+  },
+  "WCS-0644": {
+    "page_1": "species_list",
+    "page_2": "starnes_card",
+    "page_3": "species_list"
+  },
+  "WCS-0654": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0665": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-0671": {
+    "page_1": "species_list",
+    "page_2": "species_list",
+    "page_3": "starnes_card",
+    "page_4": "starnes_card"
+  },
+  "WCS-0681": {
+    "page_1": "starnes_card",
+    "page_2": "freeform",
+    "page_3": "species_list"
+  },
+  "WCS-0692": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0697": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0699": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-0783": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0784": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0807": {
+    "page_1": "starnes_card"
+  },
+  "WCS-0813": {
+    "page_1": "starnes_card",
+    "page_2": "freeform",
+    "page_3": "species_list"
+  },
+  "WCS-0847": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "species_list",
+    "page_4": "species_list"
+  },
+  "WCS-0848": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "species_list",
+    "page_4": "species_list"
+  },
+  "WCS-0849": {
+    "page_1": "species_list",
+    "page_2": "species_list",
+    "page_3": "starnes_card"
+  },
+  "WCS-0850": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list",
+    "page_3": "starnes_card",
+    "page_4": "species_list"
+  },
+  "WCS-0851": {
+    "page_1": "species_list",
+    "page_2": "starnes_card",
+    "page_3": "starnes_card"
+  },
+  "WCS-0852": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-0897": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "freeform",
+    "page_4": "species_list"
+  },
+  "WCS-0898": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "freeform",
+    "page_4": "species_list"
+  },
+  "WCS-0899": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "freeform",
+    "page_4": "species_list"
+  },
+  "WCS-0900": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0901": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "species_list",
+    "page_4": "species_list"
+  },
+  "WCS-0902": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "species_list"
+  },
+  "WCS-0903": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "freeform"
+  },
+  "WCS-0904": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "species_list",
+    "page_4": "species_list"
+  },
+  "WCS-0905": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "freeform",
+    "page_4": "species_list"
+  },
+  "WCS-0906": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "freeform"
+  },
+  "WCS-0907": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "freeform",
+    "page_4": "species_list"
+  },
+  "WCS-0908": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0909": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "freeform"
+  },
+  "WCS-0910": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "freeform",
+    "page_4": "species_list"
+  },
+  "WCS-0911": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "freeform",
+    "page_4": "species_list"
+  },
+  "WCS-0912": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "species_list",
+    "page_4": "species_list"
+  },
+  "WCS-0913": {
+    "page_4": "freeform",
+    "page_1": "ncsm_sheet",
+    "page_3": "freeform",
+    "page_2": "starnes_card"
+  },
+  "WCS-0914": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "freeform",
+    "page_4": "species_list"
+  },
+  "WCS-0915": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "species_list",
+    "page_4": "species_list"
+  },
+  "WCS-0916": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "species_list",
+    "page_4": "species_list"
+  },
+  "WCS-0917": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "freeform",
+    "page_4": "species_list"
+  },
+  "WCS-0918": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "freeform",
+    "page_4": "species_list"
+  },
+  "WCS-0919": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "freeform",
+    "page_4": "species_list"
+  },
+  "WCS-0920": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-0921": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "species_list"
+  },
+  "WCS-0923": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list",
+    "page_3": "species_list",
+    "page_4": "species_list",
+    "page_5": "species_list"
+  },
+  "WCS-0924": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-1004": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1078": {
+    "page_1": "species_list",
+    "page_2": "species_list",
+    "page_3": "starnes_card",
+    "page_4": "freeform"
+  },
+  "WCS-1080": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1082": {
+    "page_1": "species_list",
+    "page_2": "species_list",
+    "page_3": "starnes_card"
+  },
+  "WCS-1085": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "species_list"
+  },
+  "WCS-1086": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1087": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1088": {
+    "page_1": "species_list",
+    "page_2": "species_list",
+    "page_3": "starnes_card"
+  },
+  "WCS-1091": {
+    "page_1": "species_list",
+    "page_2": "species_list",
+    "page_3": "starnes_card"
+  },
+  "WCS-1093": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1094": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "freeform",
+    "page_4": "species_list",
+    "page_5": "species_list"
+  },
+  "WCS-1096": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1097": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1098": {
+    "page_1": "species_list",
+    "page_2": "species_list",
+    "page_3": "starnes_card"
+  },
+  "WCS-1113": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-1151": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "freeform"
+  },
+  "WCS-1158": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card",
+    "page_3": "species_list"
+  },
+  "WCS-1172": {
+    "page_1": "starnes_card"
+  },
+  "WCS-1191": {
+    "page_1": "starnes_card",
+    "page_2": "freeform",
+    "page_3": "ncsm_sheet"
+  },
+  "WCS-1193": {
+    "page_1": "starnes_card",
+    "page_2": "freeform",
+    "page_3": "ncsm_sheet"
+  },
+  "WCS-1196": {
+    "page_1": "starnes_card",
+    "page_2": "starnes_card"
+  },
+  "WCS-1254": {
+    "page_1": "starnes_card",
+    "page_2": "ncsm_sheet"
+  },
+  "WCS-1259": {
+    "page_1": "starnes_card"
+  },
+  "WCS-1266": {
+    "page_1": "starnes_card",
+    "page_2": "ncsm_sheet",
+    "page_3": "species_list",
+    "page_4": "species_list"
+  },
+  "WCS-1330": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1339": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1343": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1351": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1362": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1371": {
+    "page_1": "starnes_card",
+    "page_2": "species_list"
+  },
+  "WCS-1373": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1375": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1379": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1389": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1390": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1392": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1394": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1395": {
+    "page_1": "starnes_card",
+    "page_2": "species_list"
+  },
+  "WCS-1397": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1398": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1399": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1400": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1401": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1402": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1403": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1404": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1405": {
+    "page_1": "species_list",
+    "page_2": "species_list",
+    "page_3": "starnes_card"
+  },
+  "WCS-1406": {
+    "page_1": "starnes_card"
+  },
+  "WCS-1407": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1408": {
+    "page_1": "starnes_card",
+    "page_2": "starnes_card"
+  },
+  "WCS-1409": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1410": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1411": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1412": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1413": {
+    "page_1": "species_list",
+    "page_2": "starnes_card",
+    "page_3": "freeform"
+  },
+  "WCS-1416": {
+    "page_1": "species_list",
+    "page_2": "starnes_card",
+    "page_3": "freeform"
+  },
+  "WCS-1424": {
+    "page_1": "starnes_card",
+    "page_2": "ncsm_sheet"
+  },
+  "WCS-1441": {
+    "page_1": "species_list",
+    "page_2": "starnes_card"
+  },
+  "WCS-1518": {
+    "page_1": "si_806a",
+    "page_2": "freeform"
+  },
+  "WCS-1947": {
+    "page_1": "si_806a",
+    "page_2": "freeform"
+  },
+  "WCS-1948": {
+    "page_1": "si_806a",
+    "page_2": "freeform"
+  },
+  "WCS-2004": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-2011": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  },
+  "WCS-2111": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  },
+  "WCS-2156": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  },
+  "WCS-2175": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  },
+  "WCS-2192": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  },
+  "WCS-2195": {
+    "page_1": "ncsm_sheet",
+    "page_2": "freeform"
+  },
+  "WCS-2199": {
+    "page_1": "ncsm_sheet",
+    "page_2": "freeform"
+  },
+  "WCS-2218": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  },
+  "WCS-2253": {
+    "page_1": "ncsm_sheet",
+    "page_2": "freeform"
+  },
+  "WCS-2257": {
+    "page_1": "ncsm_sheet",
+    "page_2": "freeform"
+  },
+  "WCS-2268": {
+    "page_1": "ncsm_sheet",
+    "page_2": "freeform"
+  },
+  "WCS-2269": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  },
+  "WCS-2392": {
+    "page_1": "ncsm_sheet",
+    "page_2": "freeform"
+  },
+  "WCS-2408": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  },
+  "WCS-2417": {
+    "page_1": "ncsm_sheet",
+    "page_2": "freeform"
+  },
+  "WCS-2430": {
+    "page_1": "ncsm_sheet",
+    "page_2": "freeform"
+  },
+  "WCS-2451": {
+    "page_1": "ncsm_sheet",
+    "page_2": "freeform"
+  },
+  "WCS-2452": {
+    "page_1": "ncsm_sheet",
+    "page_2": "freeform"
+  },
+  "WCS-2505": {
+    "page_1": "ncsm_sheet",
+    "page_2": "freeform",
+    "page_3": "collection_card",
+    "page_4": "freeform"
+  },
+  "WCS-2518": {
+    "page_1": "ncsm_sheet",
+    "page_2": "freeform"
+  },
+  "WCS-2554": {
+    "page_1": "ncsm_sheet",
+    "page_2": "freeform"
+  },
+  "WCS-2568": {
+    "page_1": "ncsm_sheet",
+    "page_2": "freeform"
+  },
+  "WCS-2609": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  },
+  "WCS-2700": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  },
+  "WCS-2701": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  },
+  "WCS-2720": {
+    "page_1": "ncsm_sheet",
+    "page_2": "freeform"
+  },
+  "WCS-2721": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-2722": {
+    "page_1": "ncsm_sheet",
+    "page_2": "freeform"
+  },
+  "WCS-2724": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-2726": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  },
+  "WCS-2727": {
+    "page_1": "ncsm_sheet",
+    "page_2": "freeform"
+  },
+  "WCS-2731": {
+    "page_1": "ncsm_sheet",
+    "page_2": "freeform"
+  },
+  "WCS-2734": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  },
+  "WCS-2736": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  },
+  "WCS-2738": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-2739": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  },
+  "WCS-2741": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-2744": {
+    "page_1": "ncsm_sheet",
+    "page_2": "freeform"
+  },
+  "WCS-2747": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  },
+  "WCS-2748": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  },
+  "WCS-2751": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  },
+  "WCS-2753": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  },
+  "WCS-2794": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  },
+  "WCS-2936": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  },
+  "WCS-2968": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  },
+  "WCS-2969": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  },
+  "WCS-2976": {
+    "page_1": "ncsm_sheet",
+    "page_2": "starnes_card"
+  },
+  "WCS-3010": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  },
+  "WCS-3011": {
+    "page_1": "ncsm_sheet",
+    "page_2": "freeform"
+  },
+  "WCS-3012": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  },
+  "WCS-3013": {
+    "page_1": "ncsm_sheet",
+    "page_2": "freeform"
+  },
+  "WCS-3014": {
+    "page_1": "ncsm_sheet",
+    "page_2": "freeform"
+  },
+  "WCS-3015": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  },
+  "WCS-3033": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  },
+  "WCS-3068": {
+    "page_1": "ncsm_sheet",
+    "page_2": "species_list"
+  }
+}
