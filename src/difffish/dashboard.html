@@ -91,8 +91,9 @@
 <header>
   <div>
     <h1>difffish</h1>
+    <p><label>Run <select id="run" aria-label="Run"></select></label> <button id="reload">Reload</button></p>
     <p id="count"></p>
-    <p><button id="reload">Reload results</button></p>
+    <p id="config" class="muted"></p>
   </div>
   <div id="stats"></div>
   <div id="measures" class="muted"></div>
@@ -106,6 +107,8 @@
 const VERDICTS = ["exact", "equivalent", "mismatch", "missing"];
 const CORRECT = new Set(["exact", "equivalent"]);
 let data = { results: [], stats: null };
+let runList = [];
+let run = "";
 let current = null;
 let contestedOnly = true;
 let view = remembered("view", "table");       // "table": whole tables; "field": one field, a candidate per row
@@ -143,6 +146,7 @@ function columnHead(c) {
 
 function renderHeader() {
   const s = data.stats;
+  if (!s) { document.getElementById("count").textContent = "No runs yet."; return; }
   document.getElementById("count").textContent =
     `${s.documents} documents, ${s.scored} scored fields`;
   const rows = Object.entries(s.candidates)
@@ -344,16 +348,40 @@ function show() {
   renderDetail();
 }
 
+async function getJson(url) {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`could not load ${url}: ${response.status}`);
+  return response.json();
+}
+
+function renderRuns() {
+  const picker = document.getElementById("run");
+  picker.replaceChildren(...runList.map(r =>
+    el("option", { value: r.name, textContent: `${r.name} (${r.documents})`, selected: r.name === run })));
+  const chosen = runList.find(r => r.name === run);
+  const m = chosen ? chosen.manifest : null;
+  document.getElementById("config").textContent = m
+    ? `Transcription prompt: ${m.transcribe_prompt} · adjudicator: ${m.adjudicator_model} · scorer: ${m.scorer_model}` : "";
+}
+
 async function load() {
-  const response = await fetch("/api/results");
-  if (!response.ok) throw new Error("could not load results: " + response.status);
-  data = await response.json();
+  runList = await getJson("/api/runs");
+  if (!runList.some(r => r.name === run)) run = (runList[0] || {}).name || "";
+  renderRuns();
+  data = run ? await getJson("/api/results?run=" + encodeURIComponent(run)) : { results: [], stats: null };
   renderHeader();
   show();
 }
 
+document.getElementById("run").onchange = event => {
+  run = event.target.value;
+  remember("run", run);
+  load();
+};
+
 document.getElementById("reload").onclick = load;
 window.addEventListener("hashchange", show);
+run = remembered("run", "");
 load();
 </script>
 </body>

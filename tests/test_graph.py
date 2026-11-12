@@ -8,18 +8,6 @@ from pydantic import ValidationError
 from difffish.schemas import MAJORITY, RECONCILED, Reconciliation, Transcription, reconciliation_schema
 
 
-@pytest.fixture
-def settings(monkeypatch, tmp_path):
-    for name, value in {
-        "AZURE_OPENAI_URL": "http://localhost/openai/v1",
-        "DIFFFISH_NOTES_DIR": str(tmp_path),
-        "DIFFFISH_READER_MODELS": "model-a, model-b,model-c",
-        "DIFFFISH_ADJUDICATOR_MODEL": "adjudicator",
-        "DIFFFISH_SCORER_MODEL": "scorer",
-    }.items():
-        monkeypatch.setenv(name, value)
-
-
 def reading(reader, model, **content):
     return Transcription(reader=reader, model=model, content=content, notes=f"{reader} found the date smudged")
 

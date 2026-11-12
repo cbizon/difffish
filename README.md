@@ -90,17 +90,50 @@ The API key is read from the macOS keychain item `azure-openai`, not from `.env`
 ## Use
 
 ```bash
-uv run difffish models            # what is deployed on the endpoint
-uv run difffish graph             # both graphs as Mermaid
-uv run difffish run WCS-0005      # one document
-uv run difffish corpus --limit 10 # several documents, then statistics
+uv run difffish models                                    # what is deployed on the endpoint
+uv run difffish graph                                     # both graphs as Mermaid
+uv run difffish corpus --run baseline --limit 20          # run documents into a named run
+uv run difffish document WCS-0005 --run baseline          # one document
+uv run difffish runs                                      # list the runs
 ```
 
-`corpus` saves each document's result as soon as it finishes.
+`corpus` saves each document as it finishes and skips documents the run
+already has, so the same command extends a run or picks up after a failure.
+`document` checkpoints to `.difffish/checkpoints.sqlite`; an interrupted run
+resumes without repeating model calls that finished.
 
-After changing the scorer's prompt or model, or the human records,
-`uv run difffish rescore` scores the saved results again without calling the
-readers or the adjudicator.
+## Runs and comparing prompts
+
+Every result belongs to a named run:
+
+```
+results/<run>/run.json        how the run was made
+results/<run>/WCS-NNNN.json   one result per document
+```
+
+`run.json` records the reader models, adjudicator, scorer, DPI and the full
+text of every prompt. A run is tied to that configuration: continuing it with
+a different prompt or model is refused, so results inside a run stay
+comparable. Use a new run name for a new configuration.
+
+To try a different transcription prompt, add a text file next to
+`src/difffish/data/prompts/transcribe/baseline.txt` and name it in a new run:
+
+```bash
+uv run difffish corpus --run hints --transcribe-prompt hints --limit 20
+uv run difffish compare baseline hints
+```
+
+`compare` pairs the two runs on the documents they share and reports, for each
+candidate and field, the share correct in each run and how many fields were
+gained and lost. It refuses to compare runs scored by different scorers, since
+that would measure the scorer and not the change. After changing the scorer's
+prompt or model, the human records, or the vote counting, bring a run up to
+date without calling the readers or adjudicator:
+
+```bash
+uv run difffish rescore --run baseline
+```
 
 ## Dashboard
 
@@ -108,7 +141,7 @@ readers or the adjudicator.
 uv run difffish dashboard         # then open http://127.0.0.1:8765
 ```
 
-For each document in `results/` it shows the scan next to:
+Pick a run at the top. For each of its documents it shows the scan next to:
 
 - the human record, with every candidate's own text for each field on the
   colour of the scorer's verdict (click a row for the scorer's reasons)
@@ -150,4 +183,5 @@ with " / ".
 
 - A second pass where unsettled fields go back to the readers with each
   other's readings. `Decision.settled` marks the fields that would go.
-- Resuming a corpus run. Only single-document runs are checkpointed.
+- Prompt variants for the adjudicator and scorer. Only the transcription prompt
+  can be chosen per run; the others are constants recorded in the manifest.

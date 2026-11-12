@@ -9,9 +9,10 @@ import operator
 from typing import Annotated, TypedDict
 
 from langgraph.graph import END, START, StateGraph
+from langgraph.runtime import Runtime
 from langgraph.types import Send
 
-from difffish.graph import build_document_graph
+from difffish.graph import RunContext, build_document_graph
 from difffish.schemas import DocResult
 from difffish.stats import Stats, summarize
 
@@ -32,8 +33,9 @@ def assign_documents(state: CorpusState) -> list[Send]:
     return [Send("document", {"doc_id": doc_id}) for doc_id in state["doc_ids"]]
 
 
-def document(task: DocumentTask) -> dict:
-    return {"results": [document_graph.invoke({"doc_id": task["doc_id"]})["result"]]}
+def document(task: DocumentTask, runtime: Runtime[RunContext]) -> dict:
+    result = document_graph.invoke({"doc_id": task["doc_id"]}, context=runtime.context)["result"]
+    return {"results": [result]}
 
 
 def summarize_results(state: CorpusState) -> dict:
@@ -41,7 +43,7 @@ def summarize_results(state: CorpusState) -> dict:
 
 
 def build_corpus_graph():
-    builder = StateGraph(CorpusState)
+    builder = StateGraph(CorpusState, context_schema=RunContext)
     builder.add_node("document", document)
     builder.add_node("summarize", summarize_results)
     builder.add_conditional_edges(START, assign_documents, ["document"])

@@ -10,36 +10,44 @@ import json
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import unquote, urlparse
+from urllib.parse import parse_qs, unquote, urlparse
 
-from difffish import documents
+from difffish import documents, runs
 from difffish.config import get_settings
-from difffish.schemas import DocResult
 from difffish.stats import summarize
 
 PAGE = Path(__file__).parent / "dashboard.html"
 
 
-def load_results(results_dir: Path) -> list[DocResult]:
-    return [DocResult.model_validate_json(p.read_text()) for p in sorted(results_dir.glob("WCS-*.json"))]
+def run_list(root: Path) -> list[dict]:
+    """Every saved run with its manifest and how many documents it holds."""
+    return [
+        {"name": name, "documents": len(runs.saved_doc_ids(name, root)), "manifest": runs.load_manifest(name, root).model_dump()}
+        for name in runs.list_runs(root)
+    ]
 
 
-def payload(results_dir: Path) -> dict:
-    results = load_results(results_dir)
+def payload(run: str, root: Path) -> dict:
+    results = runs.load_results(run, root)
     return {
+        "run": run,
         "results": [r.model_dump() for r in results],
         "stats": summarize(results).model_dump(),
     }
 
 
-def make_handler(results_dir: Path, notes_dir: Path) -> type[BaseHTTPRequestHandler]:
+def make_handler(root: Path, notes_dir: Path) -> type[BaseHTTPRequestHandler]:
     class Handler(BaseHTTPRequestHandler):
         def do_GET(self) -> None:
-            path = unquote(urlparse(self.path).path)
+            url = urlparse(self.path)
+            path = unquote(url.path)
+            run = parse_qs(url.query).get("run", [""])[0]
             if path == "/":
                 self._send(PAGE.read_bytes(), "text/html; charset=utf-8")
-            elif path == "/api/results":
-                self._send(json.dumps(payload(results_dir)).encode(), "application/json")
+            elif path == "/api/runs":
+                self._send(json.dumps(run_list(root)).encode(), "application/json")
+            elif path == "/api/results" and run in runs.list_runs(root):
+                self._send(json.dumps(payload(run, root)).encode(), "application/json")
             elif path.startswith("/pdf/") and path.removeprefix("/pdf/") in documents.document_ids():
                 self._send(documents.pdf_path(path.removeprefix("/pdf/"), notes_dir).read_bytes(), "application/pdf")
             else:
@@ -58,8 +66,8 @@ def make_handler(results_dir: Path, notes_dir: Path) -> type[BaseHTTPRequestHand
     return Handler
 
 
-def serve(results_dir: Path, port: int) -> None:
-    handler = make_handler(results_dir, get_settings().notes_dir)
+def serve(root: Path, port: int) -> None:
+    handler = make_handler(root, get_settings().notes_dir)
     with ThreadingHTTPServer(("127.0.0.1", port), handler) as server:
         print(f"dashboard at http://127.0.0.1:{port}", flush=True)
         server.serve_forever()

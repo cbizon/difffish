@@ -17,6 +17,7 @@ go through the same node with the same prompt, and it is not told which is which
 from __future__ import annotations
 
 import operator
+from dataclasses import dataclass
 from typing import Annotated, Any, TypedDict
 
 import openai
@@ -24,6 +25,7 @@ from langchain_core.exceptions import OutputParserException
 from langchain_core.messages import HumanMessage
 from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
 from langgraph.graph import END, START, StateGraph
+from langgraph.runtime import Runtime
 from langgraph.types import Send
 from pydantic import ValidationError
 
@@ -45,6 +47,13 @@ from difffish.schemas import (
     Transcription,
     reconciliation_schema,
 )
+
+@dataclass(frozen=True)
+class RunContext:
+    """What is fixed for a whole run and passed to every node, outside graph state."""
+
+    transcribe_prompt: str = "baseline"  # name of a file in data/prompts/transcribe
+
 
 class DocInput(TypedDict):
     doc_id: str
@@ -107,7 +116,7 @@ def assign_readers(state: DocState) -> list[Send]:
     ]
 
 
-def transcribe(task: ReaderTask) -> dict:
+def transcribe(task: ReaderTask, runtime: Runtime[RunContext]) -> dict:
     """One model reads the document. A failed call is recorded, not hidden: ``diff`` enforces the quorum."""
     schema = build_document_model(task["page_types"])
     pages = documents.render_pages(task["pdf_path"], get_settings().dpi)
@@ -117,7 +126,7 @@ def transcribe(task: ReaderTask) -> dict:
                 {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{page}", "detail": "high"}}
                 for page in pages
             ),
-            {"type": "text", "text": prompts.TRANSCRIBE},
+            {"type": "text", "text": prompts.transcribe_prompt(runtime.context.transcribe_prompt)},
         ]
     )
     reading = Transcription(reader=task["reader"], model=task["model"])
@@ -210,7 +219,7 @@ def checkpoint_serializer() -> JsonPlusSerializer:
 
 
 def build_document_graph(checkpointer=None):
-    builder = StateGraph(DocState, input_schema=DocInput)
+    builder = StateGraph(DocState, input_schema=DocInput, context_schema=RunContext)
     builder.add_node("prepare", prepare)
     builder.add_node("transcribe", transcribe)
     builder.add_node("diff", diff)

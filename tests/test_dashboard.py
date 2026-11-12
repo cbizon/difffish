@@ -7,7 +7,8 @@ from http.server import ThreadingHTTPServer
 import pymupdf
 import pytest
 
-from difffish.dashboard import load_results, make_handler, payload
+from difffish import runs
+from difffish.dashboard import make_handler, payload, run_list
 from difffish.schemas import MAJORITY, RECONCILED, DocResult, FieldScore, Scorecard
 
 
@@ -20,12 +21,12 @@ def result(doc_id):
 
 
 @pytest.fixture
-def dirs(tmp_path):
+def dirs(tmp_path, settings):
     results, notes = tmp_path / "results", tmp_path / "notes"
-    results.mkdir()
     notes.mkdir()
+    runs.save_manifest(runs.current_manifest("baseline", "baseline"), results)
     for doc_id in ("WCS-0006", "WCS-0005"):
-        (results / f"{doc_id}.json").write_text(result(doc_id).model_dump_json())
+        runs.save_result("baseline", result(doc_id), results)
     with pymupdf.open() as doc:
         doc.new_page()
         doc.save(notes / "WCS-0005.pdf")
@@ -46,12 +47,15 @@ def get(url):
         return response.headers["Content-Type"], response.read()
 
 
-def test_load_results_returns_documents_in_order(dirs):
-    assert [r.doc_id for r in load_results(dirs[0])] == ["WCS-0005", "WCS-0006"]
+def test_run_list_describes_each_run(dirs):
+    listed = run_list(dirs[0])
+    assert [(r["name"], r["documents"]) for r in listed] == [("baseline", 2)]
+    assert listed[0]["manifest"]["transcribe_prompt"] == "baseline"
 
 
 def test_payload_has_results_and_statistics(dirs):
-    data = payload(dirs[0])
+    data = payload("baseline", dirs[0])
+    assert [r["doc_id"] for r in data["results"]] == ["WCS-0005", "WCS-0006"]
     assert len(data["results"]) == 2
     assert data["stats"]["documents"] == 2
     assert data["stats"]["candidates"]["model-a"]["correct"] == 2
@@ -64,9 +68,15 @@ def test_serves_the_page(url):
 
 
 def test_serves_results_as_json(url):
-    content_type, body = get(url + "/api/results")
+    content_type, body = get(url + "/api/results?run=baseline")
     assert content_type == "application/json"
     assert [r["doc_id"] for r in json.loads(body)["results"]] == ["WCS-0005", "WCS-0006"]
+
+
+def test_serves_the_list_of_runs(url):
+    content_type, body = get(url + "/api/runs")
+    assert content_type == "application/json"
+    assert [r["name"] for r in json.loads(body)] == ["baseline"]
 
 
 def test_serves_the_scan(url):
@@ -75,8 +85,9 @@ def test_serves_the_scan(url):
     assert body.startswith(b"%PDF")
 
 
-@pytest.mark.parametrize("path", ["/pdf/../../etc/passwd", "/pdf/WCS-9999", "/nothing"])
-def test_refuses_anything_that_is_not_a_known_document(url, path):
+@pytest.mark.parametrize("path", ["/pdf/../../etc/passwd", "/pdf/WCS-9999", "/nothing", "/api/results",
+                                  "/api/results?run=other", "/api/results?run=../baseline"])
+def test_refuses_anything_that_is_not_a_known_document_or_run(url, path):
     with pytest.raises(urllib.error.HTTPError) as error:
         get(url + path)
     assert error.value.code == 404

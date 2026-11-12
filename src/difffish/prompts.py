@@ -3,40 +3,26 @@
 from __future__ import annotations
 
 import json
+from pathlib import Path
 from typing import Any
 
 from difffish.schemas import FieldDiff, Transcription
 
-TRANSCRIBE = """\
-You are an expert at transcribing handwritten documents into structured data. The attached \
-images are the pages of a scanned field data sheet used by a fish biologist to record \
-collections. Pages may be pre-printed forms filled in by hand, handwritten cards, typed \
-species lists, or free-form notes.
+PROMPTS_DIR = Path(__file__).parent / "data" / "prompts"
 
-Fill in the structured record for every page.
 
-Transcription rules:
-- Transcribe only what is written; do not infer or guess values that are absent.
-- Leave a field as an empty string if it was left blank on the form.
-- Text for a form field may appear on the line, above it, below it, or to the side — include all of it.
-- A caret (^) or connecting line indicates a continuation; treat the continued text as part of the same field.
-- Ignore crossed-out or scribbled-out text.
-- If a field contains two values (e.g. start/end coordinates or two time intervals), separate them with " / ".
+def transcribe_prompts() -> list[str]:
+    """Names of the transcription prompt variants, one text file each."""
+    return sorted(p.stem for p in (PROMPTS_DIR / "transcribe").glob("*.txt"))
 
-Hints for the NCSM Aquatic/Marine Field Data Sheet:
-- DATE: usually DD MMM YYYY
-- TIME: usually a 24-hour range e.g. "0830-1100"
-- FIELD#: format WCS-NNNN
-- LOCALITY: spans two printed lines; include both
-- LAT/LONG: usually 5 decimal places
-- METHOD CAPTURE: may have text above and below the line; common values include "seine" (with \
-length), "electrofishing boat", "backpack electrofisher", "angling"
-- STREAM WIDTH / MAX DEPTH: values often written above the line; usually in meters
-- CURRENT: common values "fast", "moderate", "sluggish" (often abbreviated)
 
-In transcription_notes, record the fields where you were unsure of the reading and why \
-(smearing, overwriting, ambiguous characters), and any handwritten text you could not \
-place in a field."""
+def transcribe_prompt(name: str) -> str:
+    """The transcription prompt a run uses. Add a variant by adding a file."""
+    path = PROMPTS_DIR / "transcribe" / f"{name}.txt"
+    if not path.is_file():
+        raise FileNotFoundError(f"no transcription prompt {name!r}; available: {', '.join(transcribe_prompts())}")
+    return path.read_text().strip()
+
 
 RECONCILE = """\
 Several readers independently transcribed the same scanned, handwritten fish-collection \

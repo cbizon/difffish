@@ -69,3 +69,73 @@ def report(stats: Stats) -> str:
             f"reconciled lost to majority vote:   {stats.lost_to_majority}",
         ]
     return "\n".join(lines)
+
+
+class Shift(BaseModel):
+    """One candidate's scores in two runs, over the fields both runs scored."""
+
+    fields: int = 0
+    correct_a: int = 0
+    correct_b: int = 0
+    gained: int = 0  # wrong in the first run, correct in the second
+    lost: int = 0  # correct in the first run, wrong in the second
+
+    def add(self, verdict_a: str, verdict_b: str) -> None:
+        a, b = verdict_a in CORRECT, verdict_b in CORRECT
+        self.fields += 1
+        self.correct_a += a
+        self.correct_b += b
+        self.gained += b and not a
+        self.lost += a and not b
+
+
+class Comparison(BaseModel):
+    documents: int = 0  # documents present in both runs
+    candidates: dict[str, Shift] = {}
+    by_field: dict[str, dict[str, Shift]] = {}
+
+
+def _verdicts(result: DocResult) -> dict[tuple[str, str], str]:
+    """(candidate by model name, human field) -> verdict."""
+    return {
+        (result.readers.get(card.candidate, card.candidate), s.field): s.verdict
+        for card in result.scorecards
+        for s in card.scores
+    }
+
+
+def compare(first: list[DocResult], second: list[DocResult]) -> Comparison:
+    """Pair two runs document by document, candidate by candidate, field by field.
+
+    Only what both runs have is compared: shared documents, and candidates
+    (readers by model name, the majority vote, the reconciled record) in both.
+    """
+    other = {r.doc_id: r for r in second}
+    comparison = Comparison()
+    for result in first:
+        if result.doc_id not in other:
+            continue
+        comparison.documents += 1
+        a, b = _verdicts(result), _verdicts(other[result.doc_id])
+        for key in a.keys() & b.keys():
+            name, field = key
+            comparison.candidates.setdefault(name, Shift()).add(a[key], b[key])
+            comparison.by_field.setdefault(field, {}).setdefault(name, Shift()).add(a[key], b[key])
+    return comparison
+
+
+def comparison_report(comparison: Comparison, first: str, second: str) -> str:
+    def row(label: str, shift: Shift) -> str:
+        return (f"{label:<24}{shift.correct_a / shift.fields:>9.1%}{shift.correct_b / shift.fields:>9.1%}"
+                f"{shift.gained:>8}{shift.lost:>6}{shift.fields:>8}")
+
+    head = f"{'':<24}{first[:8]:>9}{second[:8]:>9}{'gained':>8}{'lost':>6}{'fields':>8}"
+    lines = [f"{comparison.documents} documents in both runs. Correct means exact or equivalent.", "", head]
+    order = sorted(comparison.candidates, key=lambda n: -comparison.candidates[n].correct_b)
+    lines += [row(name, comparison.candidates[name]) for name in order]
+    for name in (RECONCILED, *[n for n in order if n not in (RECONCILED, MAJORITY)][:1]):
+        if name not in comparison.candidates:
+            continue
+        lines += ["", f"{name} by field", head]
+        lines += [row(field, by[name]) for field, by in comparison.by_field.items() if name in by]
+    return "\n".join(lines)

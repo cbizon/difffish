@@ -1,5 +1,5 @@
 from difffish.schemas import MAJORITY, RECONCILED, DocResult, FieldScore, Scorecard
-from difffish.stats import report, summarize
+from difffish.stats import compare, comparison_report, report, summarize
 
 
 def card(candidate, **verdicts):
@@ -77,3 +77,37 @@ def test_report_lists_every_candidate():
     text = report(summarize(results()))
     for name in ("model-a", "model-b", MAJORITY, RECONCILED):
         assert name in text
+
+
+def second_run():
+    return [
+        result(
+            "WCS-0001",
+            card("Reader A", state="exact", county="exact", gear="mismatch"),  # county: gained
+            card("Reader B", state="mismatch", county="exact", gear="mismatch"),  # state: lost
+            card(MAJORITY, state="exact", county="exact", gear="mismatch"),
+            card(RECONCILED, state="exact", county="exact", gear="exact"),  # gear: gained
+        ),
+        result("WCS-0003", card("Reader A", state="exact"), card(MAJORITY, state="exact"), card(RECONCILED, state="exact")),
+    ]
+
+
+def test_compare_pairs_runs_on_shared_documents_only():
+    comparison = compare(results(), second_run())
+    assert comparison.documents == 1
+    assert comparison.candidates["model-a"].fields == 3
+
+
+def test_compare_counts_fields_gained_and_lost():
+    comparison = compare(results(), second_run())
+    a = comparison.candidates["model-a"]
+    assert (a.correct_a, a.correct_b, a.gained, a.lost) == (1, 2, 1, 0)
+    b = comparison.candidates["model-b"]
+    assert (b.correct_a, b.correct_b, b.gained, b.lost) == (2, 1, 0, 1)
+    assert comparison.by_field["gear"][RECONCILED].gained == 1
+    assert comparison.by_field["state"]["model-b"].lost == 1
+
+
+def test_comparison_report_names_both_runs():
+    text = comparison_report(compare(results(), second_run()), "baseline", "hints")
+    assert "baseline" in text and "hints" in text and "model-a" in text
