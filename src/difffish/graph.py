@@ -191,8 +191,22 @@ def score(task: ScoreTask) -> dict:
     return {"scorecards": [Scorecard(candidate=task["candidate"], scores=sheet.scores)]}
 
 
+def reader_names(transcriptions: list[Transcription]) -> dict[str, str]:
+    """Reader label -> the name results are reported under: the model, numbered
+    when the same model reads more than once ("gpt-6-luna #2")."""
+    ordered = sorted(transcriptions, key=lambda t: t.reader)
+    repeated = {m for m in (t.model for t in ordered) if sum(t.model == m for t in ordered) > 1}
+    seen: dict[str, int] = {}
+    names = {}
+    for t in ordered:
+        seen[t.model] = seen.get(t.model, 0) + 1
+        names[t.reader] = f"{t.model} #{seen[t.model]}" if t.model in repeated else t.model
+    return names
+
+
 def compare(state: DocState) -> dict:
     decisions = state["reconciliation"].decisions
+    names = reader_names(state["transcriptions"])
     return {
         "result": DocResult(
             doc_id=state["doc_id"],
@@ -200,7 +214,7 @@ def compare(state: DocState) -> dict:
             transcriptions=state["transcriptions"],
             diffs=state["diffs"],
             majority=majority_document(state["diffs"]),
-            readers={t.reader: t.model for t in state["transcriptions"] if t.content is not None},
+            readers={t.reader: names[t.reader] for t in state["transcriptions"] if t.content is not None},
             failed_readers={t.reader: t.error for t in state["transcriptions"] if t.error},
             fields=len(state["diffs"]),
             contested=sum(not d.unanimous for d in state["diffs"]),

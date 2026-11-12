@@ -114,6 +114,18 @@ def test_score_prompt_does_not_say_which_candidate_it_is():
         assert word not in prompt
 
 
+def test_readers_are_reported_by_model_name():
+    assert graph.reader_names(transcriptions()) == {
+        "Reader A": "model-a", "Reader B": "model-b", "Reader C": "model-c", "Reader D": "model-d"}
+
+
+def test_a_model_that_reads_more_than_once_is_numbered():
+    readings = [reading("Reader C", "luna"), reading("Reader A", "luna"), reading("Reader B", "sol"),
+                Transcription(reader="Reader D", model="luna", error="failed")]
+    assert graph.reader_names(readings) == {
+        "Reader A": "luna #1", "Reader B": "sol", "Reader C": "luna #2", "Reader D": "luna #3"}
+
+
 def test_state_survives_a_checkpoint_round_trip():
     serde = graph.checkpoint_serializer()
     original = transcriptions()[0]

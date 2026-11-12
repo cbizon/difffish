@@ -83,7 +83,7 @@ class Scorecard(BaseModel):
 class DocResult(BaseModel):
     doc_id: str
     human: dict[str, str]
-    readers: dict[str, str]  # reader label -> model
+    readers: dict[str, str]  # reader label -> model, numbered when a model reads more than once
     failed_readers: dict[str, str]  # reader label -> error
     transcriptions: list[Transcription]
     diffs: list[FieldDiff]
