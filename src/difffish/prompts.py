@@ -80,8 +80,11 @@ For each curator field, give one verdict:
 wrong (a different digit in a coordinate, a different collector, a different place)
 - missing: the transcription has nothing for this field
 
-Give one score per curator field, using the curator's field names exactly, with a one-line \
-reason that names the differing text for a mismatch."""
+Give one score per curator field, using the curator's field names exactly:
+- found: the transcription's text for this field, copied as written. When it is spread over \
+several transcription fields, join the pieces with "; ". Leave it blank when missing.
+- verdict: as above
+- reason: one line, naming the differing text for a mismatch"""
 
 
 def reconcile_prompt(transcriptions: list[Transcription], diffs: list[FieldDiff]) -> str:

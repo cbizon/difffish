@@ -63,6 +63,7 @@ def reconciliation_schema(readers: list[str]) -> type[BaseModel]:
 
 class FieldScore(BaseModel):
     field: str
+    found: str = ""  # the candidate's text for this field, as written; blank when missing
     verdict: Verdict
     reason: str
 

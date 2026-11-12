@@ -1,4 +1,4 @@
-"""Command line: ``difffish graph | models | run DOC_ID | corpus [DOC_ID ...] | dashboard``."""
+"""Command line: ``difffish graph | models | run DOC_ID | corpus [DOC_ID ...] | rescore [DOC_ID ...] | dashboard``."""
 
 from __future__ import annotations
 
@@ -76,6 +76,20 @@ def run_corpus(args: argparse.Namespace) -> None:
                 print(report(output["stats"]))
 
 
+def rescore(args: argparse.Namespace) -> None:
+    """Score saved results again, after a change to the scorer. Readers and adjudicator are not called."""
+    from difffish.dashboard import load_results
+    from difffish.rescore import build_rescore_graph
+
+    results = [r for r in load_results(RESULTS_DIR) if not args.doc_ids or r.doc_id in args.doc_ids]
+    graph = build_rescore_graph()
+    inputs = [{"result": r} for r in results]
+    for done, (_, output) in enumerate(graph.batch_as_completed(inputs, {"max_concurrency": args.concurrency}), 1):
+        result = output["result"]
+        (RESULTS_DIR / f"{result.doc_id}.json").write_text(result.model_dump_json(indent=2))
+        print(f"[{done}/{len(results)}] {result.doc_id}", flush=True)
+
+
 def show_dashboard(args: argparse.Namespace) -> None:
     from difffish.dashboard import serve
 
@@ -99,6 +113,11 @@ def main() -> None:
     corpus.add_argument("--limit", type=int, help="only the first N documents")
     corpus.add_argument("--concurrency", type=int, default=4, help="documents in flight at once")
     corpus.set_defaults(func=run_corpus)
+
+    again = commands.add_parser("rescore", help="score saved results again without re-reading the documents")
+    again.add_argument("doc_ids", nargs="*", help="documents to rescore (default: all saved results)")
+    again.add_argument("--concurrency", type=int, default=4, help="documents in flight at once")
+    again.set_defaults(func=rescore)
 
     dashboard = commands.add_parser("dashboard", help="browse results next to the scans")
     dashboard.add_argument("--port", type=int, default=8765)

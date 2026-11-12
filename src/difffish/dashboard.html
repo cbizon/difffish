@@ -32,7 +32,8 @@
   header h1 { font-size: 16px; margin: 0; }
   header p { margin: 2px 0 0; color: var(--muted); }
   button { font: inherit; padding: 2px 10px; border: 1px solid var(--line); border-radius: 4px; background: var(--panel); color: var(--text); cursor: pointer; }
-  main { display: grid; grid-template-columns: 190px minmax(320px, 1fr) minmax(480px, 1.4fr); min-height: 0; }
+  main { display: grid; grid-template-columns: 170px minmax(0, 1fr) minmax(0, 1.3fr); min-height: 0; }
+  @media (max-width: 1100px) { main { grid-template-columns: 110px minmax(0, 1fr) minmax(0, 1.2fr); } nav small { display: none; } }
   nav, #detail { overflow: auto; }
   nav { border-right: 1px solid var(--line); background: var(--panel); }
   nav a { display: block; padding: 6px 12px; color: inherit; text-decoration: none; border-bottom: 1px solid var(--line); }
@@ -62,6 +63,12 @@
   .mismatch { background: var(--mismatch-bg); color: var(--mismatch); }
   .missing { background: var(--missing-bg); color: var(--missing); }
   .warn { background: var(--warn-bg); color: var(--warn); }
+  td.exact, td.equivalent, td.mismatch, td.missing { color: var(--text); }
+  .toolbar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 10px 0; }
+  .toolbar button[aria-pressed="true"] { background: var(--pick); font-weight: 600; }
+  select { font: inherit; max-width: 100%; padding: 2px 4px; background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 4px; }
+  .legend .badge { margin-right: 6px; }
+  tr.human td { font-weight: 600; }
   tr.scores { cursor: pointer; }
   tr.reasons td { background: var(--panel); font-size: 13px; }
   tr.reasons p { margin: 2px 0; }
@@ -93,6 +100,15 @@ const CORRECT = new Set(["exact", "equivalent"]);
 let data = { results: [], stats: null };
 let current = null;
 let contestedOnly = true;
+let view = remembered("view", "table");       // "table": whole tables; "field": one field, a candidate per row
+let selected = remembered("field", "");       // "human:<field>" or "form:<path>"
+
+function remembered(key, fallback) {
+  try { return localStorage.getItem("difffish." + key) || fallback; } catch { return fallback; }
+}
+function remember(key, value) {
+  try { localStorage.setItem("difffish." + key, value); } catch { /* storage unavailable: keep it for this page only */ }
+}
 
 function el(tag, props = {}, ...children) {
   const node = Object.assign(document.createElement(tag), props);
@@ -143,6 +159,79 @@ function renderNav() {
   document.getElementById("docs").replaceChildren(...links);
 }
 
+// The candidate's own text for a human field, on the colour of the scorer's verdict.
+function foundCell(score) {
+  return el("td", { className: "value " + score.verdict, title: score.verdict, textContent: score.found || "—" });
+}
+function legend() {
+  return el("p", { className: "legend" }, ...VERDICTS.map(v => badge(v, v)));
+}
+
+// One human field: a candidate per row.
+function scoreRows(result, field) {
+  const head = el("tr", {}, ...["Candidate", "Transcription", "Verdict", "Scorer's reason"].map(h => el("th", { textContent: h })));
+  const human = el("tr", { className: "human" }, el("td", { className: "field", textContent: "human record" }),
+    el("td", { className: "value", textContent: result.human[field] }), el("td"), el("td"));
+  const rows = candidates(result).map(c => {
+    const score = result.scorecards.find(card => card.candidate === c.key).scores.find(s => s.field === field);
+    return el("tr", {}, el("td", { className: "field" }, c.name, el("small", { className: "rationale", textContent: c.note })),
+      foundCell(score), el("td", {}, badge(score.verdict, score.verdict)), el("td", { className: "value", textContent: score.reason }));
+  });
+  return el("div", { className: "scroll" }, el("table", {}, head, human, ...rows));
+}
+
+// One form field: a reader per row, then the majority vote and the adjudicator's ruling.
+function readingRows(result, path) {
+  const d = result.diffs.find(x => x.path === path);
+  const decision = result.decisions.find(x => x.path === path);
+  const final = decision ? decision.value : d.plurality;
+  const row = (name, note, value) => el("tr", {},
+    el("td", { className: "field" }, name, el("small", { className: "rationale", textContent: note })),
+    el("td", { className: "value" + (norm(value) === norm(final) ? "" : " differs"), textContent: value || "—" }));
+  return el("div", { className: "scroll" }, el("table", {},
+    el("tr", {}, el("th", { textContent: "Reader" }), el("th", { textContent: "Transcription" })),
+    ...Object.entries(result.readers).map(([label, model]) => row(model, label, d.readings[label])),
+    row("majority", "plain vote", d.plurality),
+    el("tr", {}, el("td", { className: "field" }, "reconciled", el("small", { className: "rationale", textContent: "adjudicator" })),
+      rulingCell(result, d, decision))));
+}
+
+function rulingCell(result, d, decision) {
+  const ruling = el("td", { className: "value reconciled" }, (decision ? decision.value : d.plurality) || "—");
+  if (decision) {
+    if (!decision.settled) ruling.append(" ", badge("warn", "unsettled"));
+    const support = decision.supporting_readers.map(r => result.readers[r] || r).join(", ") || "no reader";
+    ruling.append(el("span", { className: "rationale", textContent: `${decision.rationale} (Supported by: ${support})` }));
+  } else {
+    ruling.append(el("span", { className: "rationale", textContent: "All readers agreed." }));
+  }
+  return ruling;
+}
+
+function fieldPicker(result) {
+  const option = (value, text) => el("option", { value, textContent: text, selected: value === selected });
+  const group = (label, options) => Object.assign(el("optgroup", {}, ...options), { label });
+  const contested = result.diffs.filter(d => !d.unanimous).map(d => option("form:" + d.path, d.path));
+  const agreed = result.diffs.filter(d => d.unanimous).map(d => option("form:" + d.path, d.path));
+  const picker = el("select", { ariaLabel: "Field" },
+    group("Human record (scored)", Object.keys(result.human).map(f => option("human:" + f, f))),
+    group("Form fields, contested", contested), group("Form fields, agreed", agreed));
+  picker.onchange = () => { selected = picker.value; remember("field", selected); renderDetail(); };
+  return picker;
+}
+
+function fieldView(result) {
+  const known = selected.startsWith("human:") ? selected.slice(6) in result.human
+    : result.diffs.some(d => "form:" + d.path === selected);
+  if (!known) selected = "human:" + Object.keys(result.human)[0];
+  const picker = fieldPicker(result);
+  const body = selected.startsWith("human:")
+    ? [legend(), scoreRows(result, selected.slice(6))]
+    : [el("p", { className: "muted", textContent: "Red text differs from the reconciled value." }),
+       readingRows(result, selected.slice(5))];
+  return [el("div", { className: "toolbar" }, el("label", {}, "Field ", picker)), ...body];
+}
+
 function scoreTable(result) {
   const cols = candidates(result);
   const byCandidate = Object.fromEntries(result.scorecards.map(c =>
@@ -155,7 +244,7 @@ function scoreTable(result) {
         el("p", {}, el("strong", { textContent: c.name + ": " }), byCandidate[c.key][field].reason))));
     const row = el("tr", { className: "scores", title: "Click for the scorer's reasons" },
       el("td", { className: "path field", textContent: field }), el("td", { className: "value", textContent: value }),
-      ...cols.map(c => el("td", {}, badge(byCandidate[c.key][field].verdict, byCandidate[c.key][field].verdict))));
+      ...cols.map(c => foundCell(byCandidate[c.key][field])));
     row.onclick = () => { reasons.hidden = !reasons.hidden; };
     return [row, reasons];
   });
@@ -173,15 +262,10 @@ function transcriptionTable(result) {
     const decision = decisions[d.path];
     const final = decision ? decision.value : d.plurality;
     const cell = v => el("td", { className: "value" + (norm(v) === norm(final) ? "" : " differs"), textContent: v });
-    const ruling = el("td", { className: "value reconciled" }, final);
-    if (decision) {
-      if (!decision.settled) ruling.append(" ", badge("warn", "unsettled"));
-      const support = decision.supporting_readers.map(r => result.readers[r] || r).join(", ") || "no reader";
-      ruling.append(el("span", { className: "rationale", textContent: `${decision.rationale} (Supported by: ${support})` }));
-    }
     return el("tr", { className: d.unanimous ? "" : "contested" },
       el("td", { className: "path", textContent: d.path }),
-      ...readers.map(([label]) => cell(d.readings[label])), cell(d.plurality), ruling);
+      ...readers.map(([label]) => cell(d.readings[label])), cell(d.plurality),
+      decision ? rulingCell(result, d, decision) : el("td", { className: "value reconciled", textContent: final }));
   });
   return el("div", { className: "scroll" }, el("table", {}, head, ...rows));
 }
@@ -203,21 +287,34 @@ function renderDetail() {
   const notes = result.transcriptions.filter(t => t.notes).map(t =>
     el("details", {}, el("summary", { textContent: `${t.model} (${t.reader})` }), el("p", { textContent: t.notes })));
 
-  detail.replaceChildren(
-    el("h2", { textContent: result.doc_id }),
-    el("p", { className: "muted", textContent:
-      `${result.contested} of ${result.fields} form fields contested, ${result.unsettled.length} left unsettled by the adjudicator` }),
-    ...failed,
+  const toggle = (value, text) => {
+    const button = el("button", { textContent: text, ariaPressed: String(view === value) });
+    button.onclick = () => { view = value; remember("view", view); renderDetail(); };
+    return button;
+  };
+  const tables = view === "field" ? fieldView(result) : [
     el("h3", { textContent: "Scores against the human record" }),
-    el("p", { className: "muted", textContent: "Click a row for the scorer's reasons." }),
+    legend(),
+    el("p", { className: "muted", textContent:
+      "Each cell is that candidate's transcription, coloured by the scorer's verdict. Click a row for the reasons." }),
     scoreTable(result),
     el("h3", { textContent: "Transcriptions" }),
     el("p", {}, el("label", {}, filter, " Contested fields only"),
       el("span", { className: "muted", textContent: "  Red text differs from the reconciled value." })),
     transcriptionTable(result),
+  ];
+  const keep = detail.dataset.doc === result.doc_id ? detail.scrollTop : 0;
+  detail.dataset.doc = result.doc_id;
+  detail.replaceChildren(
+    el("h2", { textContent: result.doc_id }),
+    el("p", { className: "muted", textContent:
+      `${result.contested} of ${result.fields} form fields contested, ${result.unsettled.length} left unsettled by the adjudicator` }),
+    ...failed,
+    el("div", { className: "toolbar" }, toggle("table", "Whole tables"), toggle("field", "One field")),
+    ...tables,
     el("h3", { textContent: "Reader notes" }),
     ...notes);
-  detail.scrollTop = 0;
+  detail.scrollTop = keep;
 }
 
 function show() {

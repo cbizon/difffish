@@ -159,14 +159,18 @@ def reconcile(state: ReadingsOnly) -> dict:
     }
 
 
+def score_tasks(
+    transcriptions: list[Transcription], majority: dict[str, Any], reconciled: dict[str, Any], human: dict[str, str]
+) -> list[Send]:
+    """One scoring task per candidate: each successful reader, the majority vote, the reconciled record."""
+    candidates = {t.reader: t.content for t in transcriptions if t.content is not None}
+    candidates[MAJORITY] = majority
+    candidates[RECONCILED] = reconciled
+    return [Send("score", {"candidate": name, "content": content, "human": human}) for name, content in candidates.items()]
+
+
 def assign_scores(state: DocState) -> list[Send]:
-    candidates = {t.reader: t.content for t in state["transcriptions"] if t.content is not None}
-    candidates[MAJORITY] = majority_document(state["diffs"])
-    candidates[RECONCILED] = state["reconciled"]
-    return [
-        Send("score", {"candidate": name, "content": content, "human": state["human"]})
-        for name, content in candidates.items()
-    ]
+    return score_tasks(state["transcriptions"], majority_document(state["diffs"]), state["reconciled"], state["human"])
 
 
 def score(task: ScoreTask) -> dict:
