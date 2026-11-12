@@ -8,7 +8,7 @@ import pymupdf
 import pytest
 
 from difffish import runs
-from difffish.dashboard import make_handler, payload, run_list
+from difffish.dashboard import comparison, make_handler, payload, run_list
 from difffish.schemas import MAJORITY, RECONCILED, DocResult, FieldScore, Scorecard
 
 
@@ -79,6 +79,25 @@ def test_serves_the_list_of_runs(url):
     assert [r["name"] for r in json.loads(body)] == ["baseline"]
 
 
+def test_serves_a_comparison_of_two_runs(url, dirs):
+    runs.save_manifest(runs.current_manifest("other", "baseline"), dirs[0])
+    runs.save_result("other", result("WCS-0005"), dirs[0])
+    content_type, body = get(url + "/api/compare?first=baseline&second=other")
+    data = json.loads(body)
+    assert content_type == "application/json"
+    assert data["scoring_differs"] == [] and data["config_differs"] == []
+    assert data["comparison"]["documents"] == 1
+    assert data["comparison"]["candidates"]["model-a"]["fields"] == 1
+
+
+def test_runs_scored_differently_are_not_compared(dirs, monkeypatch):
+    monkeypatch.setenv("DIFFFISH_SCORER_MODEL", "another-scorer")
+    runs.save_manifest(runs.current_manifest("other", "baseline"), dirs[0])
+    data = comparison("baseline", "other", dirs[0])
+    assert data["scoring_differs"] == ["scorer_model"]
+    assert data["comparison"] is None
+
+
 def test_serves_the_scan(url):
     content_type, body = get(url + "/pdf/WCS-0005")
     assert content_type == "application/pdf"
@@ -86,7 +105,8 @@ def test_serves_the_scan(url):
 
 
 @pytest.mark.parametrize("path", ["/pdf/../../etc/passwd", "/pdf/WCS-9999", "/nothing", "/api/results",
-                                  "/api/results?run=other", "/api/results?run=../baseline"])
+                                  "/api/results?run=other", "/api/results?run=../baseline",
+                                  "/api/compare?first=baseline", "/api/compare?first=baseline&second=nope"])
 def test_refuses_anything_that_is_not_a_known_document_or_run(url, path):
     with pytest.raises(urllib.error.HTTPError) as error:
         get(url + path)

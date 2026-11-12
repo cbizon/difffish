@@ -33,6 +33,14 @@
   header p { margin: 2px 0 0; color: var(--muted); }
   button { font: inherit; padding: 2px 10px; border: 1px solid var(--line); border-radius: 4px; background: var(--panel); color: var(--text); cursor: pointer; }
   main { display: grid; grid-template-columns: 170px minmax(0, 1fr) minmax(0, 1.3fr); min-height: 0; }
+  body.comparing main { display: block; overflow: auto; }
+  body.comparing nav, body.comparing iframe, body.comparing #detail,
+  body.comparing #stats, body.comparing #measures, body.comparing .docs-only { display: none; }
+  body:not(.comparing) #compare { display: none; }
+  #compare { padding: 12px 16px 48px; max-width: 1200px; }
+  #compare tr.change { cursor: pointer; }
+  td.gain { color: var(--exact); font-weight: 600; }
+  td.loss { color: var(--mismatch); font-weight: 600; }
   @media (max-width: 1100px) { main { grid-template-columns: 110px minmax(0, 1fr) minmax(0, 1.2fr); } nav small { display: none; } }
   nav, #detail { overflow: auto; }
   nav { border-right: 1px solid var(--line); background: var(--panel); }
@@ -91,9 +99,10 @@
 <header>
   <div>
     <h1>difffish</h1>
-    <p><label>Run <select id="run" aria-label="Run"></select></label> <button id="reload">Reload</button></p>
-    <p id="count"></p>
-    <p id="config" class="muted"></p>
+    <p><span class="docs-only"><label>Run <select id="run" aria-label="Run"></select></label> </span><button id="reload">Reload</button>
+       <button id="mode">Compare runs</button></p>
+    <p id="count" class="docs-only"></p>
+    <p id="config" class="muted docs-only"></p>
   </div>
   <div id="stats"></div>
   <div id="measures" class="muted"></div>
@@ -102,6 +111,7 @@
   <nav id="docs"></nav>
   <iframe id="pdf" title="Scanned field notes"></iframe>
   <section id="detail"></section>
+  <section id="compare"></section>
 </main>
 <script>
 const VERDICTS = ["exact", "equivalent", "mismatch", "missing"];
@@ -111,6 +121,10 @@ let runList = [];
 let run = "";
 let current = null;
 let contestedOnly = true;
+let comparing = false;
+let pair = { first: remembered("first", ""), second: remembered("second", "") };
+let compared = null;                           // the last /api/compare answer
+let focus = { candidate: "reconciled", field: "" };
 let view = remembered("view", "table");       // "table": whole tables; "field": one field, a candidate per row
 let selected = remembered("field", "");       // "human:<field>" or "form:<path>"
 
@@ -364,8 +378,127 @@ function renderRuns() {
     ? `Transcription prompt: ${m.transcribe_prompt} · adjudicator: ${m.adjudicator_model} · scorer: ${m.scorer_model}` : "";
 }
 
+// ---- Compare runs -------------------------------------------------------------
+
+function picker(label, options, value, onchange) {
+  const select = el("select", { ariaLabel: label },
+    ...options.map(([v, text]) => el("option", { value: v, textContent: text, selected: v === value })));
+  select.onchange = () => onchange(select.value);
+  return el("label", {}, label + " ", select);
+}
+
+function shiftRow(label, shift, extra = {}) {
+  const net = shift.gained - shift.lost;
+  return el("tr", extra, el("td", { className: "field", textContent: label }),
+    el("td", { className: "num", textContent: pct(shift.correct_a, shift.fields) }),
+    el("td", { className: "num", textContent: pct(shift.correct_b, shift.fields) }),
+    el("td", { className: "num" + (shift.gained ? " gain" : ""), textContent: shift.gained }),
+    el("td", { className: "num" + (shift.lost ? " loss" : ""), textContent: shift.lost }),
+    el("td", { className: "num" + (net > 0 ? " gain" : net < 0 ? " loss" : ""), textContent: (net > 0 ? "+" : "") + net }),
+    el("td", { className: "num", textContent: shift.fields }));
+}
+
+function shiftHead(first) {
+  return el("tr", {}, ...[first, pair.first, pair.second, "Gained", "Lost", "Net", "Fields"].map(h => el("th", { textContent: h })));
+}
+
+// Open one document of the second run at the field that changed.
+function openChange(change) {
+  run = pair.second; remember("run", run);
+  view = "field"; remember("view", view);
+  selected = "human:" + change.field; remember("field", selected);
+  setComparing(false);
+  location.hash = change.doc_id;
+  load();
+}
+
+function renderCompare() {
+  const box = document.getElementById("compare");
+  const names = runList.map(r => [r.name, `${r.name} (${r.documents})`]);
+  const choose = key => value => { pair[key] = value; remember(key, value); loadCompare(); };
+  const toolbar = el("div", { className: "toolbar" },
+    picker("First run", names, pair.first, choose("first")), picker("Second run", names, pair.second, choose("second")));
+  const parts = [el("h2", { textContent: "Compare runs" }), toolbar];
+  if (runList.length < 2) {
+    parts.push(el("p", { className: "muted", textContent: "There is only one run. A comparison needs two." }));
+  } else if (!compared) {
+    parts.push(el("p", { className: "muted", textContent: "Loading…" }));
+  } else if (compared.scoring_differs.length) {
+    parts.push(el("p", {}, badge("warn", "not comparable"),
+      ` These runs were scored differently (${compared.scoring_differs.join(", ")}). Rescore the older run first, ` +
+      "or the comparison would measure the scorer."));
+  } else {
+    const c = compared.comparison;
+    const differs = compared.config_differs.length ? "Runs differ in: " + compared.config_differs.join(", ") + "."
+      : "The two runs have the same configuration, so differences are run-to-run variation.";
+    parts.push(el("p", { className: "muted", textContent:
+      `${c.documents} documents in both runs. ${differs} Correct means exact or equivalent.` }));
+
+    const order = Object.keys(c.candidates).sort((a, b) =>
+      c.candidates[b].correct_b / c.candidates[b].fields - c.candidates[a].correct_b / c.candidates[a].fields);
+    if (!order.includes(focus.candidate)) focus.candidate = order[0];
+    parts.push(el("h3", { textContent: "By candidate" }),
+      el("p", { className: "muted", textContent: "Only candidates present in both runs. Click a row to look at that candidate below." }),
+      scrollTable([shiftHead("Candidate")], order.map(name => {
+        const row = shiftRow(name, c.candidates[name], { className: "change" });
+        row.onclick = () => { focus = { candidate: name, field: "" }; renderCompare(); };
+        return row;
+      })));
+
+    const fields = Object.keys(c.by_field).filter(f => c.by_field[f][focus.candidate]);
+    parts.push(el("h3", { textContent: `${focus.candidate} by field` }),
+      el("div", { className: "toolbar" },
+        picker("Candidate", order.map(n => [n, n]), focus.candidate, v => { focus = { candidate: v, field: "" }; renderCompare(); })),
+      scrollTable([shiftHead("Human field")], fields.map(f => {
+        const row = shiftRow(f, c.by_field[f][focus.candidate], { className: "change" });
+        row.onclick = () => { focus.field = focus.field === f ? "" : f; renderCompare(); };
+        return row;
+      })));
+
+    const changes = c.changes.filter(x => x.candidate === focus.candidate && (!focus.field || x.field === focus.field));
+    const cell = score => el("td", { className: "value " + score.verdict, title: score.verdict + ": " + score.reason,
+                                     textContent: score.found || "—" });
+    parts.push(el("h3", { textContent: `Fields that changed for ${focus.candidate}` + (focus.field ? `: ${focus.field}` : "") }),
+      el("div", { className: "toolbar" },
+        picker("Field", [["", "all fields"], ...fields.map(f => [f, f])], focus.field, v => { focus.field = v; renderCompare(); })),
+      legend(),
+      el("p", { className: "muted", textContent:
+        `${changes.filter(x => x.gained).length} gained, ${changes.filter(x => !x.gained).length} lost. ` +
+        "Click a row to open that document in the second run." }),
+      scrollTable(
+        [el("tr", {}, ...["Document", "Field", "", "Human value", pair.first, pair.second].map(h => el("th", { textContent: h })))],
+        changes.map(x => {
+          const row = el("tr", { className: "change" }, el("td", { className: "field", textContent: x.doc_id }),
+            el("td", { className: "path field", textContent: x.field }),
+            el("td", { className: x.gained ? "gain" : "loss", textContent: x.gained ? "gained" : "lost" }),
+            el("td", { className: "value", textContent: x.human }), cell(x.first), cell(x.second));
+          row.onclick = () => openChange(x);
+          return row;
+        })));
+  }
+  box.replaceChildren(...parts);
+}
+
+async function loadCompare() {
+  const names = runList.map(r => r.name);
+  if (!names.includes(pair.first)) pair.first = names.includes("baseline") ? "baseline" : names[0] || "";
+  if (!names.includes(pair.second) || pair.second === pair.first) pair.second = names.find(n => n !== pair.first) || "";
+  compared = null;
+  renderCompare();
+  if (names.length < 2) return;
+  compared = await getJson(`/api/compare?first=${encodeURIComponent(pair.first)}&second=${encodeURIComponent(pair.second)}`);
+  renderCompare();
+}
+
+function setComparing(on) {
+  comparing = on;
+  document.body.classList.toggle("comparing", on);
+  document.getElementById("mode").textContent = on ? "Back to documents" : "Compare runs";
+}
+
 async function load() {
   runList = await getJson("/api/runs");
+  if (comparing) { await loadCompare(); return; }
   if (!runList.some(r => r.name === run)) run = (runList[0] || {}).name || "";
   renderRuns();
   data = run ? await getJson("/api/results?run=" + encodeURIComponent(run)) : { results: [], stats: null };
@@ -380,6 +513,7 @@ document.getElementById("run").onchange = event => {
 };
 
 document.getElementById("reload").onclick = load;
+document.getElementById("mode").onclick = () => { setComparing(!comparing); load(); };
 window.addEventListener("hashchange", show);
 run = remembered("run", "");
 load();

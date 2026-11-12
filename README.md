@@ -198,6 +198,12 @@ Pick a run at the top. For each of its documents it shows the scan next to:
 "One field" switches from the wide tables to a single field chosen from a
 dropdown, with one candidate per row, for narrow screens.
 
+"Compare runs" at the top switches to a comparison of any two runs on the
+documents they share: correct share in each run, fields gained and lost, per
+candidate and per field, and a list of every field that changed with both
+readings side by side. Clicking a changed field opens that document at that
+field. Runs scored by different scorers are reported as not comparable.
+
 The header has the statistics across all loaded documents. The page is served
 on 127.0.0.1 only, and the scans are read from `DIFFFISH_NOTES_DIR`.
 

@@ -108,6 +108,15 @@ def test_compare_counts_fields_gained_and_lost():
     assert comparison.by_field["state"]["model-b"].lost == 1
 
 
+def test_compare_lists_each_field_that_changed():
+    changes = compare(results(), second_run()).changes
+    assert {(c.candidate, c.field, c.gained) for c in changes} == {
+        ("model-a", "county", True), ("model-b", "state", False), (MAJORITY, "county", True),
+        (RECONCILED, "gear", True)}
+    gained = next(c for c in changes if c.candidate == "model-a")
+    assert (gained.doc_id, gained.first.verdict, gained.second.verdict) == ("WCS-0001", "mismatch", "exact")
+
+
 def test_comparison_report_names_both_runs():
     text = comparison_report(compare(results(), second_run()), "baseline", "hints")
     assert "baseline" in text and "hints" in text and "model-a" in text

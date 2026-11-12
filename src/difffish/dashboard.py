@@ -14,7 +14,7 @@ from urllib.parse import parse_qs, unquote, urlparse
 
 from difffish import documents, runs
 from difffish.config import get_settings
-from difffish.stats import summarize
+from difffish.stats import compare, summarize
 
 PAGE = Path(__file__).parent / "dashboard.html"
 
@@ -36,18 +36,39 @@ def payload(run: str, root: Path) -> dict:
     }
 
 
+def comparison(first: str, second: str, root: Path) -> dict:
+    """Two runs paired on the documents they share.
+
+    Runs scored by different scorers are not compared: the numbers would
+    measure the scorer and not the change between the runs.
+    """
+    a, b = runs.load_manifest(first, root), runs.load_manifest(second, root)
+    scoring = a.differences(b, runs.SCORING)
+    return {
+        "first": first,
+        "second": second,
+        "scoring_differs": scoring,
+        "config_differs": a.differences(b, runs.READING + runs.RECONCILING),
+        "comparison": None if scoring else compare(runs.load_results(first, root), runs.load_results(second, root)).model_dump(),
+    }
+
+
 def make_handler(root: Path, notes_dir: Path) -> type[BaseHTTPRequestHandler]:
     class Handler(BaseHTTPRequestHandler):
         def do_GET(self) -> None:
             url = urlparse(self.path)
             path = unquote(url.path)
-            run = parse_qs(url.query).get("run", [""])[0]
+            query = parse_qs(url.query)
+            run = query.get("run", [""])[0]
+            pair = [query.get(key, [""])[0] for key in ("first", "second")]
             if path == "/":
                 self._send(PAGE.read_bytes(), "text/html; charset=utf-8")
             elif path == "/api/runs":
                 self._send(json.dumps(run_list(root)).encode(), "application/json")
             elif path == "/api/results" and run in runs.list_runs(root):
                 self._send(json.dumps(payload(run, root)).encode(), "application/json")
+            elif path == "/api/compare" and all(name in runs.list_runs(root) for name in pair):
+                self._send(json.dumps(comparison(*pair, root)).encode(), "application/json")
             elif path.startswith("/pdf/") and path.removeprefix("/pdf/") in documents.document_ids():
                 self._send(documents.pdf_path(path.removeprefix("/pdf/"), notes_dir).read_bytes(), "application/pdf")
             else:

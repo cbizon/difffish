@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from pydantic import BaseModel
 
-from difffish.schemas import CORRECT, MAJORITY, RECONCILED, DocResult
+from difffish.schemas import CORRECT, MAJORITY, RECONCILED, DocResult, FieldScore
 
 
 class Tally(BaseModel):
@@ -89,16 +89,29 @@ class Shift(BaseModel):
         self.lost += a and not b
 
 
+class Change(BaseModel):
+    """One field of one candidate that is correct in one run and not in the other."""
+
+    doc_id: str
+    candidate: str
+    field: str
+    human: str
+    first: FieldScore
+    second: FieldScore
+    gained: bool  # wrong in the first run, correct in the second
+
+
 class Comparison(BaseModel):
     documents: int = 0  # documents present in both runs
     candidates: dict[str, Shift] = {}
     by_field: dict[str, dict[str, Shift]] = {}
+    changes: list[Change] = []
 
 
-def _verdicts(result: DocResult) -> dict[tuple[str, str], str]:
-    """(candidate by model name, human field) -> verdict."""
+def _scores(result: DocResult) -> dict[tuple[str, str], FieldScore]:
+    """(candidate by model name, human field) -> score."""
     return {
-        (result.readers.get(card.candidate, card.candidate), s.field): s.verdict
+        (result.readers.get(card.candidate, card.candidate), s.field): s
         for card in result.scorecards
         for s in card.scores
     }
@@ -116,11 +129,17 @@ def compare(first: list[DocResult], second: list[DocResult]) -> Comparison:
         if result.doc_id not in other:
             continue
         comparison.documents += 1
-        a, b = _verdicts(result), _verdicts(other[result.doc_id])
-        for key in a.keys() & b.keys():
+        a, b = _scores(result), _scores(other[result.doc_id])
+        for key in sorted(a.keys() & b.keys()):
             name, field = key
-            comparison.candidates.setdefault(name, Shift()).add(a[key], b[key])
-            comparison.by_field.setdefault(field, {}).setdefault(name, Shift()).add(a[key], b[key])
+            first_verdict, second_verdict = a[key].verdict, b[key].verdict
+            comparison.candidates.setdefault(name, Shift()).add(first_verdict, second_verdict)
+            comparison.by_field.setdefault(field, {}).setdefault(name, Shift()).add(first_verdict, second_verdict)
+            if (first_verdict in CORRECT) != (second_verdict in CORRECT):
+                comparison.changes.append(
+                    Change(doc_id=result.doc_id, candidate=name, field=field, human=result.human.get(field, ""),
+                           first=a[key], second=b[key], gained=second_verdict in CORRECT)
+                )
     return comparison
 
 
