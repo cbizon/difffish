@@ -13,9 +13,27 @@ plain majority vote.
 
 Document graph, one run per WCS ID (`src/difffish/graph.py`):
 
+```mermaid
+flowchart TD
+    pdf[(PDF scan)]
+    human[(Human record)]
+    prepare --> |one per reader model| transcribe
+    pdf -.-> transcribe
+    transcribe --> |all readings| diff
+    diff --> |contested fields| reconcile
+    reconcile --> |readers, majority vote, reconciled| score
+    human -.-> score
+    score --> compare
+    compare --> result([Result for the document])
+
+    subgraph blind [Sees only the readings]
+        diff
+        reconcile
+    end
 ```
-prepare → transcribe × N → diff → reconcile → score × (N + 2) → compare
-```
+
+Solid arrows are graph edges. Dotted arrows show the only nodes that receive
+the scan and the human record.
 
 - `prepare` — finds the PDF, its page classifications, and the human record.
 - `transcribe` — one per reader model (`Send`). Renders the pages and asks the
@@ -30,8 +48,11 @@ prepare → transcribe × N → diff → reconcile → score × (N + 2) → comp
 
 Corpus graph (`src/difffish/corpus.py`):
 
-```
-document × D → summarize
+```mermaid
+flowchart LR
+    ids([WCS IDs]) --> |one per document| document[document graph]
+    document --> summarize
+    summarize --> stats([Statistics])
 ```
 
 ## Design rules
