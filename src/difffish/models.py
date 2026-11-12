@@ -5,14 +5,14 @@ from __future__ import annotations
 from langchain_openai import ChatOpenAI
 from pydantic import BaseModel
 
-from difffish.config import get_settings
+from difffish.config import api_key, get_settings
 
 
 def get_model(name: str) -> ChatOpenAI:
     s = get_settings()
     return ChatOpenAI(
         base_url=s.base_url,
-        api_key=s.api_key,
+        api_key=api_key(),
         model=name,
         max_retries=s.max_retries,
         timeout=s.timeout,

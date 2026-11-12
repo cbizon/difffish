@@ -10,7 +10,6 @@ from difffish.schemas import MAJORITY, RECONCILED, Reconciliation, Transcription
 def settings(monkeypatch, tmp_path):
     for name, value in {
         "AZURE_OPENAI_URL": "http://localhost/openai/v1",
-        "AZURE_OPENAI_API_KEY": "unused",
         "DIFFFISH_NOTES_DIR": str(tmp_path),
         "DIFFFISH_READER_MODELS": "model-a, model-b,model-c",
         "DIFFFISH_ADJUDICATOR_MODEL": "adjudicator",

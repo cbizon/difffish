@@ -9,7 +9,7 @@ from pathlib import Path
 from langgraph.checkpoint.sqlite import SqliteSaver
 
 from difffish import documents
-from difffish.config import PROJECT_ROOT, get_settings
+from difffish.config import PROJECT_ROOT, api_key, get_settings
 from difffish.stats import report
 
 RESULTS_DIR = PROJECT_ROOT / "results"
@@ -27,7 +27,7 @@ def list_models(args: argparse.Namespace) -> None:
     from openai import OpenAI
 
     s = get_settings()
-    for model in sorted(OpenAI(base_url=s.base_url, api_key=s.api_key).models.list().data, key=lambda m: m.id):
+    for model in sorted(OpenAI(base_url=s.base_url, api_key=api_key()).models.list().data, key=lambda m: m.id):
         print(model.id)
 
 

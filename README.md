@@ -55,6 +55,8 @@ uv sync
 cp .env.example .env   # then fill in the endpoint, notes directory, and models
 ```
 
+The API key is read from the macOS keychain item `azure-openai`, not from `.env`.
+
 ## Use
 
 ```bash
