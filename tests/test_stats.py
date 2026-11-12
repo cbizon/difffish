@@ -9,6 +9,10 @@ def card(candidate, **verdicts):
 def result(doc_id, *cards):
     return DocResult(
         doc_id=doc_id,
+        human={},
+        transcriptions=[],
+        diffs=[],
+        majority={},
         readers={"Reader A": "model-a", "Reader B": "model-b"},
         failed_readers={},
         fields=10,

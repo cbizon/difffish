@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any, Literal
 
-from pydantic import BaseModel
+from pydantic import BaseModel, create_model
 
 # How a candidate's value for one human field compares with the human value.
 #   exact      — the same text, ignoring case and spacing
@@ -53,6 +53,14 @@ class Reconciliation(BaseModel):
     decisions: list[Decision]
 
 
+def reconciliation_schema(readers: list[str]) -> type[BaseModel]:
+    """``Reconciliation`` as the adjudicator must return it for one document:
+    supporting readers can only be the labels it was shown ("Reader A", not "A")."""
+    reader = Literal[tuple(readers)]
+    decision = create_model("Decision", __base__=Decision, supporting_readers=(list[reader], ...))
+    return create_model("Reconciliation", decisions=(list[decision], ...))
+
+
 class FieldScore(BaseModel):
     field: str
     verdict: Verdict
@@ -72,11 +80,15 @@ class Scorecard(BaseModel):
 
 class DocResult(BaseModel):
     doc_id: str
+    human: dict[str, str]
     readers: dict[str, str]  # reader label -> model
     failed_readers: dict[str, str]  # reader label -> error
+    transcriptions: list[Transcription]
+    diffs: list[FieldDiff]
     fields: int
     contested: int
     unsettled: list[str]
+    majority: dict[str, Any]
     reconciled: dict[str, Any]
     decisions: list[Decision]
     scorecards: list[Scorecard]

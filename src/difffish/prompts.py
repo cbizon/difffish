@@ -56,7 +56,7 @@ fish names, coordinates that fall in the stated region.
 For every contested field give:
 - path: exactly as listed
 - value: your ruling. Use one of the readings unless combining them is clearly justified.
-- supporting_readers: the readers whose reading matches your ruling
+- supporting_readers: the readers whose reading matches your ruling, by their full label ("Reader A")
 - rationale: one or two sentences
 - settled: false when you have no principled basis for choosing and someone needs to look \
 at the document again; otherwise true

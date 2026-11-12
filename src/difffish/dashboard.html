@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>difffish</title>
+<style>
+  :root {
+    --bg: #ffffff; --panel: #f6f7f8; --line: #d9dde1; --text: #1b1f23; --muted: #5d6670;
+    --pick: #e7f0fb; --contested: #fff8e1;
+    --exact-bg: #d7f0dc; --exact: #14532d;
+    --equivalent-bg: #d6ecf5; --equivalent: #0c4a6e;
+    --mismatch-bg: #f9d9d7; --mismatch: #8a1c14;
+    --missing-bg: #e7e9ec; --missing: #454c54;
+    --warn-bg: #fde9c8; --warn: #7a4a00;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #15181b; --panel: #1d2125; --line: #353b42; --text: #e6e9ec; --muted: #9aa4ae;
+      --pick: #1f3147; --contested: #2e2a1a;
+      --exact-bg: #17402a; --exact: #b9ecc6;
+      --equivalent-bg: #143a4d; --equivalent: #b5e1f3;
+      --mismatch-bg: #55201c; --mismatch: #f6c1bc;
+      --missing-bg: #343a41; --missing: #cdd3d9;
+      --warn-bg: #4a3610; --warn: #f6d9a3;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 14px/1.4 system-ui, sans-serif; color: var(--text); background: var(--bg);
+         height: 100vh; display: grid; grid-template-rows: auto 1fr; }
+  header { padding: 8px 16px; border-bottom: 1px solid var(--line); display: flex; gap: 24px; align-items: flex-start; flex-wrap: wrap; }
+  header h1 { font-size: 16px; margin: 0; }
+  header p { margin: 2px 0 0; color: var(--muted); }
+  button { font: inherit; padding: 2px 10px; border: 1px solid var(--line); border-radius: 4px; background: var(--panel); color: var(--text); cursor: pointer; }
+  main { display: grid; grid-template-columns: 190px minmax(320px, 1fr) minmax(480px, 1.4fr); min-height: 0; }
+  nav, #detail { overflow: auto; }
+  nav { border-right: 1px solid var(--line); background: var(--panel); }
+  nav a { display: block; padding: 6px 12px; color: inherit; text-decoration: none; border-bottom: 1px solid var(--line); }
+  nav a.current { background: var(--pick); font-weight: 600; }
+  nav small { display: block; color: var(--muted); font-weight: 400; }
+  iframe { width: 100%; height: 100%; border: 0; border-right: 1px solid var(--line); background: var(--panel); }
+  #detail { padding: 12px 16px 48px; }
+  h2 { font-size: 18px; margin: 0 0 4px; }
+  h3 { font-size: 14px; margin: 24px 0 6px; }
+  p { margin: 4px 0; }
+  .muted { color: var(--muted); }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { border: 1px solid var(--line); padding: 4px 6px; text-align: left; vertical-align: top; }
+  th { background: var(--panel); font-weight: 600; white-space: nowrap; }
+  th small { display: block; font-weight: 400; color: var(--muted); }
+  td.value { white-space: pre-wrap; overflow-wrap: anywhere; min-width: 90px; }
+  td.path { font-family: ui-monospace, monospace; font-size: 12px; overflow-wrap: anywhere; }
+  td.field { white-space: nowrap; overflow-wrap: normal; }
+  tr.contested td.path { background: var(--contested); }
+  td.differs { color: var(--mismatch); }
+  td.reconciled { background: var(--pick); }
+  .rationale { display: block; margin-top: 4px; font-size: 12px; color: var(--muted); }
+  .badge { display: inline-block; padding: 0 6px; border-radius: 3px; font-size: 12px; white-space: nowrap; }
+  .exact { background: var(--exact-bg); color: var(--exact); }
+  .equivalent { background: var(--equivalent-bg); color: var(--equivalent); }
+  .mismatch { background: var(--mismatch-bg); color: var(--mismatch); }
+  .missing { background: var(--missing-bg); color: var(--missing); }
+  .warn { background: var(--warn-bg); color: var(--warn); }
+  tr.scores { cursor: pointer; }
+  tr.reasons td { background: var(--panel); font-size: 13px; }
+  tr.reasons p { margin: 2px 0; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  header table { width: auto; font-size: 13px; }
+  header th, header td { padding: 1px 8px; }
+  details { margin: 4px 0; }
+  details p { white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>difffish</h1>
+    <p id="count"></p>
+    <p><button id="reload">Reload results</button></p>
+  </div>
+  <div id="stats"></div>
+  <div id="measures" class="muted"></div>
+</header>
+<main>
+  <nav id="docs"></nav>
+  <iframe id="pdf" title="Scanned field notes"></iframe>
+  <section id="detail"></section>
+</main>
+<script>
+const VERDICTS = ["exact", "equivalent", "mismatch", "missing"];
+const CORRECT = new Set(["exact", "equivalent"]);
+let data = { results: [], stats: null };
+let current = null;
+let contestedOnly = true;
+
+function el(tag, props = {}, ...children) {
+  const node = Object.assign(document.createElement(tag), props);
+  node.append(...children.filter(c => c !== null && c !== undefined));
+  return node;
+}
+const pct = (n, d) => d ? (100 * n / d).toFixed(0) + "%" : "–";
+const norm = s => s.split(/\s+/).filter(Boolean).join(" ").toLowerCase();
+const badge = (cls, text) => el("span", { className: "badge " + cls, textContent: text });
+
+// Readers that succeeded, then the two derived candidates, in column order.
+function candidates(result) {
+  const readers = Object.entries(result.readers).map(([label, model]) => ({ key: label, name: model, note: label }));
+  return [...readers, { key: "majority", name: "majority", note: "plain vote" },
+          { key: "reconciled", name: "reconciled", note: "adjudicator" }];
+}
+function columnHead(c) {
+  return el("th", {}, c.name, el("small", { textContent: c.note }));
+}
+
+function renderHeader() {
+  const s = data.stats;
+  document.getElementById("count").textContent =
+    `${s.documents} documents, ${s.scored} scored fields`;
+  const rows = Object.entries(s.candidates)
+    .sort((a, b) => b[1].correct / b[1].fields - a[1].correct / a[1].fields)
+    .map(([name, t]) => el("tr", {}, el("td", { textContent: name }),
+      el("td", { className: "num", textContent: pct(t.exact, t.fields) }),
+      el("td", { className: "num", textContent: pct(t.correct, t.fields) })));
+  document.getElementById("stats").replaceChildren(el("table", {},
+    el("tr", {}, el("th", { textContent: "Candidate" }), el("th", { textContent: "Exact" }),
+      el("th", { textContent: "Exact or equivalent" })), ...rows));
+  document.getElementById("measures").replaceChildren(
+    el("p", { textContent: `Some reader correct: ${pct(s.ceiling, s.scored)} of fields` }),
+    el("p", { textContent: `Reconciled wrong although a reader was correct: ${s.missed}` }),
+    el("p", { textContent: `Reconciled beat the majority vote: ${s.beat_majority}` }),
+    el("p", { textContent: `Reconciled lost to the majority vote: ${s.lost_to_majority}` }));
+}
+
+function renderNav() {
+  const links = data.results.map(r => {
+    const card = r.scorecards.find(c => c.candidate === "reconciled");
+    const right = card.scores.filter(s => CORRECT.has(s.verdict)).length;
+    const link = el("a", { href: "#" + r.doc_id, className: r.doc_id === current ? "current" : "" }, r.doc_id,
+      el("small", { textContent: `reconciled ${right}/${card.scores.length} · ${r.contested} contested` }));
+    return link;
+  });
+  document.getElementById("docs").replaceChildren(...links);
+}
+
+function scoreTable(result) {
+  const cols = candidates(result);
+  const byCandidate = Object.fromEntries(result.scorecards.map(c =>
+    [c.candidate, Object.fromEntries(c.scores.map(s => [s.field, s]))]));
+  const head = el("tr", {}, el("th", { textContent: "Human field" }), el("th", { textContent: "Human value" }),
+    ...cols.map(columnHead));
+  const rows = Object.entries(result.human).flatMap(([field, value]) => {
+    const reasons = el("tr", { className: "reasons", hidden: true },
+      el("td", { colSpan: cols.length + 2 }, ...cols.map(c =>
+        el("p", {}, el("strong", { textContent: c.name + ": " }), byCandidate[c.key][field].reason))));
+    const row = el("tr", { className: "scores", title: "Click for the scorer's reasons" },
+      el("td", { className: "path field", textContent: field }), el("td", { className: "value", textContent: value }),
+      ...cols.map(c => el("td", {}, badge(byCandidate[c.key][field].verdict, byCandidate[c.key][field].verdict))));
+    row.onclick = () => { reasons.hidden = !reasons.hidden; };
+    return [row, reasons];
+  });
+  return el("div", { className: "scroll" }, el("table", {}, head, ...rows));
+}
+
+function transcriptionTable(result) {
+  const readers = Object.entries(result.readers);
+  const decisions = Object.fromEntries(result.decisions.map(d => [d.path, d]));
+  const head = el("tr", {}, el("th", { textContent: "Form field" }),
+    ...readers.map(([label, model]) => el("th", {}, model, el("small", { textContent: label }))),
+    el("th", {}, "majority", el("small", { textContent: "plain vote" })),
+    el("th", {}, "reconciled", el("small", { textContent: "adjudicator" })));
+  const rows = result.diffs.filter(d => !contestedOnly || !d.unanimous).map(d => {
+    const decision = decisions[d.path];
+    const final = decision ? decision.value : d.plurality;
+    const cell = v => el("td", { className: "value" + (norm(v) === norm(final) ? "" : " differs"), textContent: v });
+    const ruling = el("td", { className: "value reconciled" }, final);
+    if (decision) {
+      if (!decision.settled) ruling.append(" ", badge("warn", "unsettled"));
+      const support = decision.supporting_readers.map(r => result.readers[r] || r).join(", ") || "no reader";
+      ruling.append(el("span", { className: "rationale", textContent: `${decision.rationale} (Supported by: ${support})` }));
+    }
+    return el("tr", { className: d.unanimous ? "" : "contested" },
+      el("td", { className: "path", textContent: d.path }),
+      ...readers.map(([label]) => cell(d.readings[label])), cell(d.plurality), ruling);
+  });
+  return el("div", { className: "scroll" }, el("table", {}, head, ...rows));
+}
+
+function renderDetail() {
+  const result = data.results.find(r => r.doc_id === current);
+  const detail = document.getElementById("detail");
+  if (!result) { detail.replaceChildren(el("p", { className: "muted", textContent: "No results yet." })); return; }
+  const pdf = document.getElementById("pdf");
+  const src = "/pdf/" + encodeURIComponent(result.doc_id) + "#navpanes=0&view=FitH";
+  if (pdf.getAttribute("src") !== src) pdf.setAttribute("src", src);
+
+  const failed = Object.entries(result.failed_readers).map(([label, error]) => {
+    const model = result.transcriptions.find(t => t.reader === label).model;
+    return el("p", {}, badge("warn", "failed reader"), ` ${model}: ${error}`);
+  });
+  const filter = el("input", { type: "checkbox", checked: contestedOnly });
+  filter.onchange = () => { contestedOnly = filter.checked; renderDetail(); };
+  const notes = result.transcriptions.filter(t => t.notes).map(t =>
+    el("details", {}, el("summary", { textContent: `${t.model} (${t.reader})` }), el("p", { textContent: t.notes })));
+
+  detail.replaceChildren(
+    el("h2", { textContent: result.doc_id }),
+    el("p", { className: "muted", textContent:
+      `${result.contested} of ${result.fields} form fields contested, ${result.unsettled.length} left unsettled by the adjudicator` }),
+    ...failed,
+    el("h3", { textContent: "Scores against the human record" }),
+    el("p", { className: "muted", textContent: "Click a row for the scorer's reasons." }),
+    scoreTable(result),
+    el("h3", { textContent: "Transcriptions" }),
+    el("p", {}, el("label", {}, filter, " Contested fields only"),
+      el("span", { className: "muted", textContent: "  Red text differs from the reconciled value." })),
+    transcriptionTable(result),
+    el("h3", { textContent: "Reader notes" }),
+    ...notes);
+  detail.scrollTop = 0;
+}
+
+function show() {
+  const wanted = location.hash.slice(1);
+  current = data.results.some(r => r.doc_id === wanted) ? wanted : (data.results[0] || {}).doc_id;
+  renderNav();
+  renderDetail();
+}
+
+async function load() {
+  const response = await fetch("/api/results");
+  if (!response.ok) throw new Error("could not load results: " + response.status);
+  data = await response.json();
+  renderHeader();
+  show();
+}
+
+document.getElementById("reload").onclick = load;
+window.addEventListener("hashchange", show);
+load();
+</script>
+</body>
+</html>

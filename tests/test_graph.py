@@ -3,7 +3,9 @@ from langgraph.types import Send
 
 from difffish import graph, prompts
 from difffish.diff import diff_readings
-from difffish.schemas import MAJORITY, RECONCILED, Reconciliation, Transcription
+from pydantic import ValidationError
+
+from difffish.schemas import MAJORITY, RECONCILED, Reconciliation, Transcription, reconciliation_schema
 
 
 @pytest.fixture
@@ -77,6 +79,21 @@ def test_reconcile_makes_no_model_call_when_readers_agree():
     out = graph.reconcile({"transcriptions": agreed, "diffs": diffs})
     assert out["reconciliation"] == Reconciliation(decisions=[])
     assert out["reconciled"] == {"county": "Monroe"}
+
+
+def ruling(readers):
+    return {"decisions": [{"path": "date", "value": "3 Apr 1969", "supporting_readers": readers,
+                           "rationale": "two of three", "settled": True}]}
+
+
+def test_adjudicator_must_name_readers_by_their_full_label():
+    schema = reconciliation_schema(["Reader A", "Reader B"])
+    accepted = schema.model_validate(ruling(["Reader A", "Reader B"]))
+    assert Reconciliation.model_validate(accepted.model_dump()).decisions[0].supporting_readers == ["Reader A", "Reader B"]
+    with pytest.raises(ValidationError):
+        schema.model_validate(ruling(["A"]))
+    with pytest.raises(ValidationError):
+        schema.model_validate(ruling(["Reader C"]))
 
 
 def test_reconcile_prompt_names_readers_but_not_models():

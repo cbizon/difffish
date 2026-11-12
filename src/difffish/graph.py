@@ -43,6 +43,7 @@ from difffish.schemas import (
     Decision,
     FieldScore,
     Transcription,
+    reconciliation_schema,
 )
 
 class DocInput(TypedDict):
@@ -148,8 +149,10 @@ def reconcile(state: ReadingsOnly) -> dict:
     if all(d.unanimous for d in diffs):
         reconciliation = Reconciliation(decisions=[])
     else:
-        adjudicator = get_structured_model(get_settings().adjudicator_model, Reconciliation)
-        reconciliation = adjudicator.invoke(prompts.reconcile_prompt(state["transcriptions"], diffs))
+        readers = [t.reader for t in state["transcriptions"] if t.content is not None]
+        adjudicator = get_structured_model(get_settings().adjudicator_model, reconciliation_schema(readers))
+        ruling = adjudicator.invoke(prompts.reconcile_prompt(state["transcriptions"], diffs))
+        reconciliation = Reconciliation.model_validate(ruling.model_dump())
     return {
         "reconciliation": reconciliation,
         "reconciled": reconciled_document(diffs, reconciliation.decisions),
@@ -180,6 +183,10 @@ def compare(state: DocState) -> dict:
     return {
         "result": DocResult(
             doc_id=state["doc_id"],
+            human=state["human"],
+            transcriptions=state["transcriptions"],
+            diffs=state["diffs"],
+            majority=majority_document(state["diffs"]),
             readers={t.reader: t.model for t in state["transcriptions"] if t.content is not None},
             failed_readers={t.reader: t.error for t in state["transcriptions"] if t.error},
             fields=len(state["diffs"]),

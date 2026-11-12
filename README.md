@@ -87,6 +87,25 @@ uv run difffish run WCS-0005      # one document
 uv run difffish corpus --limit 10 # several documents, then statistics
 ```
 
+`corpus` saves each document's result as soon as it finishes.
+
+## Dashboard
+
+```bash
+uv run difffish dashboard         # then open http://127.0.0.1:8765
+```
+
+For each document in `results/` it shows the scan next to:
+
+- the human record, with every candidate's verdict per field (click a row for
+  the scorer's reasons)
+- each reader's transcription, the majority vote, and the reconciled value with
+  the adjudicator's rationale, for contested fields or all fields
+- the readers' own transcription notes
+
+The header has the statistics across all loaded documents. The page is served
+on 127.0.0.1 only, and the scans are read from `DIFFFISH_NOTES_DIR`.
+
 `run` checkpoints to `.difffish/checkpoints.sqlite`. If a run is interrupted,
 running it again resumes and does not repeat model calls that finished. Results
 go to `results/`.

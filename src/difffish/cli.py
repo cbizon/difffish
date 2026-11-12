@@ -1,4 +1,4 @@
-"""Command line: ``difffish graph | models | run DOC_ID | corpus [DOC_ID ...]``."""
+"""Command line: ``difffish graph | models | run DOC_ID | corpus [DOC_ID ...] | dashboard``."""
 
 from __future__ import annotations
 
@@ -60,12 +60,26 @@ def run_corpus(args: argparse.Namespace) -> None:
     from difffish.corpus import build_corpus_graph
 
     doc_ids = args.doc_ids or documents.document_ids()[: args.limit]
-    state = build_corpus_graph().invoke({"doc_ids": doc_ids}, {"max_concurrency": args.concurrency})
     RESULTS_DIR.mkdir(exist_ok=True)
-    for result in state["results"]:
-        (RESULTS_DIR / f"{result.doc_id}.json").write_text(result.model_dump_json(indent=2))
-    (RESULTS_DIR / "stats.json").write_text(state["stats"].model_dump_json(indent=2))
-    print(report(state["stats"]))
+    config = {"max_concurrency": args.concurrency}
+    done = 0
+    # Stream node by node so each document is saved as soon as it finishes.
+    for update in build_corpus_graph().stream({"doc_ids": doc_ids}, config, stream_mode="updates"):
+        for node, output in update.items():
+            if node == "document":
+                for result in output["results"]:
+                    (RESULTS_DIR / f"{result.doc_id}.json").write_text(result.model_dump_json(indent=2))
+                    done += 1
+                    print(f"[{done}/{len(doc_ids)}] {result.doc_id}: {result.contested} of {result.fields} contested, "
+                          f"{len(result.failed_readers)} failed readers", flush=True)
+            elif node == "summarize":
+                print(report(output["stats"]))
+
+
+def show_dashboard(args: argparse.Namespace) -> None:
+    from difffish.dashboard import serve
+
+    serve(RESULTS_DIR, args.port)
 
 
 def main() -> None:
@@ -85,6 +99,10 @@ def main() -> None:
     corpus.add_argument("--limit", type=int, help="only the first N documents")
     corpus.add_argument("--concurrency", type=int, default=4, help="documents in flight at once")
     corpus.set_defaults(func=run_corpus)
+
+    dashboard = commands.add_parser("dashboard", help="browse results next to the scans")
+    dashboard.add_argument("--port", type=int, default=8765)
+    dashboard.set_defaults(func=show_dashboard)
 
     args = parser.parse_args()
     args.func(args)
