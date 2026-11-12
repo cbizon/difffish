@@ -1,4 +1,5 @@
 import base64
+import re
 
 import pymupdf
 import pytest
@@ -48,6 +49,33 @@ def test_every_document_has_page_types_and_a_human_record():
     for doc_id in ids:
         assert documents.page_types(doc_id)
         assert documents.human_record(doc_id)
+
+
+def test_human_locality_and_coordinates_are_separate_fields():
+    record = documents.human_record("WCS-0005")
+    assert record["verbatimLocality"].endswith("ca 16 air mi E Madisonville")
+    assert record["verbatimLatitude"] == "35.5373°N"
+    assert record["verbatimLongitude"] == "84.1046°W"
+
+
+def test_start_and_end_coordinates_are_joined_with_a_slash():
+    record = documents.human_record("WCS-3011")
+    assert record["verbatimLatitude"] == "39.37134 N / 38.36654 N"
+    assert record["verbatimLongitude"] == "77.33578 W / 77.32188 W"
+
+
+def test_a_document_without_coordinates_has_no_coordinate_fields():
+    record = documents.human_record("WCS-0021")
+    assert record["verbatimLocality"] == "MA, Worchester County, Jordan Pond"
+    assert "verbatimLatitude" not in record and "verbatimLongitude" not in record
+
+
+def test_no_locality_still_ends_in_coordinates():
+    ends_in_coordinate = re.compile(r"\d\.\d{3,}\s*°?\s*[NSEW]?\s*$|\d\"\s*[NSEW]\s*$")
+    for doc_id in documents.document_ids():
+        record = documents.human_record(doc_id)
+        assert not ends_in_coordinate.search(record["verbatimLocality"]), doc_id
+        assert ("verbatimLatitude" in record) == ("verbatimLongitude" in record), doc_id
 
 
 def test_human_record_drops_fields_the_curator_left_empty():

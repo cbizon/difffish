@@ -68,8 +68,8 @@ You are checking a machine transcription of fish-collection field notes against 
 that a human curator made from the same document.
 
 The curator's record uses its own field names and is not a literal transcription: one \
-curator field may combine several form fields (the locality includes state, county and \
-coordinates; remarks merge several notes), and names and abbreviations may be expanded. \
+curator field may combine several form fields (the locality starts with the state and \
+county; remarks merge several notes), and names and abbreviations may be expanded. \
 The information for a curator field can be anywhere in the transcription.
 
 For each curator field, give one verdict:
@@ -79,6 +79,10 @@ For each curator field, give one verdict:
 - mismatch: the transcription states a different fact, or gets any part of a combined field \
 wrong (a different digit in a coordinate, a different collector, a different place)
 - missing: the transcription has nothing for this field
+
+Coordinates: the same digits in a different notation are equivalent ("35.5373°N" / \
+"35.5373 N", "-82.7840°" / "82.7840 W", a start and end written as a range or as two \
+values). Any different digit is a mismatch.
 
 Give one score per curator field, using the curator's field names exactly:
 - found: the transcription's text for this field, copied as written. When it is spread over \

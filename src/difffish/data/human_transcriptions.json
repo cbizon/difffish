@@ -1,7 +1,9 @@
 {
   "WCS-0005": {
     "verbatimEventDate": "3 Apr 1969",
-    "verbatimLocality": "TN, Monroe County, Citico Cr. ca. 1 mi. above confl. w/ Little Tennessee R. ca 16 air mi E Madisonville, 35.5373\u00b0N, 84.1046\u00b0W",
+    "verbatimLocality": "TN, Monroe County, Citico Cr. ca. 1 mi. above confl. w/ Little Tennessee R. ca 16 air mi E Madisonville",
+    "verbatimLatitude": "35.5373\u00b0N",
+    "verbatimLongitude": "84.1046\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -17,7 +19,9 @@
   },
   "WCS-0006": {
     "verbatimEventDate": "5 Apr 1969",
-    "verbatimLocality": "TN, Bradley County, Coahulla Cr. at second bridge N. of GA line, 35.0279\u00b0N, 84.848\u00b0W",
+    "verbatimLocality": "TN, Bradley County, Coahulla Cr. at second bridge N. of GA line",
+    "verbatimLatitude": "35.0279\u00b0N",
+    "verbatimLongitude": "84.848\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -33,7 +37,9 @@
   },
   "WCS-0008": {
     "verbatimEventDate": "11 Apr 1969",
-    "verbatimLocality": "TN, Polk County, Hiwassee R. below Apalachia Powerhouse ca. 10.8 mi SE Etowah, 35.1835\u00b0N 84.4377\u00b0W",
+    "verbatimLocality": "TN, Polk County, Hiwassee R. below Apalachia Powerhouse ca. 10.8 mi SE Etowah",
+    "verbatimLatitude": "35.1835\u00b0N",
+    "verbatimLongitude": "84.4377\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -49,7 +55,9 @@
   },
   "WCS-0011": {
     "verbatimEventDate": "16 Apr 1969",
-    "verbatimLocality": "TN, Fayette County, Little Laurel Cr. at TN. 59, 7.5 air miles NW Somerville, 35.3222\u00b0N, 89.4504\u00b0W",
+    "verbatimLocality": "TN, Fayette County, Little Laurel Cr. at TN. 59, 7.5 air miles NW Somerville",
+    "verbatimLatitude": "35.3222\u00b0N",
+    "verbatimLongitude": "89.4504\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -65,7 +73,9 @@
   },
   "WCS-0013": {
     "verbatimEventDate": "20 Jul 1969",
-    "verbatimLocality": "Virginia, Southampton County, Nottoway R. at VA 35, 1.0 miles W. of Courtland, 36.7179\u00b0N, 77.0752\u00b0W",
+    "verbatimLocality": "Virginia, Southampton County, Nottoway R. at VA 35, 1.0 miles W. of Courtland",
+    "verbatimLatitude": "36.7179\u00b0N",
+    "verbatimLongitude": "77.0752\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -81,7 +91,9 @@
   },
   "WCS-0017": {
     "verbatimEventDate": "7 Aug 1969",
-    "verbatimLocality": "TN, Pickett County, Rock Cr. at TN. 154, about 13.0 air miles NE Jamestown, 36.5785\u00b0N, 84.7956\u00b0W",
+    "verbatimLocality": "TN, Pickett County, Rock Cr. at TN. 154, about 13.0 air miles NE Jamestown",
+    "verbatimLatitude": "36.5785\u00b0N",
+    "verbatimLongitude": "84.7956\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -97,7 +109,9 @@
   },
   "WCS-0020": {
     "verbatimEventDate": "29 Dec 1969",
-    "verbatimLocality": "TN, Cocke County, Cosby Cr. at Tenn 32, 6.5 air miles S Newport, 35.8739\u00b0N, 83.2224\u00b0W",
+    "verbatimLocality": "TN, Cocke County, Cosby Cr. at Tenn 32, 6.5 air miles S Newport",
+    "verbatimLatitude": "35.8739\u00b0N",
+    "verbatimLongitude": "83.2224\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -114,6 +128,8 @@
   "WCS-0021": {
     "verbatimEventDate": "7 Sept 1968",
     "verbatimLocality": "MA, Worchester County, Jordan Pond",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -129,7 +145,9 @@
   },
   "WCS-0024": {
     "verbatimEventDate": "24 Sep 1969",
-    "verbatimLocality": "TN, Coffee County, Trib (Meadow Branch or next tributary to W?) to West Fk. Hickory Cr. at TN. 55, just S of Warren county line, 12.1 to 12.3 air miles SW of McMinnville, 35.5789\u00b0N, 85.9491\u00b0W",
+    "verbatimLocality": "TN, Coffee County, Trib (Meadow Branch or next tributary to W?) to West Fk. Hickory Cr. at TN. 55, just S of Warren county line, 12.1 to 12.3 air miles SW of McMinnville",
+    "verbatimLatitude": "35.5789\u00b0N",
+    "verbatimLongitude": "85.9491\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -145,7 +163,9 @@
   },
   "WCS-0028": {
     "verbatimEventDate": "29 Nov 1969",
-    "verbatimLocality": "TN, Bradley County, Conasauga River, at TN 74, 0.3 miles N Georgia state line, about 12 air miles SSE Cleveland, 34.991\u00b0N, 84.7754\u00b0W",
+    "verbatimLocality": "TN, Bradley County, Conasauga River, at TN 74, 0.3 miles N Georgia state line, about 12 air miles SSE Cleveland",
+    "verbatimLatitude": "34.991\u00b0N",
+    "verbatimLongitude": "84.7754\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -161,7 +181,9 @@
   },
   "WCS-0030": {
     "verbatimEventDate": "29 Sep 1969",
-    "verbatimLocality": "TN, Maury County, Flat Creek at US 431, 12.3 air miles NE Columbia, 35.6653\u00b0N, 86.8301\u00b0W",
+    "verbatimLocality": "TN, Maury County, Flat Creek at US 431, 12.3 air miles NE Columbia",
+    "verbatimLatitude": "35.6653\u00b0N",
+    "verbatimLongitude": "86.8301\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -177,7 +199,9 @@
   },
   "WCS-0037": {
     "verbatimEventDate": "9 Jul 1969",
-    "verbatimLocality": "TN, Bledsoe County, Sequatchie River (probable locale, 0.8 miles S of Cumberland County line, about 13.0 air miles NNE Pikeville), 35.7382\u00b0N, 85.036\u00b0W",
+    "verbatimLocality": "TN, Bledsoe County, Sequatchie River (probable locale, 0.8 miles S of Cumberland County line, about 13.0 air miles NNE Pikeville)",
+    "verbatimLatitude": "35.7382\u00b0N",
+    "verbatimLongitude": "85.036\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -193,7 +217,9 @@
   },
   "WCS-0038": {
     "verbatimEventDate": "21 Feb 1970",
-    "verbatimLocality": "MD, Carroll County, Little Morgan Run at Klee Mill Rd., 3.2 mi NW Eldersburg, 39.4382\u00b0 N 76.9929\u00b0 W",
+    "verbatimLocality": "MD, Carroll County, Little Morgan Run at Klee Mill Rd., 3.2 mi NW Eldersburg",
+    "verbatimLatitude": "39.4382\u00b0 N",
+    "verbatimLongitude": "76.9929\u00b0 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -209,7 +235,9 @@
   },
   "WCS-0039": {
     "verbatimEventDate": "4 Apr 1970",
-    "verbatimLocality": "MD, Howard County, Middle Branch Patuxent R. at Tridelphia Rd., 6.5 air mi NW ctr. Columbia, 39.2820\u00b0 N 76.9409\u00b0 W",
+    "verbatimLocality": "MD, Howard County, Middle Branch Patuxent R. at Tridelphia Rd., 6.5 air mi NW ctr. Columbia",
+    "verbatimLatitude": "39.2820\u00b0 N",
+    "verbatimLongitude": "76.9409\u00b0 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -225,7 +253,9 @@
   },
   "WCS-0042": {
     "verbatimEventDate": "15 May 1970",
-    "verbatimLocality": "TN, Blount County, Little River at US 411, 5.1 air miles E center of Maryville, 35.7866\u00b0N, 83.8834\u00b0W",
+    "verbatimLocality": "TN, Blount County, Little River at US 411, 5.1 air miles E center of Maryville",
+    "verbatimLatitude": "35.7866\u00b0N",
+    "verbatimLongitude": "83.8834\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -241,7 +271,9 @@
   },
   "WCS-0043": {
     "verbatimEventDate": "15 May 1970",
-    "verbatimLocality": "TN, Blount County, Little R. just below Walland by Old Walland Hwy, 8.4 air mi E Maryville, 35.7371\u00b0 N 83.8215\u00b0 W",
+    "verbatimLocality": "TN, Blount County, Little R. just below Walland by Old Walland Hwy, 8.4 air mi E Maryville",
+    "verbatimLatitude": "35.7371\u00b0 N",
+    "verbatimLongitude": "83.8215\u00b0 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -257,7 +289,9 @@
   },
   "WCS-0045": {
     "verbatimEventDate": "6 Jun 1970",
-    "verbatimLocality": "VA, Floyd County, Laurel Cr. at Rt 663, (or Rt 705?) at Sowers, 7.1 air mi NNW Floyd, 37.0050\u00b0 N 80.3780\u00b0 W",
+    "verbatimLocality": "VA, Floyd County, Laurel Cr. at Rt 663, (or Rt 705?) at Sowers, 7.1 air mi NNW Floyd",
+    "verbatimLatitude": "37.0050\u00b0 N",
+    "verbatimLongitude": "80.3780\u00b0 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -273,7 +307,9 @@
   },
   "WCS-0046": {
     "verbatimEventDate": "7 Jun 1970",
-    "verbatimLocality": "VA, Craig County, Craig Creek at Rt 621, ca. 1.3 air mi W VA 311, 10 air mi NW Salem, 37.4081\u00b0N 80.1772\u00b0W",
+    "verbatimLocality": "VA, Craig County, Craig Creek at Rt 621, ca. 1.3 air mi W VA 311, 10 air mi NW Salem",
+    "verbatimLatitude": "37.4081\u00b0N",
+    "verbatimLongitude": "80.1772\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -289,7 +325,9 @@
   },
   "WCS-0047": {
     "verbatimEventDate": "7 Jun 1970",
-    "verbatimLocality": "VA, Craig County, Craig Cr. at Rt 614, 4.9 air mi NE New Castle, 37.5354\u00b0 N 80.0343\u00b0 W",
+    "verbatimLocality": "VA, Craig County, Craig Cr. at Rt 614, 4.9 air mi NE New Castle",
+    "verbatimLatitude": "37.5354\u00b0 N",
+    "verbatimLongitude": "80.0343\u00b0 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -306,6 +344,8 @@
   "WCS-0050": {
     "verbatimEventDate": "8 Jun 1970",
     "verbatimLocality": "VA, Montgomery Co., North Fork Roanoke R. off RT 603, ca. 8-9 mi E Blacksburg",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -321,7 +361,9 @@
   },
   "WCS-0054": {
     "verbatimEventDate": "20 Apr 1971",
-    "verbatimLocality": "TN, Roane County, Trib. to Bear Cr. at TN 95, 0.8 air mi E jct. w/ TN 58, 10.5 air mi NE Kingston, 35.9453\u00b0 N 84.3471\u00b0 W",
+    "verbatimLocality": "TN, Roane County, Trib. to Bear Cr. at TN 95, 0.8 air mi E jct. w/ TN 58, 10.5 air mi NE Kingston",
+    "verbatimLatitude": "35.9453\u00b0 N",
+    "verbatimLongitude": "84.3471\u00b0 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -337,7 +379,9 @@
   },
   "WCS-0057": {
     "verbatimEventDate": "1 Jul 1971",
-    "verbatimLocality": "TN, Monroe County, Tellico R. at Millsaps Rd, 9.8 air mi NNE Tellico Plains, 35.5013\u00b0 N 84.2467\u00b0 W",
+    "verbatimLocality": "TN, Monroe County, Tellico R. at Millsaps Rd, 9.8 air mi NNE Tellico Plains",
+    "verbatimLatitude": "35.5013\u00b0 N",
+    "verbatimLongitude": "84.2467\u00b0 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -353,7 +397,9 @@
   },
   "WCS-0062": {
     "verbatimEventDate": "30 Jan 1971",
-    "verbatimLocality": "SC, Aiken County, Tributary to Savannah R. at \"Murray\" (?) Rd. no further data, 33.5500\u00b0 N 81.7200\u00b0 W",
+    "verbatimLocality": "SC, Aiken County, Tributary to Savannah R. at \"Murray\" (?) Rd. no further data",
+    "verbatimLatitude": "33.5500\u00b0 N",
+    "verbatimLongitude": "81.7200\u00b0 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -370,6 +416,8 @@
   "WCS-0063": {
     "verbatimEventDate": "14 Aug 1971",
     "verbatimLocality": "NC, Mecklenburg County, Catawba R., Lake Norman Reservoir, Davidson-Cornelius area",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -385,7 +433,9 @@
   },
   "WCS-0065": {
     "verbatimEventDate": "16 Oct 1971",
-    "verbatimLocality": "TN, Lauderdale County, Open Lake (overflow of Miss. R.) at public access on W bank, N off TN 19, 9.7 air mi WNW Ripley, 35.7869\u00b0 N 89.6966\u00b0 W",
+    "verbatimLocality": "TN, Lauderdale County, Open Lake (overflow of Miss. R.) at public access on W bank, N off TN 19, 9.7 air mi WNW Ripley",
+    "verbatimLatitude": "35.7869\u00b0 N",
+    "verbatimLongitude": "89.6966\u00b0 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -401,7 +451,9 @@
   },
   "WCS-0068": {
     "verbatimEventDate": "5 Oct 1971",
-    "verbatimLocality": "TN, Lewis County, Trace Cr., (no further data), 35.4690 N 87.6218 W",
+    "verbatimLocality": "TN, Lewis County, Trace Cr., (no further data)",
+    "verbatimLatitude": "35.4690 N",
+    "verbatimLongitude": "87.6218 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -417,7 +469,9 @@
   },
   "WCS-0137": {
     "verbatimEventDate": "9 Aug 1972",
-    "verbatimLocality": "TN, Hardeman County, Hatchie R at TN 18, 2 mi NE ctr of Bolivar, 35.2774\u00b0N, 88.9769\u00b0W",
+    "verbatimLocality": "TN, Hardeman County, Hatchie R at TN 18, 2 mi NE ctr of Bolivar",
+    "verbatimLatitude": "35.2774\u00b0N",
+    "verbatimLongitude": "88.9769\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -433,7 +487,9 @@
   },
   "WCS-0186": {
     "verbatimEventDate": "July 1973",
-    "verbatimLocality": "SC, Colleton County, Edisto Beach at Edisto Beach State Park, 32.4950\u00b0 N 80.3060\u00b0 W",
+    "verbatimLocality": "SC, Colleton County, Edisto Beach at Edisto Beach State Park",
+    "verbatimLatitude": "32.4950\u00b0 N",
+    "verbatimLongitude": "80.3060\u00b0 W",
     "cont_ocean": "Atlantic Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -450,6 +506,8 @@
   "WCS-0211": {
     "verbatimEventDate": null,
     "verbatimLocality": "GA, Monroe County, Trib to Echeconnes Creek at US 341, 1 mi N of Culloden on US 341",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -466,6 +524,8 @@
   "WCS-0212": {
     "verbatimEventDate": "8/26/67",
     "verbatimLocality": "Ga, Crawford County, Avery Creek in Magnolia Swamp",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -482,6 +542,8 @@
   "WCS-0213": {
     "verbatimEventDate": null,
     "verbatimLocality": "NC, Orange County, New Hope Creek at Piney Mt.",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -498,6 +560,8 @@
   "WCS-0214": {
     "verbatimEventDate": null,
     "verbatimLocality": "NC,  Alleghany County, Elk Creek at Co. Rd. 1335, 3.0 mi WNW of Twin Oaks",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -514,6 +578,8 @@
   "WCS-0215": {
     "verbatimEventDate": "9/9/72",
     "verbatimLocality": "NC, Ashe Co., New River at mouth of Big Horsepen Creek at 1644, 1.2 mi SE of Lansing",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -530,6 +596,8 @@
   "WCS-0216": {
     "verbatimEventDate": null,
     "verbatimLocality": "NC, Martin County, Robinson Cr. at 1530",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -546,6 +614,8 @@
   "WCS-0217": {
     "verbatimEventDate": "9/1/67",
     "verbatimLocality": "NC, Union Co., Goose Cr. at 1547, 1.6 mi SW of Brief",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -562,6 +632,8 @@
   "WCS-0218": {
     "verbatimEventDate": "5/18/67",
     "verbatimLocality": "NC, Cabarrus Co., Mallard Creek at SSR 1300 to Rocky River , 1.3 mi NW of Harrisburg",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -578,6 +650,8 @@
   "WCS-0219": {
     "verbatimEventDate": "9-16-72",
     "verbatimLocality": "NC, Robeson Co., Lumber R. at N.C. 711, 2.7 mi W of Lumberton",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -594,6 +668,8 @@
   "WCS-0220": {
     "verbatimEventDate": null,
     "verbatimLocality": "NC, Stokes Co., Dan River at SSR 1416, 4.0 mi W of Collingstown",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -610,6 +686,8 @@
   "WCS-0222": {
     "verbatimEventDate": "6/28/69",
     "verbatimLocality": "NC, Columbus Co., North shore of Lake Waccamaw at SSR 1735, 0.4 mi S of Lake Waccamaw",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -626,6 +704,8 @@
   "WCS-0225": {
     "verbatimEventDate": "10/10/73",
     "verbatimLocality": "NC, Mecklenburg Co., Long Cr. - NC 16",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -642,6 +722,8 @@
   "WCS-0228": {
     "verbatimEventDate": "9/4/66",
     "verbatimLocality": "NC, Mecklenburg Co., Lake Wylie",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -658,6 +740,8 @@
   "WCS-0229": {
     "verbatimEventDate": "6/1/68",
     "verbatimLocality": "Stokes Co., Dan River a - Danbury",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -674,6 +758,8 @@
   "WCS-0257": {
     "verbatimEventDate": "5/25/74",
     "verbatimLocality": "MS, Calhoun Co., Trib. to Grenada Res. 1 mi. S. Calhoun City at MS 8",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -690,6 +776,8 @@
   "WCS-0259": {
     "verbatimEventDate": "18 May 1974",
     "verbatimLocality": "TN, Weakley Co., N. Fk. Obion R. overflow, swamp off TN 89 near Palmersville",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -706,6 +794,8 @@
   "WCS-0260": {
     "verbatimEventDate": "6/9/1974",
     "verbatimLocality": "TN, Polk/Bradley Co., Conasauga R (2 locations), Isle above RR bridge and at TN 74",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -722,6 +812,8 @@
   "WCS-0261": {
     "verbatimEventDate": "6/16/1974",
     "verbatimLocality": "TN, Polk Co., Conasauga R at Minnewauga Cr.",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -738,6 +830,8 @@
   "WCS-0264": {
     "verbatimEventDate": null,
     "verbatimLocality": "Blount County, Little R. ca. 1 mi below Walland",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -754,6 +848,8 @@
   "WCS-0265": {
     "verbatimEventDate": "24 July 1974",
     "verbatimLocality": "Tn., Morgan Co., Emory R. at Nemo @ 4 air mi WSW Wartburg",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -769,7 +865,9 @@
   },
   "WCS-0296": {
     "verbatimEventDate": "11 Nov 1974",
-    "verbatimLocality": "TN, Blount Co., Little R. at Tn 33, 4.5 air mi NNE ctr Maryville, 35.8195\u00b0N, 83.9381\u00b0W",
+    "verbatimLocality": "TN, Blount Co., Little R. at Tn 33, 4.5 air mi NNE ctr Maryville",
+    "verbatimLatitude": "35.8195\u00b0N",
+    "verbatimLongitude": "83.9381\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -786,6 +884,8 @@
   "WCS-0320": {
     "verbatimEventDate": "1974",
     "verbatimLocality": "NC, L Norman",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -802,6 +902,8 @@
   "WCS-0354": {
     "verbatimEventDate": "26 Apr. 1975",
     "verbatimLocality": "Tn., Seveir Co., Road Prong - @ \u00bd mi above confl. w/ W. Prong Little Pigeon R. @ 7 air mi S Gatlinburg",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -818,6 +920,8 @@
   "WCS-0363": {
     "verbatimEventDate": "26/May/1975",
     "verbatimLocality": "NC, Richmond Co., Naked Cr at NC 73 E of Ellerbee",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -834,6 +938,8 @@
   "WCS-0364": {
     "verbatimEventDate": "5/27/75",
     "verbatimLocality": "N.C., Mecklenburg County, Mallard Creek at Mallard Creek Road",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -850,6 +956,8 @@
   "WCS-0373": {
     "verbatimEventDate": "8 June 1975",
     "verbatimLocality": "TN, Loudon Co., Little Tennessee R. W side Toliver I. @ 9 mi S Lenoir City",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -866,6 +974,8 @@
   "WCS-0386": {
     "verbatimEventDate": "6/27/75",
     "verbatimLocality": "N.C., Pitt Co, Swift Cr. at Co. Rd. 1126",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -882,6 +992,8 @@
   "WCS-0389": {
     "verbatimEventDate": "6/28/75",
     "verbatimLocality": "N.C., Pitt County, Swift Cr at Co Rd 1923",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -898,6 +1010,8 @@
   "WCS-0390": {
     "verbatimEventDate": "6/28/75",
     "verbatimLocality": "N.C.,Craven/Pitt County, Creeping Swamp at US 43",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -914,6 +1028,8 @@
   "WCS-0392": {
     "verbatimEventDate": "6/29/75",
     "verbatimLocality": "N.C., Pitt-Beaufort Co, Creeping Swamp at NC 102",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -930,6 +1046,8 @@
   "WCS-0395": {
     "verbatimEventDate": "6/29/75",
     "verbatimLocality": "N.C., Pitt Co., Clayroot Swamp at Co Rd 1925",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -946,6 +1064,8 @@
   "WCS-0396": {
     "verbatimEventDate": "29 June 1975",
     "verbatimLocality": "N.C. Lenoir County, Neuse River at SR 1002, S. LaGrange",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -962,6 +1082,8 @@
   "WCS-0397": {
     "verbatimEventDate": "6/30/75",
     "verbatimLocality": "NC, Carteret Co., Bogue Sound, west end on island side",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "Atlantic Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -977,7 +1099,9 @@
   },
   "WCS-0454": {
     "verbatimEventDate": "10/4/75",
-    "verbatimLocality": "TN, Scott Co., Big South Fork Cumberland River at mouth Station Camp Cr. and 2451, 8.9 air mi WNW Oneida, 36.5465\u00b0N, 84.6650\u00b0W",
+    "verbatimLocality": "TN, Scott Co., Big South Fork Cumberland River at mouth Station Camp Cr. and 2451, 8.9 air mi WNW Oneida",
+    "verbatimLatitude": "36.5465\u00b0N",
+    "verbatimLongitude": "84.6650\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -993,7 +1117,9 @@
   },
   "WCS-0499": {
     "verbatimEventDate": "11/30/75",
-    "verbatimLocality": "TN, Hancock Co., Clinch R. at Frost Ford 3.7 mi NE Tn 31, 36.5302\u00b0N, 83.1509\u00b0W",
+    "verbatimLocality": "TN, Hancock Co., Clinch R. at Frost Ford 3.7 mi NE Tn 31",
+    "verbatimLatitude": "36.5302\u00b0N",
+    "verbatimLongitude": "83.1509\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1010,6 +1136,8 @@
   "WCS-0502": {
     "verbatimEventDate": "12/11/75",
     "verbatimLocality": "N.C., Polk Co, N. Fk Pacolet River, \u00bc mi below intersection of US 176 & NC 108",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1026,6 +1154,8 @@
   "WCS-0517": {
     "verbatimEventDate": "9 Dec 1975",
     "verbatimLocality": "Tn., Campbell Co., Clinch R. (Norris Res.) - Cove Cr. Embayment",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1042,6 +1172,8 @@
   "WCS-0524": {
     "verbatimEventDate": "? 1975",
     "verbatimLocality": "TN, Polk Co., Conasauga R. - 1.3 mi NW Tennga between US 411 & TN 74",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1058,6 +1190,8 @@
   "WCS-0543": {
     "verbatimEventDate": "2/28/76",
     "verbatimLocality": "FL., Monroe Co., Ohio Key",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "Atlantic Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1074,6 +1208,8 @@
   "WCS-0554": {
     "verbatimEventDate": "23 Mar 1976",
     "verbatimLocality": "FL, Collier Co., Tamiami Canal along US 41 ca. 2 mi E. Ochopee",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1090,6 +1226,8 @@
   "WCS-0560": {
     "verbatimEventDate": "3/26/76",
     "verbatimLocality": "FL, St. Lucie Co., Indian R., E side ca. 2 mi S Ft. Pierce Beach",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "Atlantic Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1106,6 +1244,8 @@
   "WCS-0572": {
     "verbatimEventDate": "18 Apr 1976",
     "verbatimLocality": "Tn., Blount Co., Little R. at US 411 E Maryville",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1122,6 +1262,8 @@
   "WCS-0573": {
     "verbatimEventDate": "9 Apr 1976",
     "verbatimLocality": "TN, Campbell Co., No Business Cr. - US 25W",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1138,6 +1280,8 @@
   "WCS-0577": {
     "verbatimEventDate": "23 Apr 1976",
     "verbatimLocality": "LA, Plaquemines Co., Mississippi R. at Tulane Riverside Research Lab, Belle Chasse",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1154,6 +1298,8 @@
   "WCS-0581": {
     "verbatimEventDate": "4/25/76",
     "verbatimLocality": "Tn., Bradley Co., Conasauga R. at TN 74",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1170,6 +1316,8 @@
   "WCS-0582": {
     "verbatimEventDate": "20 Apr 1976",
     "verbatimLocality": "AL, Tuscaloosa Co., Unnamed trib at bridge on unnumbered St. Rt., 3.0 air mi. SE Rt. 11-43 bridge on Black Warrior R.",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1186,6 +1334,8 @@
   "WCS-0583": {
     "verbatimEventDate": "20 Apr 1976",
     "verbatimLocality": "Ala., Tuscaloosa Co., Trib. - Black Warrior R. - 3.7 air mi SE US 11-73 bridge",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1201,7 +1351,9 @@
   },
   "WCS-0594": {
     "verbatimEventDate": "14 May 1976",
-    "verbatimLocality": "AL, Seveir Co., L. Prg. Little Pigeon R by Red Bank Rd. 4.6 air mi ctr Sevierville, 35.83095\u00b0N, 83.47616\u00b0W",
+    "verbatimLocality": "AL, Seveir Co., L. Prg. Little Pigeon R by Red Bank Rd. 4.6 air mi ctr Sevierville",
+    "verbatimLatitude": "35.83095\u00b0N",
+    "verbatimLongitude": "83.47616\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1217,7 +1369,9 @@
   },
   "WCS-0601": {
     "verbatimEventDate": "25 May 1976",
-    "verbatimLocality": "MS, Perry Co., Beaverdam Cr. at MS 15 0.9 mi N ctr Richton, 31.26238\u00b0N, 88.93589\u00b0W",
+    "verbatimLocality": "MS, Perry Co., Beaverdam Cr. at MS 15 0.9 mi N ctr Richton",
+    "verbatimLatitude": "31.26238\u00b0N",
+    "verbatimLongitude": "88.93589\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1234,6 +1388,8 @@
   "WCS-0644": {
     "verbatimEventDate": "6 Sept 1976",
     "verbatimLocality": "Ky., Whitley Co., Archers Cr. at Cumberland Falls Rd. 3.9 mi W. Ky. 204 jct.",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1250,6 +1406,8 @@
   "WCS-0654": {
     "verbatimEventDate": " 7 Sept 1976",
     "verbatimLocality": "NC, ? Hyde ? Co., Ocracoke Island - Silver Lake",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "Atlantic Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1266,6 +1424,8 @@
   "WCS-0665": {
     "verbatimEventDate": "1 Oct 1976",
     "verbatimLocality": "Ky., Hickman Co., Mississippi R. - Columbus",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1282,6 +1442,8 @@
   "WCS-0671": {
     "verbatimEventDate": "3 Oct 1976",
     "verbatimLocality": "Ky., Allen Co., Trammel Fk. At Ky. 240 1 mi. W. of Allen Springs",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1298,6 +1460,8 @@
   "WCS-0681": {
     "verbatimEventDate": "6 Nov 1976",
     "verbatimLocality": "Ala, Calhoun Co., Coldwater Spring, 6.3 mi W US-78-Ala. 21 jct; \u00bc mi N US 78 on Rt 109",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1314,6 +1478,8 @@
   "WCS-0692": {
     "verbatimEventDate": "10 Sept 1968",
     "verbatimLocality": "Mi, Benzie Co., Platte R.",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1330,6 +1496,8 @@
   "WCS-0697": {
     "verbatimEventDate": "3 Oct 1976",
     "verbatimLocality": "Wa, Clallam Co., Cape Alava - 3.3 mi NW Lake Ozette",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1346,6 +1514,8 @@
   "WCS-0699": {
     "verbatimEventDate": "21 Oct 1975",
     "verbatimLocality": "La., West Feliciana Par., Alexander Cr. - 3 mi S St. Francisville at abandoned La.-Ark. R.R. trestle",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1361,7 +1531,9 @@
   },
   "WCS-0783": {
     "verbatimEventDate": "1-2 Jul 1977",
-    "verbatimLocality": "TX, Kerr County, Guadalupe R. below dam, below Kerrville St. Park, ca. 4.5 mi SE Kerrville, 29.9950 N, 99.1067 W",
+    "verbatimLocality": "TX, Kerr County, Guadalupe R. below dam, below Kerrville St. Park, ca. 4.5 mi SE Kerrville",
+    "verbatimLatitude": "29.9950 N",
+    "verbatimLongitude": "99.1067 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1377,7 +1549,9 @@
   },
   "WCS-0784": {
     "verbatimEventDate": "2 July 1977",
-    "verbatimLocality": "TX, Kerr County, Bumble Bee Creek, at TX 39, about 6.0 km W of Ingram, 30.0704 N, 99.3015 W",
+    "verbatimLocality": "TX, Kerr County, Bumble Bee Creek, at TX 39, about 6.0 km W of Ingram",
+    "verbatimLatitude": "30.0704 N",
+    "verbatimLongitude": "99.3015 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1394,6 +1568,8 @@
   "WCS-0807": {
     "verbatimEventDate": "18 July 1977",
     "verbatimLocality": "Utah, Washington Co., Virgin R. below Rockville by Utah 15",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1409,7 +1585,9 @@
   },
   "WCS-0813": {
     "verbatimEventDate": "22 July 1977",
-    "verbatimLocality": "Okla, Kingfisher Co., Cimarron R. at Okla. 51, 8.3 air mi E of Okeene; 36.11950\u00b0 N, 98.16849\u00b0 W",
+    "verbatimLocality": "Okla, Kingfisher Co., Cimarron R. at Okla. 51, 8.3 air mi E of Okeene",
+    "verbatimLatitude": "36.11950\u00b0 N",
+    "verbatimLongitude": "98.16849\u00b0 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1425,7 +1603,9 @@
   },
   "WCS-0847": {
     "verbatimEventDate": "22 Oct 1977",
-    "verbatimLocality": "KY, McCreary-Wayne Counties, Little South Fk. R. at Freedom Church Ford, 2.1 air mi SSW confl. Little & Big South fks, 8.6 air mi NW Whitley City, 36.7989 N 84.5968 W",
+    "verbatimLocality": "KY, McCreary-Wayne Counties, Little South Fk. R. at Freedom Church Ford, 2.1 air mi SSW confl. Little & Big South fks, 8.6 air mi NW Whitley City",
+    "verbatimLatitude": "36.7989 N",
+    "verbatimLongitude": "84.5968 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1441,7 +1621,9 @@
   },
   "WCS-0848": {
     "verbatimEventDate": "23 Oct 1977",
-    "verbatimLocality": "KY, Green County, Green R. at KY 88 4.5 air mi W Greensburg, 37.2658 N 85.5822 W",
+    "verbatimLocality": "KY, Green County, Green R. at KY 88 4.5 air mi W Greensburg",
+    "verbatimLatitude": "37.2658 N",
+    "verbatimLongitude": "85.5822 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1458,6 +1640,8 @@
   "WCS-0849": {
     "verbatimEventDate": "23 Oct 1977",
     "verbatimLocality": "Ky., Green Co., Big Cr. at Ky 61 3 mi NNW Greensburg",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1473,7 +1657,9 @@
   },
   "WCS-0850": {
     "verbatimEventDate": "22 Oct 1977",
-    "verbatimLocality": "KY, Casey County, Green R. at KY 1640, 1/2 mi N of US 127 and Dunnville, 9.1 mi SSW Liberty, 37.2061\u00b0 N, 85.0068\u00b0 W",
+    "verbatimLocality": "KY, Casey County, Green R. at KY 1640, 1/2 mi N of US 127 and Dunnville, 9.1 mi SSW Liberty",
+    "verbatimLatitude": "37.2061\u00b0 N",
+    "verbatimLongitude": "85.0068\u00b0 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1490,6 +1676,8 @@
   "WCS-0851": {
     "verbatimEventDate": "23 Oct 1977",
     "verbatimLocality": "Ky., Casey Co., Allen Cr. at US 127 7 mi SW Liberty",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1506,6 +1694,8 @@
   "WCS-0852": {
     "verbatimEventDate": "23 Oct 1977",
     "verbatimLocality": "Ky., Casey Co., Trace Fork at Labascus by Rt 501 3.3 mi E US 127 jct",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1522,6 +1712,8 @@
   "WCS-0897": {
     "verbatimEventDate": "7 Jun 1978",
     "verbatimLocality": "American Samoa, Tutuila Island, S shore W of Pago Pago, Faga'alu beach & reef area",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1538,6 +1730,8 @@
   "WCS-0898": {
     "verbatimEventDate": "7 Jun 1978",
     "verbatimLocality": "American Samoa, Tutuila I., S. shore, Pago Pago Harbor at Utulei (behind Rainmaker Hotel)",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1554,6 +1748,8 @@
   "WCS-0899": {
     "verbatimEventDate": "8 Jun 1978",
     "verbatimLocality": "American Samoa. Tutuila I., S shore, Palu Lagoon, 3.5 air mi SW Pago Pago near airport",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1570,6 +1766,8 @@
   "WCS-0900": {
     "verbatimEventDate": "8 Jun 1978",
     "verbatimLocality": "American Samoa, Tutuila I., S shore W of Pago Pago, reef area at Alega",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1585,7 +1783,9 @@
   },
   "WCS-0901": {
     "verbatimEventDate": "8 Jun 1978",
-    "verbatimLocality": "American Samoa, Tutuila I., South shore, freshwater stream entering sea at Alega W of Pago Pago, 14.2700 S, 170.6800 W",
+    "verbatimLocality": "American Samoa, Tutuila I., South shore, freshwater stream entering sea at Alega W of Pago Pago",
+    "verbatimLatitude": "14.2700 S",
+    "verbatimLongitude": "170.6800 W",
     "cont_ocean": "Oceania",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1601,7 +1801,9 @@
   },
   "WCS-0902": {
     "verbatimEventDate": "8 Jun 1978",
-    "verbatimLocality": "American Samoa, Tutuila I., S shore, Pala Lagoon (W bank) about 3.5 air mi SW Pago Pago near airport, 14.3333 S, 170.7080 W",
+    "verbatimLocality": "American Samoa, Tutuila I., S shore, Pala Lagoon (W bank) about 3.5 air mi SW Pago Pago near airport",
+    "verbatimLatitude": "14.3333 S",
+    "verbatimLongitude": "170.7080 W",
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1618,6 +1820,8 @@
   "WCS-0903": {
     "verbatimEventDate": "Jun 1978",
     "verbatimLocality": "American Samoa, Tutuila Island area (purchased at market in Pago Pago)",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1633,7 +1837,9 @@
   },
   "WCS-0904": {
     "verbatimEventDate": "9 Jun 1978",
-    "verbatimLocality": "American Samoa, Tutuila I., S shore, W of Pago Pago, Faga'alu Bay, rocky reef area, 14.2633\u00b0 S 170.6800\u00b0 W",
+    "verbatimLocality": "American Samoa, Tutuila I., S shore, W of Pago Pago, Faga'alu Bay, rocky reef area",
+    "verbatimLatitude": "14.2633\u00b0 S",
+    "verbatimLongitude": "170.6800\u00b0 W",
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1649,7 +1855,9 @@
   },
   "WCS-0905": {
     "verbatimEventDate": "9 Jun 1978",
-    "verbatimLocality": "American Samoa, Tutuila I., SW shore, Leone Bay area, basaltic tidepools at Vailoatai. 14.3580\u00b0 S, 170.7780\u00b0 W",
+    "verbatimLocality": "American Samoa, Tutuila I., SW shore, Leone Bay area, basaltic tidepools at Vailoatai",
+    "verbatimLatitude": "14.3580\u00b0 S",
+    "verbatimLongitude": "170.7780\u00b0 W",
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1665,7 +1873,9 @@
   },
   "WCS-0906": {
     "verbatimEventDate": "10 Jun 1978",
-    "verbatimLocality": "American Samoa, Tutuila I., offshore reef (Taema Bank) about 5 km. S Pago Pago, 14.3333\u00b0 S, 170.6666\u00b0 W",
+    "verbatimLocality": "American Samoa, Tutuila I., offshore reef (Taema Bank) about 5 km. S Pago Pago",
+    "verbatimLatitude": "14.3333\u00b0 S",
+    "verbatimLongitude": "170.6666\u00b0 W",
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1681,7 +1891,9 @@
   },
   "WCS-0907": {
     "verbatimEventDate": "10 Jun 1978",
-    "verbatimLocality": "American Samoa, Tutuila I., south shore, Faga Nea Nea Bay near Pago Pago, 14\u00b0 18' 6.5\" S, 170\u00b0 41' 16\" W",
+    "verbatimLocality": "American Samoa, Tutuila I., south shore, Faga Nea Nea Bay near Pago Pago",
+    "verbatimLatitude": "14\u00b0 18' 6.5\" S",
+    "verbatimLongitude": "170\u00b0 41' 16\" W",
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1697,7 +1909,9 @@
   },
   "WCS-0908": {
     "verbatimEventDate": "11 Jun 1978",
-    "verbatimLocality": "American Samoa, Tutuila I., east end at Cape Matatula, 14.2353\u00b0S, 170.5476\u00b0W",
+    "verbatimLocality": "American Samoa, Tutuila I., east end at Cape Matatula",
+    "verbatimLatitude": "14.2353\u00b0S",
+    "verbatimLongitude": "170.5476\u00b0W",
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1713,7 +1927,9 @@
   },
   "WCS-0909": {
     "verbatimEventDate": "11-12 Jun 1978",
-    "verbatimLocality": "American Samoa, Tutuila I., S shore, about 3.5 air mi SW Pago Pago, Pala Lagoon (W bank), 14\u00b0 19' 17\" S, 170\u00b0 42' 48\" W",
+    "verbatimLocality": "American Samoa, Tutuila I., S shore, about 3.5 air mi SW Pago Pago, Pala Lagoon (W bank)",
+    "verbatimLatitude": "14\u00b0 19' 17\" S",
+    "verbatimLongitude": "170\u00b0 42' 48\" W",
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1730,6 +1946,8 @@
   "WCS-0910": {
     "verbatimEventDate": "12 Jun 1978",
     "verbatimLocality": "American Samoa, Tutuila I., off Taema Bank 5 more km S of island (no further data--purchased at Pago Pago fish market)",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1745,7 +1963,9 @@
   },
   "WCS-0911": {
     "verbatimEventDate": "12 Jun 1978",
-    "verbatimLocality": "American Samoa, Tutuila I, South shore, near Pago Pago, Faga Nea Nea, 14\u00b0 18' 6.5\" S, 170\u00b0 41' 16\" W",
+    "verbatimLocality": "American Samoa, Tutuila I, South shore, near Pago Pago, Faga Nea Nea",
+    "verbatimLatitude": "14\u00b0 18' 6.5\" S",
+    "verbatimLongitude": "170\u00b0 41' 16\" W",
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1761,7 +1981,9 @@
   },
   "WCS-0912": {
     "verbatimEventDate": "13 Jun 1978",
-    "verbatimLocality": "American Samoa, Tutuila I, south shore, Pago Pago harbor in Pago Pago, 14\u00b0 16' 26\" S, 170\u00b0 41' 31\" W",
+    "verbatimLocality": "American Samoa, Tutuila I, south shore, Pago Pago harbor in Pago Pago",
+    "verbatimLatitude": "14\u00b0 16' 26\" S",
+    "verbatimLongitude": "170\u00b0 41' 31\" W",
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1777,7 +1999,9 @@
   },
   "WCS-0913": {
     "verbatimEventDate": "14 Jun 1978",
-    "verbatimLocality": "American Samoa, Tutuila I., south shore, W of Pago Pago, Fagaalu, 14.2633\u00b0S, 170.6800\u00b0W",
+    "verbatimLocality": "American Samoa, Tutuila I., south shore, W of Pago Pago, Fagaalu",
+    "verbatimLatitude": "14.2633\u00b0S",
+    "verbatimLongitude": "170.6800\u00b0W",
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1793,7 +2017,9 @@
   },
   "WCS-0914": {
     "verbatimEventDate": "15 Jun 1978",
-    "verbatimLocality": "American Samoa, Tutuila I., SW shore, Leone Bay at Vailoatai, basaltic tidepools, 14\u00b0 21' 23\" S, 170\u00b0 47' 8.15\" W",
+    "verbatimLocality": "American Samoa, Tutuila I., SW shore, Leone Bay at Vailoatai, basaltic tidepools",
+    "verbatimLatitude": "14\u00b0 21' 23\" S",
+    "verbatimLongitude": "170\u00b0 47' 8.15\" W",
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1809,7 +2035,9 @@
   },
   "WCS-0915": {
     "verbatimEventDate": "15-17 Jun 1978",
-    "verbatimLocality": "American Samoa, Tutuila I, north shore, Fagasa Bay (w shore), 14.2872\u00b0 S, 170.7247\u00b0 W",
+    "verbatimLocality": "American Samoa, Tutuila I, north shore, Fagasa Bay (w shore)",
+    "verbatimLatitude": "14.2872\u00b0 S",
+    "verbatimLongitude": "170.7247\u00b0 W",
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1825,7 +2053,9 @@
   },
   "WCS-0916": {
     "verbatimEventDate": "18-19 Jun 1978",
-    "verbatimLocality": "American Samoa, Tutuila I., S shore, Pago Pago, Utulei, beach, 14\u00b0 16' 49.5\" S, 170\u00b0 40' 56\" W",
+    "verbatimLocality": "American Samoa, Tutuila I., S shore, Pago Pago, Utulei, beach",
+    "verbatimLatitude": "14\u00b0 16' 49.5\" S",
+    "verbatimLongitude": "170\u00b0 40' 56\" W",
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1841,7 +2071,9 @@
   },
   "WCS-0917": {
     "verbatimEventDate": "19 Jun 1978",
-    "verbatimLocality": "American Samoa, Tutuila I., south shore, ca. 3.5 air mi SW Pago Pago, entrance channel to Pala Lagoon at airport, 14.3350\u00b0S, 170.7080\u00b0W",
+    "verbatimLocality": "American Samoa, Tutuila I., south shore, ca. 3.5 air mi SW Pago Pago, entrance channel to Pala Lagoon at airport",
+    "verbatimLatitude": "14.3350\u00b0S",
+    "verbatimLongitude": "170.7080\u00b0W",
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1857,7 +2089,9 @@
   },
   "WCS-0918": {
     "verbatimEventDate": "18 Jun 1978",
-    "verbatimLocality": "American Samoa, Tutuila I. South shore, Pago Pago, freshwater stream (ditch) entering sea at Utulei, 14.2828\u00b0S 120.6824\u00b0W",
+    "verbatimLocality": "American Samoa, Tutuila I. South shore, Pago Pago, freshwater stream (ditch) entering sea at Utulei",
+    "verbatimLatitude": "14.2828\u00b0S",
+    "verbatimLongitude": "120.6824\u00b0W",
     "cont_ocean": "Oceania",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1873,7 +2107,9 @@
   },
   "WCS-0919": {
     "verbatimEventDate": "16 Jun 1978",
-    "verbatimLocality": "American Samoa, Tutuila I., S shore, ca. 3.5 air mi SW Pago Pago, Pala Lagoon (W bank) near airport, 14\u00b0 19' 17\" S, 170\u00b0 42' 4\" W",
+    "verbatimLocality": "American Samoa, Tutuila I., S shore, ca. 3.5 air mi SW Pago Pago, Pala Lagoon (W bank) near airport",
+    "verbatimLatitude": "14\u00b0 19' 17\" S",
+    "verbatimLongitude": "170\u00b0 42' 4\" W",
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1889,7 +2125,9 @@
   },
   "WCS-0920": {
     "verbatimEventDate": "19 Jun 1978",
-    "verbatimLocality": "American Samoa, Tutuila I., S shore, ca. 3.5 air mi SW Pago Pago, freshwater stream (\"Papa Stream\") entering Pala Lagoon, 14\u00b0 18' 46.5\" S, 170\u00b0 42' 32\" W",
+    "verbatimLocality": "American Samoa, Tutuila I., S shore, ca. 3.5 air mi SW Pago Pago, freshwater stream (\"Papa Stream\") entering Pala Lagoon",
+    "verbatimLatitude": "14\u00b0 18' 46.5\" S",
+    "verbatimLongitude": "170\u00b0 42' 32\" W",
     "cont_ocean": "Oceania",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1905,7 +2143,9 @@
   },
   "WCS-0921": {
     "verbatimEventDate": "19 Jun 1978",
-    "verbatimLocality": "American Samoa, Tutuila I., south shore, Pago Pago Harbor at oil jetty, 14\u00b0 16' 33\" S, 170\u00b0 40' 45\" W",
+    "verbatimLocality": "American Samoa, Tutuila I., south shore, Pago Pago Harbor at oil jetty",
+    "verbatimLatitude": "14\u00b0 16' 33\" S",
+    "verbatimLongitude": "170\u00b0 40' 45\" W",
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1922,6 +2162,8 @@
   "WCS-0923": {
     "verbatimEventDate": "ca. 1974-1977",
     "verbatimLocality": "American Samoa, Tutuila I area, various localities",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1938,6 +2180,8 @@
   "WCS-0924": {
     "verbatimEventDate": "ca. 1974-1977",
     "verbatimLocality": "American Samoa, Tutuila Island - various localities",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1954,6 +2198,8 @@
   "WCS-1004": {
     "verbatimEventDate": "30 June 1964",
     "verbatimLocality": "Minn., St. Louis Co., Spruce Lake (T61 R12 S18/19)",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1970,6 +2216,8 @@
   "WCS-1078": {
     "verbatimEventDate": "4 July 1979",
     "verbatimLocality": "N.C., Union Co., Goose Cr. - Rt. 1524 @ 4 mi E US 74, 0.7 mi S Mecklenburg Co. line",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -1986,6 +2234,8 @@
   "WCS-1080": {
     "verbatimEventDate": "5 July 1979",
     "verbatimLocality": "N.C., Moore Co., Stream 0.5 mi N Pine Bluff - US 1",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2002,6 +2252,8 @@
   "WCS-1082": {
     "verbatimEventDate": "5 July 1979",
     "verbatimLocality": "N.C., Scotland Co., Lumber R. -by Wagram-Maxton Hy @ 5 mi SSE Wagram",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2017,7 +2269,9 @@
   },
   "WCS-1085": {
     "verbatimEventDate": "6 July 1979",
-    "verbatimLocality": "N.C., Columbus County,  Lake Waccamaw, S shore 0.2-0.5 mi E spillway dam ca 12 mi ESE Whiteville, 34.2594\u00b0N, 78.5138\u00b0W",
+    "verbatimLocality": "N.C., Columbus County,  Lake Waccamaw, S shore 0.2-0.5 mi E spillway dam ca 12 mi ESE Whiteville",
+    "verbatimLatitude": "34.2594\u00b0N",
+    "verbatimLongitude": "78.5138\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2034,6 +2288,8 @@
   "WCS-1086": {
     "verbatimEventDate": "6 July 1979",
     "verbatimLocality": "N.C., Columbus Co., Lake Waccamaw - N shore, 1/4 mi W of public beach",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2050,6 +2306,8 @@
   "WCS-1087": {
     "verbatimEventDate": "6 July 1979",
     "verbatimLocality": "N.C., Columbus Co., Lake Waccamaw - N shore at public beach",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2066,6 +2324,8 @@
   "WCS-1088": {
     "verbatimEventDate": "6 July 1979",
     "verbatimLocality": "N.C., Sampson Co., South R. - US 701, @ 16 mi S Clinton",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2082,6 +2342,8 @@
   "WCS-1091": {
     "verbatimEventDate": "7 July 1979",
     "verbatimLocality": "N.C., Durham Co., Eno R. - Rt 1401 (Cole Mill Rd) N of Durham",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2098,6 +2360,8 @@
   "WCS-1093": {
     "verbatimEventDate": "7 July 1979",
     "verbatimLocality": "N.C., Granville Co., Coon Cr. - Rt 1609, @ 4 mi SE Oxford",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2113,7 +2377,9 @@
   },
   "WCS-1094": {
     "verbatimEventDate": "7 July 1979",
-    "verbatimLocality": "NC, Tar R. at Rt 1101 (Grissom Road), near Franklin-Granville-Vance co line corner, 11.7 air mi SSW Henderson, 36.1751\u00b0N, 78.4970\u00b0W",
+    "verbatimLocality": "NC, Tar R. at Rt 1101 (Grissom Road), near Franklin-Granville-Vance co line corner, 11.7 air mi SSW Henderson",
+    "verbatimLatitude": "36.1751\u00b0N",
+    "verbatimLongitude": "78.4970\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2130,6 +2396,8 @@
   "WCS-1096": {
     "verbatimEventDate": "8 July 1979",
     "verbatimLocality": "N.C., Stokes Co., Pinch Out Cr. - NC 66 @ 3 mi E NC 89 jct",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2146,6 +2414,8 @@
   "WCS-1097": {
     "verbatimEventDate": "8 July 1979",
     "verbatimLocality": "N.C., Wilkes Co., Roaring R. - confluence W & Middle prongs, rt 1002-1745 jct., 13 air mi NNE Wilkesboro",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2162,6 +2432,8 @@
   "WCS-1098": {
     "verbatimEventDate": "8 July 1979",
     "verbatimLocality": "N.C., Ashe Co., New R. (N fk) - off NC 88 just below Fig (town)",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2177,7 +2449,9 @@
   },
   "WCS-1113": {
     "verbatimEventDate": "4 Aug 1979",
-    "verbatimLocality": "MN, Hancock County, Atlantic Ocean, Gulf of Maine, off Mount Dessert I, ca 3-5 mi E Seal Harbor, 44.2820 N, 68.0940 W",
+    "verbatimLocality": "MN, Hancock County, Atlantic Ocean, Gulf of Maine, off Mount Dessert I, ca 3-5 mi E Seal Harbor",
+    "verbatimLatitude": "44.2820 N",
+    "verbatimLongitude": "68.0940 W",
     "cont_ocean": "Atlantic Ocean",
     "ocean_subbasin": "Gulf of Maine",
     "country": "United States",
@@ -2193,7 +2467,9 @@
   },
   "WCS-1151": {
     "verbatimEventDate": "20 Oct 1979",
-    "verbatimLocality": "VA, Scott County, Copper Cr. by Rt 627 3.0 rd. mi E Rt 665 jct, 2.3 air mi NNW Gate City, 36.6693\u00b0N, 89.5982\u00b0W",
+    "verbatimLocality": "VA, Scott County, Copper Cr. by Rt 627 3.0 rd. mi E Rt 665 jct, 2.3 air mi NNW Gate City",
+    "verbatimLatitude": "36.6693\u00b0N",
+    "verbatimLongitude": "89.5982\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2210,6 +2486,8 @@
   "WCS-1158": {
     "verbatimEventDate": "Sep.-Nov. 1978",
     "verbatimLocality": "American Samoa, Tutuila Island (no further data)",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2226,6 +2504,8 @@
   "WCS-1172": {
     "verbatimEventDate": "@ 1973",
     "verbatimLocality": "NC, Mecklenburg Co., Rocky R. tributary (** exact locality unknown)",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2241,7 +2521,9 @@
   },
   "WCS-1191": {
     "verbatimEventDate": "11 Apr 1980",
-    "verbatimLocality": "TN, Blount Co., Little R. at US 411 5 air mi ctr Maryville, 35.7856\u00b0N, 83.8829\u00b0W",
+    "verbatimLocality": "TN, Blount Co., Little R. at US 411 5 air mi ctr Maryville",
+    "verbatimLatitude": "35.7856\u00b0N",
+    "verbatimLongitude": "83.8829\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2258,6 +2540,8 @@
   "WCS-1193": {
     "verbatimEventDate": "19 Apr 1980",
     "verbatimLocality": "TN, Bradley Co., Conasauga R. - TN 74, 13 air mi SSE ctr Clevaland",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2274,6 +2558,8 @@
   "WCS-1196": {
     "verbatimEventDate": "24 Apr 1980",
     "verbatimLocality": "TN, Bradley Co., Conasauga R. - TN 74 S Clevaland",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2289,7 +2575,9 @@
   },
   "WCS-1254": {
     "verbatimEventDate": "9 Aug 1990",
-    "verbatimLocality": "Atlantic Ocean, USA, FL, Miami-Dade Counties, Biscayne Bay, midbay in Miami Beach - Virginia Key vicinity, 25.7620, 80.1590",
+    "verbatimLocality": "Atlantic Ocean, USA, FL, Miami-Dade Counties, Biscayne Bay, midbay in Miami Beach - Virginia Key vicinity",
+    "verbatimLatitude": "25.7620",
+    "verbatimLongitude": "80.1590",
     "cont_ocean": "Atlantic Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2306,6 +2594,8 @@
   "WCS-1259": {
     "verbatimEventDate": "16-17 Aug 1980",
     "verbatimLocality": "Virgin Is., St. Croix - SE shore - Grapetree Bay",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "Atlantic Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2321,7 +2611,9 @@
   },
   "WCS-1266": {
     "verbatimEventDate": "20 Aug 1980",
-    "verbatimLocality": "FL, Palm Beach County, North-south canal by S Military Trail (SSR 809) just below water control structure, ca 200 m N of Hillsboro Canal junction (& Broward County line), in SW Boca Raton; 26.3294 N, 80.1288 W",
+    "verbatimLocality": "FL, Palm Beach County, North-south canal by S Military Trail (SSR 809) just below water control structure, ca 200 m N of Hillsboro Canal junction (& Broward County line), in SW Boca Raton",
+    "verbatimLatitude": "26.3294 N",
+    "verbatimLongitude": "80.1288 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2338,6 +2630,8 @@
   "WCS-1330": {
     "verbatimEventDate": "Early June 1980",
     "verbatimLocality": "Tn. Polk Co., Conasauga R. near Minnewauga Cr.",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2354,6 +2648,8 @@
   "WCS-1339": {
     "verbatimEventDate": "24 June 1978",
     "verbatimLocality": "Tn., Greene Co., Nolichucky R. at Steele I. (RM 19.7)",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2370,6 +2666,8 @@
   "WCS-1343": {
     "verbatimEventDate": "1 Apr 1978",
     "verbatimLocality": "Tn., Blount Co., Taylor Br. at Middle Settlements",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2386,6 +2684,8 @@
   "WCS-1351": {
     "verbatimEventDate": "21 May 1979",
     "verbatimLocality": "N.C, McDowel Co., Catawba R. - S old Fort",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2402,6 +2702,8 @@
   "WCS-1362": {
     "verbatimEventDate": "Sept. 23, 1978",
     "verbatimLocality": "North Carolina, Madison County, Laurel Creek at hy 212 just south of Belva",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2418,6 +2720,8 @@
   "WCS-1371": {
     "verbatimEventDate": "12 June 1981",
     "verbatimLocality": "Cal., Solano Co., Suisun Sough Marsh S Suisun City",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2434,6 +2738,8 @@
   "WCS-1373": {
     "verbatimEventDate": "13 June 1981",
     "verbatimLocality": "Cal., Alpine Co., Carson R. by Cal. 89 just E Markleeville",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2450,6 +2756,8 @@
   "WCS-1375": {
     "verbatimEventDate": "14 June 1981",
     "verbatimLocality": "Cal., Mono Co., Hot Cr. \u00bd mi below Fales Hot Springs, @ 2 mi E Cal. 108 US 395 jct.",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2466,6 +2774,8 @@
   "WCS-1379": {
     "verbatimEventDate": "17 June 1981",
     "verbatimLocality": "Cal., Shasta Co., Hat Cr. \u00bc mi above Cal. 299 @ 10 mi W Fall R. Mills",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2482,6 +2792,8 @@
   "WCS-1389": {
     "verbatimEventDate": "20 June 1981",
     "verbatimLocality": "Ore., Lake Co., Twentymile Creek 7 air mi SW Adel",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2498,6 +2810,8 @@
   "WCS-1390": {
     "verbatimEventDate": "20 June 1981",
     "verbatimLocality": "Ore., Lake Co., Thomas Cr., @ 8 mi NW Lakeview",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2514,6 +2828,8 @@
   "WCS-1392": {
     "verbatimEventDate": "20 June 1981",
     "verbatimLocality": "Ore., Klamath Co., Sprague R. at FS Rt 5850 12 mi E Chiloquin",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2530,6 +2846,8 @@
   "WCS-1394": {
     "verbatimEventDate": "21 June 1981",
     "verbatimLocality": "Ore., Klamath Co., Spencer Cr. @ 4 mi above Klamath R. @ 15 air mi W Klamath Falls",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2546,6 +2864,8 @@
   "WCS-1395": {
     "verbatimEventDate": "21 June 1981",
     "verbatimLocality": "Ore., Klamath Co., Klamath R. (Big Bend Reservoir) & lower Spencer Cr.",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2562,6 +2882,8 @@
   "WCS-1397": {
     "verbatimEventDate": "26 June 1981",
     "verbatimLocality": "Ore., Lincoln Co., Yaquina Head @ 3 mi N Newport",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2578,6 +2900,8 @@
   "WCS-1398": {
     "verbatimEventDate": "26 June 1981",
     "verbatimLocality": "Ore.,  Benton Co., Marys R. S Philomath",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2594,6 +2918,8 @@
   "WCS-1399": {
     "verbatimEventDate": "27 June 1981",
     "verbatimLocality": "Ore., Douglas Co., Lookingglass Cr. at Ore. 42, 0.4 mi E Tenmile",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2610,6 +2936,8 @@
   "WCS-1400": {
     "verbatimEventDate": "27 June 1981",
     "verbatimLocality": "Ore., Douglas Co., South Umpqua.R., \u00bc mi below (W) I-5",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2626,6 +2954,8 @@
   "WCS-1401": {
     "verbatimEventDate": "27 June 1981",
     "verbatimLocality": "Ore., Lane Co., Coast Fk. Willamette R., 2 mi E Creswell",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2642,6 +2972,8 @@
   "WCS-1402": {
     "verbatimEventDate": "28 June 1981",
     "verbatimLocality": "Ore., Benton Co., Willamette R., E side Kiger I. off US 99W, 2 mi S Corvallis",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2658,6 +2990,8 @@
   "WCS-1403": {
     "verbatimEventDate": "30 June 1981",
     "verbatimLocality": "Wa., Lewis Co., Lacamas Creek, at Rt 506, 2 mi W 1-5",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2674,6 +3008,8 @@
   "WCS-1404": {
     "verbatimEventDate": "30 June 1981",
     "verbatimLocality": "Wa., Yakima Co., Ahtanum Cr., at S 16th Ave, 3-4 mi W Yakima",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2690,6 +3026,8 @@
   "WCS-1405": {
     "verbatimEventDate": "1 July 1981",
     "verbatimLocality": "Wa., Pierce Co., Trib. Carbon R., 1 mi W Mt. Rainier Nat. Park boundary",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2706,6 +3044,8 @@
   "WCS-1406": {
     "verbatimEventDate": "1 July 1981",
     "verbatimLocality": "Wa., Grays Harbor Co., Chehalis R. & mouth Satsop R., 2 mi SSW Satsop",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2722,6 +3062,8 @@
   "WCS-1407": {
     "verbatimEventDate": "2 July 1981",
     "verbatimLocality": "Wa., Thurston Co., Salmon Creek, 1 mi E 1-5, 6 mi S Tumwater",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2738,6 +3080,8 @@
   "WCS-1408": {
     "verbatimEventDate": "2 July 1981",
     "verbatimLocality": "Wa., Thurston Co., Waddell Cr., 3 mi NW Littlerock",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2754,6 +3098,8 @@
   "WCS-1409": {
     "verbatimEventDate": "2 July 1981",
     "verbatimLocality": "Wa., Grays Harbor Co., Tributary of Quinalt R., at US 101, 2.6 mi S Neilton",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2770,6 +3116,8 @@
   "WCS-1410": {
     "verbatimEventDate": "2 July 1981",
     "verbatimLocality": "Wa.,  Jefferson Co., Beach N of Queets R.",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2786,6 +3134,8 @@
   "WCS-1411": {
     "verbatimEventDate": "3 July 1981",
     "verbatimLocality": "Wa., Clallum Co., Strait Juan de Fuca, E of Pillar Point",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2802,6 +3152,8 @@
   "WCS-1412": {
     "verbatimEventDate": "3 July 1981",
     "verbatimLocality": "Wa., Kitsap Co., Puget Sound-Bainbridge I., at Manitou Beach",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2818,6 +3170,8 @@
   "WCS-1413": {
     "verbatimEventDate": "3 July 1981",
     "verbatimLocality": "Wash., King Co.,mLake Washington, at Sandy Point & Swamp Creek",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "Pacific Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2834,6 +3188,8 @@
   "WCS-1416": {
     "verbatimEventDate": "25 July 1981",
     "verbatimLocality": "Ky., McCreary Co., Marsh Cr. (?) and 1st trib., 0.2 mi S Rt 1240-Rt 592 jct, 4 mi E Pine Knot",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2850,6 +3206,8 @@
   "WCS-1424": {
     "verbatimEventDate": "11 Aug 1981",
     "verbatimLocality": "TN, Polk Co., Conasuaga R., - Minnewauga Cr., @ 2.6 air mi E US 411, 11.5 air mi S Benton",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2866,6 +3224,8 @@
   "WCS-1441": {
     "verbatimEventDate": "9 Oct 1981",
     "verbatimLocality": "NC, New Hanover Co., Bradley Creek estuarary at Wrightsville Ave.",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "Atlantic Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2882,6 +3242,8 @@
   "WCS-1518": {
     "verbatimEventDate": "16-18 Feb 1985",
     "verbatimLocality": "Panama: Darien Prov. Rio Pucur just above confl. w/ Rio Tuira (Pacific)",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "Panama",
@@ -2897,7 +3259,9 @@
   },
   "WCS-1947": {
     "verbatimEventDate": "20 Mar 1997",
-    "verbatimLocality": "TN, Monroe Co, lower Citico Cr. embayment,Tellico Res., Little Tennessee R., 8.7 air mi ESE Vonore, 35.5397\u00b0N, 84.0971\u00b0W",
+    "verbatimLocality": "TN, Monroe Co, lower Citico Cr. embayment,Tellico Res., Little Tennessee R., 8.7 air mi ESE Vonore",
+    "verbatimLatitude": "35.5397\u00b0N",
+    "verbatimLongitude": "84.0971\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2913,7 +3277,9 @@
   },
   "WCS-1948": {
     "verbatimEventDate": "20 Mar 1997",
-    "verbatimLocality": "TN, Blount-Monroe Cos., Little Tennessee R., head of Tellico Res. ca. Cochran Cr., 10.7 air mi ESE Vonore, 34.5456\u00b0N, 84.0591\u00b0W",
+    "verbatimLocality": "TN, Blount-Monroe Cos., Little Tennessee R., head of Tellico Res. ca. Cochran Cr., 10.7 air mi ESE Vonore",
+    "verbatimLatitude": "34.5456\u00b0N",
+    "verbatimLongitude": "84.0591\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2930,6 +3296,8 @@
   "WCS-2004": {
     "verbatimEventDate": "11 Oct 1997",
     "verbatimLocality": "NC, Cherokee County, Valley R. at Riverbend Campgroung, by US 19-74, RM 5, ca. 3.5 mi NE Murphy",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2945,7 +3313,9 @@
   },
   "WCS-2011": {
     "verbatimEventDate": "1 Nov 1997",
-    "verbatimLocality": "FL, Levy County, Otter Cr. At FL 24 1.0 mi SW of US 98-19 jct & Otter Creek (town), 29.3196\u00b0, -82.7840\u00b0",
+    "verbatimLocality": "FL, Levy County, Otter Cr. At FL 24 1.0 mi SW of US 98-19 jct & Otter Creek (town)",
+    "verbatimLatitude": "29.3196\u00b0",
+    "verbatimLongitude": "-82.7840\u00b0",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2961,7 +3331,9 @@
   },
   "WCS-2111": {
     "verbatimEventDate": "24 May 1999",
-    "verbatimLocality": "NC, Macon County, Cullasaja R. by Fulton Road on S side of river ca. 0.5 mi off US 64, 3.3 air mi E Franklin,  36.1650\u00b0 N, 83.3287\u00b0 W",
+    "verbatimLocality": "NC, Macon County, Cullasaja R. by Fulton Road on S side of river ca. 0.5 mi off US 64, 3.3 air mi E Franklin",
+    "verbatimLatitude": "36.1650\u00b0 N",
+    "verbatimLongitude": "83.3287\u00b0 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -2977,7 +3349,9 @@
   },
   "WCS-2156": {
     "verbatimEventDate": "6 Oct 1999",
-    "verbatimLocality": "Atlantic Ocean, Guld of Mexico, FL, Pinellas County, Clearwater Harbor, E end causeway (SR 686), W side of Belleair Bluffs, 37.9168 N, 82.8279 W",
+    "verbatimLocality": "Atlantic Ocean, Guld of Mexico, FL, Pinellas County, Clearwater Harbor, E end causeway (SR 686), W side of Belleair Bluffs",
+    "verbatimLatitude": "37.9168 N",
+    "verbatimLongitude": "82.8279 W",
     "cont_ocean": "Atlantic Ocean",
     "ocean_subbasin": "Gulf of Mexico",
     "country": "United States",
@@ -2994,6 +3368,8 @@
   "WCS-2175": {
     "verbatimEventDate": "28 Jan 2000",
     "verbatimLocality": "FL, Miami-Dade County, Snake Creek Canal, 1.0 kilometers reach immediately W of US 441, about 1.0 miles S Broward County line",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3009,7 +3385,9 @@
   },
   "WCS-2192": {
     "verbatimEventDate": "4 June 2000",
-    "verbatimLocality": "TN, Lewis County, Buffalo R. & lower Grinders Cr. at TN 99 5.4 air mi S Hohenwald, 35.4630\u00b0N, 87.5347\u00b0W",
+    "verbatimLocality": "TN, Lewis County, Buffalo R. & lower Grinders Cr. at TN 99 5.4 air mi S Hohenwald",
+    "verbatimLatitude": "35.4630\u00b0N",
+    "verbatimLongitude": "87.5347\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3025,7 +3403,9 @@
   },
   "WCS-2195": {
     "verbatimEventDate": "5 June 2000",
-    "verbatimLocality": "TN, Bedford County, Garrison Fork at Haley Rd. 6.6 air mi E Shelbyville (0.6 mi above Duck R.), 35.4863\u00b0N, 86.3352\u00b0W",
+    "verbatimLocality": "TN, Bedford County, Garrison Fork at Haley Rd. 6.6 air mi E Shelbyville (0.6 mi above Duck R.)",
+    "verbatimLatitude": "35.4863\u00b0N",
+    "verbatimLongitude": "86.3352\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3041,7 +3421,9 @@
   },
   "WCS-2199": {
     "verbatimEventDate": "6 June 2000",
-    "verbatimLocality": "TN, Blount County, Little R. at US 411, 5 air mi E ctr. Maryville, 35.7856\u00b0N, 83.8829\u00b0W",
+    "verbatimLocality": "TN, Blount County, Little R. at US 411, 5 air mi E ctr. Maryville",
+    "verbatimLatitude": "35.7856\u00b0N",
+    "verbatimLongitude": "83.8829\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3057,7 +3439,9 @@
   },
   "WCS-2218": {
     "verbatimEventDate": "8 Aug 2000",
-    "verbatimLocality": "NC, Macon County, Little Tennessee R. below Porters Bend Dam 3.0 air mi N Franklin, 35.2219\u00b0 N, 83.3725\u00b0 W",
+    "verbatimLocality": "NC, Macon County, Little Tennessee R. below Porters Bend Dam 3.0 air mi N Franklin",
+    "verbatimLatitude": "35.2219\u00b0 N",
+    "verbatimLongitude": "83.3725\u00b0 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3074,6 +3458,8 @@
   "WCS-2253": {
     "verbatimEventDate": "6 Mar 2001",
     "verbatimLocality": "Myanmar-Thailand, Tanintharyi-Ranong, Mae Nam Kra Buri estuary, N of Ranong (city)",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "Indian Ocean",
     "ocean_subbasin": "Andaman Sea",
     "country": "Myanmar-Thailand",
@@ -3090,6 +3476,8 @@
   "WCS-2257": {
     "verbatimEventDate": "11 Apr 2001",
     "verbatimLocality": "NC, Madison County, Spring Creek in Hot Springs, 100 m above NC 209 crossing",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3105,7 +3493,9 @@
   },
   "WCS-2268": {
     "verbatimEventDate": "13 Apr 2001",
-    "verbatimLocality": "TN, Perry County, Crooked Cr. at Pineview Rd, off Croked Cr. Rd, 9.4 air mi W Lobelville, 35.8105\u00b0N, 87.4375\u00b0W",
+    "verbatimLocality": "TN, Perry County, Crooked Cr. at Pineview Rd, off Croked Cr. Rd, 9.4 air mi W Lobelville",
+    "verbatimLatitude": "35.8105\u00b0N",
+    "verbatimLongitude": "87.4375\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3121,7 +3511,9 @@
   },
   "WCS-2269": {
     "verbatimEventDate": "13 Apr 2001",
-    "verbatimLocality": "TN, Robertson County, Carr Cr. And small trib. at Hackney Rd, 1.1 air mi SW Greenbrier; 36.4208\u00b0N, 86.8214\u00b0 W",
+    "verbatimLocality": "TN, Robertson County, Carr Cr. And small trib. at Hackney Rd, 1.1 air mi SW Greenbrier",
+    "verbatimLatitude": "36.4208\u00b0N",
+    "verbatimLongitude": "86.8214\u00b0 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3138,6 +3530,8 @@
   "WCS-2392": {
     "verbatimEventDate": "1 Apr 2003",
     "verbatimLocality": "SC, Edgefield County, Beaverdam Cr. just above SSR 51, 5.2 air mi WNW Edgefield",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3154,6 +3548,8 @@
   "WCS-2408": {
     "verbatimEventDate": "30 April 2003",
     "verbatimLocality": "NC: Montgomery County, Uwharrie R., \u00bc mi reach above NC 109, ca. 8.5 air miles NW Troy",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3169,7 +3565,9 @@
   },
   "WCS-2417": {
     "verbatimEventDate": "29 May 2003",
-    "verbatimLocality": "TN, Smith County, Dixon Creek at Dixon Springs Rd. ca. \u00bc mi N TN 25 ca. 9 air mi NW Carthage, 36.3682\u00b0N, 86.0486\u00b0W",
+    "verbatimLocality": "TN, Smith County, Dixon Creek at Dixon Springs Rd. ca. \u00bc mi N TN 25 ca. 9 air mi NW Carthage",
+    "verbatimLatitude": "36.3682\u00b0N",
+    "verbatimLongitude": "86.0486\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3185,7 +3583,9 @@
   },
   "WCS-2430": {
     "verbatimEventDate": "1 June 2003",
-    "verbatimLocality": "Ark, Calhoun County, Locust Bayou at US 278 (=ARK 4), 0.6 air mi E Camden, 33.558\u00b0, 92.6759\u00b0",
+    "verbatimLocality": "Ark, Calhoun County, Locust Bayou at US 278 (=ARK 4), 0.6 air mi E Camden",
+    "verbatimLatitude": "33.558\u00b0",
+    "verbatimLongitude": "92.6759\u00b0",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3201,7 +3601,9 @@
   },
   "WCS-2451": {
     "verbatimEventDate": "4 June2003",
-    "verbatimLocality": "AR, Independence County, cave Cr., near Cave Creek community, at Co. Rd. (Coon Cr. Ln.?), ca. 5.4 air mi N ctr. Batesville; 35.8474\u00b0 N, 91.6242\u00b0 W",
+    "verbatimLocality": "AR, Independence County, cave Cr., near Cave Creek community, at Co. Rd. (Coon Cr. Ln.?), ca. 5.4 air mi N ctr. Batesville",
+    "verbatimLatitude": "35.8474\u00b0 N",
+    "verbatimLongitude": "91.6242\u00b0 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3217,7 +3619,9 @@
   },
   "WCS-2452": {
     "verbatimEventDate": "4 June 2003",
-    "verbatimLocality": "AR, Independence County, Sullivan Creek at Sandtown Rd., ca. 9.3 air mi N ctr Batesville, 35.9039\u00b0, 91.6357\u00b0",
+    "verbatimLocality": "AR, Independence County, Sullivan Creek at Sandtown Rd., ca. 9.3 air mi N ctr Batesville",
+    "verbatimLatitude": "35.9039\u00b0",
+    "verbatimLongitude": "91.6357\u00b0",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3234,6 +3638,8 @@
   "WCS-2505": {
     "verbatimEventDate": "23 Oct 2004",
     "verbatimLocality": "NC, Randolph County, Fork Cr. at Riverside Rd, 4.2 air miles NNW Robbins",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3250,6 +3656,8 @@
   "WCS-2518": {
     "verbatimEventDate": "11 May 2005",
     "verbatimLocality": "NC: Montgomery County, Litle R. immediately below Smitherman Dam & just abover Troy-Candor Rd (SR 1554), 2.5 air mi ESE ctr Troy",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3265,7 +3673,9 @@
   },
   "WCS-2554": {
     "verbatimEventDate": "4 May 2006",
-    "verbatimLocality": "NC: Montgomery County, Little R. ~1.0 mi reach from 100 m below NC 24/27 downstream to Smitherman Dam just above Candor Rd., ~2.5 air mi E Troy; 35.3561 N, 78.8521 W to 35.3439 N, 79.8531 W",
+    "verbatimLocality": "NC: Montgomery County, Little R. ~1.0 mi reach from 100 m below NC 24/27 downstream to Smitherman Dam just above Candor Rd., ~2.5 air mi E Troy",
+    "verbatimLatitude": "35.3561 N / 35.3439 N",
+    "verbatimLongitude": "78.8521 W / 79.8531 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3281,7 +3691,9 @@
   },
   "WCS-2568": {
     "verbatimEventDate": "20 July 2006",
-    "verbatimLocality": "MS, Pike County, Tangipahoa R. at Martin Rd, 4.6 air mi WSW ctr. McComb, 31.2252\u00b0N, 90.5300\u00b0W",
+    "verbatimLocality": "MS, Pike County, Tangipahoa R. at Martin Rd, 4.6 air mi WSW ctr. McComb",
+    "verbatimLatitude": "31.2252\u00b0N",
+    "verbatimLongitude": "90.5300\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3297,7 +3709,9 @@
   },
   "WCS-2609": {
     "verbatimEventDate": "17 July 2007",
-    "verbatimLocality": "MO, Shannon County, Sinking Creek abover (E of) MO 19, 11.0 air mi NNW of Eminence, 37.3029 N , 91.4120 W",
+    "verbatimLocality": "MO, Shannon County, Sinking Creek abover (E of) MO 19, 11.0 air mi NNW of Eminence",
+    "verbatimLatitude": "37.3029 N",
+    "verbatimLongitude": "91.4120 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3313,7 +3727,9 @@
   },
   "WCS-2700": {
     "verbatimEventDate": "12 Nov 2008",
-    "verbatimLocality": "TN, Sequatchie County, Sequatchie R., shoal area ~300 m above TN 111 (~RM 49), 2.8 air mi NE Dunlap, 35.3949\u00b0N, 85.3518\u00b0W",
+    "verbatimLocality": "TN, Sequatchie County, Sequatchie R., shoal area ~300 m above TN 111 (~RM 49), 2.8 air mi NE Dunlap",
+    "verbatimLatitude": "35.3949\u00b0N",
+    "verbatimLongitude": "85.3518\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3330,6 +3746,8 @@
   "WCS-2701": {
     "verbatimEventDate": "16-17 Apr 2009",
     "verbatimLocality": "FL, Gadsden-Jackson counties, Apalachicola R., 1.2 mi reach from just below Woodruff Dam to Mosquito Creek on W side of Chattahoochee",
+    "verbatimLatitude": null,
+    "verbatimLongitude": null,
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3345,7 +3763,9 @@
   },
   "WCS-2720": {
     "verbatimEventDate": "15 July 2009",
-    "verbatimLocality": "Puerto Rico, Mun\u00edcipio Can\u00f3vanas, R\u00edo Can\u00f3vanas at rd off Rt 185, 4.25 air mi S Can\u00f3vanas; 18.3166 N, 65.8885 W",
+    "verbatimLocality": "Puerto Rico, Mun\u00edcipio Can\u00f3vanas, R\u00edo Can\u00f3vanas at rd off Rt 185, 4.25 air mi S Can\u00f3vanas",
+    "verbatimLatitude": "18.3166 N",
+    "verbatimLongitude": "65.8885 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3361,7 +3781,9 @@
   },
   "WCS-2721": {
     "verbatimEventDate": "15 July 2009",
-    "verbatimLocality": "Puerto Rico, Municipio Rio Grande, Rio Espiritu Santo at Rt. 186, ~ 1.0 air mi S of El Verde, 2.5 air mi SSE of Rio Grande (town); 18.3464 N, 65.8240 W",
+    "verbatimLocality": "Puerto Rico, Municipio Rio Grande, Rio Espiritu Santo at Rt. 186, ~ 1.0 air mi S of El Verde, 2.5 air mi SSE of Rio Grande (town)",
+    "verbatimLatitude": "18.3464 N",
+    "verbatimLongitude": "65.8240 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3377,7 +3799,9 @@
   },
   "WCS-2722": {
     "verbatimEventDate": "16 July 2009",
-    "verbatimLocality": "Puerto Rico, Municipio Fajardo, Quebrada Juan Diego, 0.25 air mi WNW off  Rt. 976 at Calle Los Gauchas, 5.1 air mi SW Fajardo; 18.2763 N, 65.7164 W",
+    "verbatimLocality": "Puerto Rico, Municipio Fajardo, Quebrada Juan Diego, 0.25 air mi WNW off  Rt. 976 at Calle Los Gauchas, 5.1 air mi SW Fajardo",
+    "verbatimLatitude": "18.2763 N",
+    "verbatimLongitude": "65.7164 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3393,7 +3817,9 @@
   },
   "WCS-2724": {
     "verbatimEventDate": "17 July 2009",
-    "verbatimLocality": "Puerto Rico, Municipio Ponce, Rio Inab\u00f3n at PR Rt. 14, on NE side of Coto Laurel, 6.2 air mi NE ctr. Ponce; 18.0499 N, 66.5444 W",
+    "verbatimLocality": "Puerto Rico, Municipio Ponce, Rio Inab\u00f3n at PR Rt. 14, on NE side of Coto Laurel, 6.2 air mi NE ctr. Ponce",
+    "verbatimLatitude": "18.0499 N",
+    "verbatimLongitude": "66.5444 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3409,7 +3835,9 @@
   },
   "WCS-2726": {
     "verbatimEventDate": "17 July 2009",
-    "verbatimLocality": "Puerto Rico, Municipio Ponce, R\u00edo Ca\u00f1as by PR Rt. 123 (Calle la Poncena), ~ 0.5 miles S of int. w/ Av Ponce de Le\u00f3n, on NW side of Ponce; 18.0247 N, 66.6409 W",
+    "verbatimLocality": "Puerto Rico, Municipio Ponce, R\u00edo Ca\u00f1as by PR Rt. 123 (Calle la Poncena), ~ 0.5 miles S of int. w/ Av Ponce de Le\u00f3n, on NW side of Ponce",
+    "verbatimLatitude": "18.0247 N",
+    "verbatimLongitude": "66.6409 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3425,7 +3853,9 @@
   },
   "WCS-2727": {
     "verbatimEventDate": "17 July 2009",
-    "verbatimLocality": "Puerto Rico, Municipio Pe\u00f1uelas, Rio Tallaboa, 0.2 air mi N PR 132, near end of Calle C, N edge of Tallaboa Alta, 6.7 air mi NW ctr of Ponce; 18.0536 N, 66.7045 W",
+    "verbatimLocality": "Puerto Rico, Municipio Pe\u00f1uelas, Rio Tallaboa, 0.2 air mi N PR 132, near end of Calle C, N edge of Tallaboa Alta, 6.7 air mi NW ctr of Ponce",
+    "verbatimLatitude": "18.0536 N",
+    "verbatimLongitude": "66.7045 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3441,7 +3871,9 @@
   },
   "WCS-2731": {
     "verbatimEventDate": "19 July 2009",
-    "verbatimLocality": "Puerto Rico, Mun. Luquillo, Northeast coast area, N side of Luquillo at Playa Azul (by Calle Luquillo Blvd), 18.3866\u00b0N, 65.7193\u00b0W",
+    "verbatimLocality": "Puerto Rico, Mun. Luquillo, Northeast coast area, N side of Luquillo at Playa Azul (by Calle Luquillo Blvd)",
+    "verbatimLatitude": "18.3866\u00b0N",
+    "verbatimLongitude": "65.7193\u00b0W",
     "cont_ocean": "Atlantic Ocean",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3457,7 +3889,9 @@
   },
   "WCS-2734": {
     "verbatimEventDate": "21 July 2009",
-    "verbatimLocality": "Puerto Rico, Mun. San German, Rio Hoconuco, at PR Rt. 358, 2.8 air mi NNW San Germ\u00e1n; 18.1180 N, 67.0627 W",
+    "verbatimLocality": "Puerto Rico, Mun. San German, Rio Hoconuco, at PR Rt. 358, 2.8 air mi NNW San Germ\u00e1n",
+    "verbatimLatitude": "18.1180 N",
+    "verbatimLongitude": "67.0627 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3473,7 +3907,9 @@
   },
   "WCS-2736": {
     "verbatimEventDate": "21 July 2009",
-    "verbatimLocality": "Puerto Rico, Mun. Mayaguez, R\u00edo Yag\u00fcez along S side of PR Rt. 106/351 and trib crossing highway, ~ 1.8 air mi ENE str. Mayaguez; 18.2087 N, 67.1152 W",
+    "verbatimLocality": "Puerto Rico, Mun. Mayaguez, R\u00edo Yag\u00fcez along S side of PR Rt. 106/351 and trib crossing highway, ~ 1.8 air mi ENE str. Mayaguez",
+    "verbatimLatitude": "18.2087 N",
+    "verbatimLongitude": "67.1152 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3489,7 +3925,9 @@
   },
   "WCS-2738": {
     "verbatimEventDate": "22 July 2009",
-    "verbatimLocality": "Puerto Rico, Mun.Las Marias, Rio Casey at end of drive NW off PR Rt. 397, 3.8 air mi WSW Las Marias; 18.2381 N, 67.0455 W",
+    "verbatimLocality": "Puerto Rico, Mun.Las Marias, Rio Casey at end of drive NW off PR Rt. 397, 3.8 air mi WSW Las Marias",
+    "verbatimLatitude": "18.2381 N",
+    "verbatimLongitude": "67.0455 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3505,7 +3943,9 @@
   },
   "WCS-2739": {
     "verbatimEventDate": "24 July 2009",
-    "verbatimLocality": "Puerto Rico, Mun. Ciales, Rio Cialitos (trib to Rio Manati), near Rt. 6685/146 jct., in Cialis, ~ 100 m above mouth; 18.3428 N, 66.4701 W",
+    "verbatimLocality": "Puerto Rico, Mun. Ciales, Rio Cialitos (trib to Rio Manati), near Rt. 6685/146 jct., in Cialis, ~ 100 m above mouth",
+    "verbatimLatitude": "18.3428 N",
+    "verbatimLongitude": "66.4701 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3521,7 +3961,9 @@
   },
   "WCS-2741": {
     "verbatimEventDate": "25 July 2009",
-    "verbatimLocality": "Puerto Rico, Mun. Patillas, Trib to Rio Jacaboa (from mouth to 75 m upstream), ~ 100 m (N of) Rt. 7755 (off of Rt. 758), 3.2 air mi ESE Patillas; 17.9886 N, 65.9661 W",
+    "verbatimLocality": "Puerto Rico, Mun. Patillas, Trib to Rio Jacaboa (from mouth to 75 m upstream), ~ 100 m (N of) Rt. 7755 (off of Rt. 758), 3.2 air mi ESE Patillas",
+    "verbatimLatitude": "17.9886 N",
+    "verbatimLongitude": "65.9661 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3537,7 +3979,9 @@
   },
   "WCS-2744": {
     "verbatimEventDate": "25 July 2009",
-    "verbatimLocality": "Puerto Rico, San Juan Mun., Tributary to R\u00edo Piedras near N end of Calle Matadero and along Rt. 22 (tollway), in west-central San Juan; 18.4179\u00b0 N, 66.0975\u00b0 W",
+    "verbatimLocality": "Puerto Rico, San Juan Mun., Tributary to R\u00edo Piedras near N end of Calle Matadero and along Rt. 22 (tollway), in west-central San Juan",
+    "verbatimLatitude": "18.4179\u00b0 N",
+    "verbatimLongitude": "66.0975\u00b0 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3553,7 +3997,9 @@
   },
   "WCS-2747": {
     "verbatimEventDate": "28 Aug 2009",
-    "verbatimLocality": "NC, Buncombe County, Swannanoa R. below & above dam at Gashes Cr./Azalea rds off NC 81 (Swannanoa Rd.), 3.6 air mi E ctr. Asheville, 35.5819\u00b0N, 82.4933\u00b0W",
+    "verbatimLocality": "NC, Buncombe County, Swannanoa R. below & above dam at Gashes Cr./Azalea rds off NC 81 (Swannanoa Rd.), 3.6 air mi E ctr. Asheville",
+    "verbatimLatitude": "35.5819\u00b0N",
+    "verbatimLongitude": "82.4933\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3569,7 +4015,9 @@
   },
   "WCS-2748": {
     "verbatimEventDate": "28 Aug 2009",
-    "verbatimLocality": "NC, Madison County, Shut-in Cr., lower 125 m from just above RR crossing to mouth, by Lower Station Rd., 3.0 air mi NW Hot Springs, 35.9188\u00b0, -82.8708\u00b0",
+    "verbatimLocality": "NC, Madison County, Shut-in Cr., lower 125 m from just above RR crossing to mouth, by Lower Station Rd., 3.0 air mi NW Hot Springs",
+    "verbatimLatitude": "35.9188\u00b0",
+    "verbatimLongitude": "-82.8708\u00b0",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3585,7 +4033,9 @@
   },
   "WCS-2751": {
     "verbatimEventDate": "29 Aug 2009",
-    "verbatimLocality": "NC, Madison County, Spring Cr, from 0525/70 bridge to 100 m below, in Hot Springs, 35.8932\u00b0N, 82.8274\u00b0W",
+    "verbatimLocality": "NC, Madison County, Spring Cr, from 0525/70 bridge to 100 m below, in Hot Springs",
+    "verbatimLatitude": "35.8932\u00b0N",
+    "verbatimLongitude": "82.8274\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3601,7 +4051,9 @@
   },
   "WCS-2753": {
     "verbatimEventDate": "29 Aug 2009",
-    "verbatimLocality": "NC, Madison County, Shut-in Cr. At Lower Shut-in Cr. Rd (SR 1303) 2nd crossing N off US 25/70, 2.6 air mi NW Hot Springs, 35.9138\u00b0, -82.8665\u00b0",
+    "verbatimLocality": "NC, Madison County, Shut-in Cr. At Lower Shut-in Cr. Rd (SR 1303) 2nd crossing N off US 25/70, 2.6 air mi NW Hot Springs",
+    "verbatimLatitude": "35.9138\u00b0",
+    "verbatimLongitude": "-82.8665\u00b0",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3617,7 +4069,9 @@
   },
   "WCS-2794": {
     "verbatimEventDate": "1 Jun 2010",
-    "verbatimLocality": "VA, Fairfax County, Little Difficult Run by Stuart Mill Rd., ~1.4 rd. mi E off Fox Mill Rd, 4.2 air mi W ctr Vienna, 39.9124 N, 77.3393 W",
+    "verbatimLocality": "VA, Fairfax County, Little Difficult Run by Stuart Mill Rd., ~1.4 rd. mi E off Fox Mill Rd, 4.2 air mi W ctr Vienna",
+    "verbatimLatitude": "39.9124 N",
+    "verbatimLongitude": "77.3393 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3633,7 +4087,9 @@
   },
   "WCS-2936": {
     "verbatimEventDate": "13 Sept 2011",
-    "verbatimLocality": "TN, Blount County, Little R. by TN 73, ca. 200 m below confl. w/ West Prong Little R. (The \"Y\") in Great Smoky Mtns, Nat. Park, 15.8 air mi ESE of Maryville, 35.6612\u00b0N, 83.7092\u00b0W",
+    "verbatimLocality": "TN, Blount County, Little R. by TN 73, ca. 200 m below confl. w/ West Prong Little R. (The \"Y\") in Great Smoky Mtns, Nat. Park, 15.8 air mi ESE of Maryville",
+    "verbatimLatitude": "35.6612\u00b0N",
+    "verbatimLongitude": "83.7092\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3649,7 +4105,9 @@
   },
   "WCS-2968": {
     "verbatimEventDate": "9 Nov 2011",
-    "verbatimLocality": "TN, Blount County, Little R. 200 m+ reach below Melrose Mill, by Old Walland Hwy, 7.5 air mi E ctr. of Maryville, 35.7497\u00b0N, 83.8371\u00b0W",
+    "verbatimLocality": "TN, Blount County, Little R. 200 m+ reach below Melrose Mill, by Old Walland Hwy, 7.5 air mi E ctr. of Maryville",
+    "verbatimLatitude": "35.7497\u00b0N",
+    "verbatimLongitude": "83.8371\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3665,7 +4123,9 @@
   },
   "WCS-2969": {
     "verbatimEventDate": "9 Nov 2011",
-    "verbatimLocality": "TN, Blount, County, Little R shoal area 50-150 m below US 411/TN 35, 5.3 air mi ENE ctr. of Maryville, 35.7865\u00b0N, 83.8832\u00b0W",
+    "verbatimLocality": "TN, Blount, County, Little R shoal area 50-150 m below US 411/TN 35, 5.3 air mi ENE ctr. of Maryville",
+    "verbatimLatitude": "35.7865\u00b0N",
+    "verbatimLongitude": "83.8832\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3681,7 +4141,9 @@
   },
   "WCS-2976": {
     "verbatimEventDate": "13 Nov 2011",
-    "verbatimLocality": "TN, Hancock County, Clinch R. at Frost Ford, by Jimmie Roberts Rd (~0.4 RM above Panther Cr.), 3.6 air mi E of Sneedville, 36.5302\u00b0N, 83.1509\u00b0W",
+    "verbatimLocality": "TN, Hancock County, Clinch R. at Frost Ford, by Jimmie Roberts Rd (~0.4 RM above Panther Cr.), 3.6 air mi E of Sneedville",
+    "verbatimLatitude": "36.5302\u00b0N",
+    "verbatimLongitude": "83.1509\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3697,7 +4159,9 @@
   },
   "WCS-3010": {
     "verbatimEventDate": "3 Sep 2013",
-    "verbatimLocality": "VA, Stafford County, Potomac Creek, lower tidal reach, 6.5-6.9 air mi ENE ctr. Fredericksburg, 38.34777 - 38.34866 N, 77.35874 - 77.34682 W",
+    "verbatimLocality": "VA, Stafford County, Potomac Creek, lower tidal reach, 6.5-6.9 air mi ENE ctr. Fredericksburg",
+    "verbatimLatitude": "38.34777 - 38.34866 N",
+    "verbatimLongitude": "77.35874 - 77.34682 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3713,7 +4177,9 @@
   },
   "WCS-3011": {
     "verbatimEventDate": "3 Sep 2013",
-    "verbatimLocality": "VA, Stafford County, Accokeek Creek, lower tidal reach, 8.3-8.4 air mi ENE ctr Fredericksburg, Start: 39.37134 N, 77.33578 W; End: 38.36654 N, 77.32188 W",
+    "verbatimLocality": "VA, Stafford County, Accokeek Creek, lower tidal reach, 8.3-8.4 air mi ENE ctr Fredericksburg",
+    "verbatimLatitude": "39.37134 N / 38.36654 N",
+    "verbatimLongitude": "77.33578 W / 77.32188 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3729,7 +4195,9 @@
   },
   "WCS-3012": {
     "verbatimEventDate": "4 Sept 2013",
-    "verbatimLocality": "VA, Fairfax-Prince William counties, Kane Cr. (lower tidal reach) and Belmont Bay area of Potomac R., 2.9-2.4 air mi ESE ctr. Woodbridge, 38.64900 - 38.63827 N, 77.19654 - 77.21278 W",
+    "verbatimLocality": "VA, Fairfax-Prince William counties, Kane Cr. (lower tidal reach) and Belmont Bay area of Potomac R., 2.9-2.4 air mi ESE ctr. Woodbridge",
+    "verbatimLatitude": "38.64900 - 38.63827 N",
+    "verbatimLongitude": "77.19654 - 77.21278 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3745,7 +4213,9 @@
   },
   "WCS-3013": {
     "verbatimEventDate": "4 Sept. 2013",
-    "verbatimLocality": "VA, Prince William County, Powells Cr., lower tidal reach W & E of CSX RR bridge, 3.6-3.7 air mil ENE Dumfries, 39.58435 - 38.58145 N, 77.26485 - 77.26247 W",
+    "verbatimLocality": "VA, Prince William County, Powells Cr., lower tidal reach W & E of CSX RR bridge, 3.6-3.7 air mil ENE Dumfries",
+    "verbatimLatitude": "39.58435 - 38.58145 N",
+    "verbatimLongitude": "77.26485 - 77.26247 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3761,7 +4231,9 @@
   },
   "WCS-3014": {
     "verbatimEventDate": "4 Sep 2013",
-    "verbatimLocality": "VA-MD, Prince William-Charles counties, Potomac R., W shore near powerline crossing, 3.1 air mi ESE dumfries, 38.55101 - 38.54803 N, 77.27222 - 77.27548 W",
+    "verbatimLocality": "VA-MD, Prince William-Charles counties, Potomac R., W shore near powerline crossing, 3.1 air mi ESE dumfries",
+    "verbatimLatitude": "38.55101 - 38.54803 N",
+    "verbatimLongitude": "77.27222 - 77.27548 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3777,7 +4249,9 @@
   },
   "WCS-3015": {
     "verbatimEventDate": "5 Sept 2013",
-    "verbatimLocality": "VA, Chesterfield County, Backwater area on N side of Appomattox R. (\"The Stump Field\"), 9.4-9.8 air mi NW of Sutherland, 37.29767 - 37.30138 N, 77.67388 - 77.67797 W",
+    "verbatimLocality": "VA, Chesterfield County, Backwater area on N side of Appomattox R. (\"The Stump Field\"), 9.4-9.8 air mi NW of Sutherland",
+    "verbatimLatitude": "37.29767 - 37.30138 N",
+    "verbatimLongitude": "77.67388 - 77.67797 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3793,7 +4267,9 @@
   },
   "WCS-3033": {
     "verbatimEventDate": "25 Sept 2013",
-    "verbatimLocality": "Va. Richmond County, Catpoint Cr. Lower tidal reach, 6.6-6.5 air mi NNE Tappahannock, Start: 38.01474 N , 76.81757 W; End: 38.01160 N, 76.81399 W",
+    "verbatimLocality": "Va. Richmond County, Catpoint Cr. Lower tidal reach, 6.6-6.5 air mi NNE Tappahannock",
+    "verbatimLatitude": "38.01474 N / 38.01160 N",
+    "verbatimLongitude": "76.81757 W / 76.81399 W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",
@@ -3809,7 +4285,9 @@
   },
   "WCS-3068": {
     "verbatimEventDate": "7 Jun 2014",
-    "verbatimLocality": "Va, Orange, County, Mine Run ca. 300 m above Zoar Rd (SR 611), just SSE of Burr Hill, 21.7 air mi WNW of Fredericksburg, 34.34078\u00b0N, 77.85771\u00b0W",
+    "verbatimLocality": "Va, Orange, County, Mine Run ca. 300 m above Zoar Rd (SR 611), just SSE of Burr Hill, 21.7 air mi WNW of Fredericksburg",
+    "verbatimLatitude": "34.34078\u00b0N",
+    "verbatimLongitude": "77.85771\u00b0W",
     "cont_ocean": "North America",
     "ocean_subbasin": null,
     "country": "United States",

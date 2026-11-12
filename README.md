@@ -89,8 +89,9 @@ uv run difffish corpus --limit 10 # several documents, then statistics
 
 `corpus` saves each document's result as soon as it finishes.
 
-After changing the scorer's prompt or model, `uv run difffish rescore` scores the
-saved results again without calling the readers or the adjudicator.
+After changing the scorer's prompt or model, or the human records,
+`uv run difffish rescore` scores the saved results again without calling the
+readers or the adjudicator.
 
 ## Dashboard
 
@@ -128,6 +129,13 @@ DIFFFISH_INTEGRATION=1 uv run pytest -m integration   # calls the endpoint
 `src/difffish/data/` holds the page classifications and human transcriptions
 for 239 documents, copied from the codburst repository. The scans themselves
 are not in this repository; point `DIFFFISH_NOTES_DIR` at them.
+
+One change from the codburst copy: the curator's `verbatimLocality` ended with
+the coordinates, which are separate fields on the form. They are now split into
+`verbatimLocality`, `verbatimLatitude` and `verbatimLongitude` (the Darwin Core
+names), so a misread digit is scored against the coordinate and not against the
+whole locality. 111 documents have coordinates; a start and end pair is joined
+with " / ".
 
 ## Not done yet
 

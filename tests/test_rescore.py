@@ -1,4 +1,5 @@
-from difffish.rescore import assign_scores, build_rescore_graph, collect
+from difffish import documents
+from difffish.rescore import assign_scores, build_rescore_graph, collect, refresh
 from difffish.schemas import MAJORITY, RECONCILED, DocResult, FieldScore, Scorecard, Transcription
 
 
@@ -25,7 +26,13 @@ def saved_result():
 
 def test_graph_shape():
     edges = {(e.source, e.target) for e in build_rescore_graph().get_graph().edges}
-    assert edges == {("__start__", "score"), ("score", "collect"), ("collect", "__end__")}
+    assert edges == {("__start__", "refresh"), ("refresh", "score"), ("score", "collect"), ("collect", "__end__")}
+
+
+def test_refresh_replaces_the_saved_human_record_with_the_current_one():
+    out = refresh({"result": saved_result()})["result"]
+    assert out.human == documents.human_record("WCS-0005")
+    assert out.reconciled == {"state": "Tenn."}
 
 
 def test_saved_candidates_are_sent_to_the_scorer_without_the_failed_reader():
