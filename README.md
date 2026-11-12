@@ -9,6 +9,52 @@ reconciled record, with a human curator's record. The point is to find out
 whether the adjudicator does better than any single model, and better than a
 plain majority vote.
 
+## What this is good for
+
+It is a test bench for ideas that might make the transcriptions more accurate.
+Each idea becomes a named run on the same documents, scored by the same scorer
+against the curator's records, and `difffish compare` shows which fields were
+gained and lost. The dashboard puts the scan next to every reading, so you can
+see why a number moved and not only that it did.
+
+Ideas tried so far:
+
+- **Reconcile several models instead of trusting one.** An adjudicator that
+  never sees the scan rules on the fields where readers disagree. It is compared
+  with each single reader and with a plain majority vote.
+- **Tell readers to study the writer's digits first** (`digits` prompt). Readers
+  followed the instruction but the readings did not clearly change.
+- **Rewrite the transcription prompt** (`fable-5.2-generated-prompt`): one best
+  reading per field with doubts in the notes, use the sheet and the card to
+  check each other, guidance for every form type.
+- **Ten copies of one model instead of five different models** (`luna10`), to
+  see whether repetition does the job of variety.
+
+Ideas not built yet:
+
+- **Enlarged tiles.** Send each page as a few overlapping crops, in case the
+  model sees the whole page at too low a resolution to tell a 4 from a 9
+  ([#1](https://github.com/cbizon/difffish/issues/1)).
+- **A digit study field.** Make the reader write down how this writer forms
+  each digit before it fills in any value
+  ([#2](https://github.com/cbizon/difffish/issues/2)).
+- **Readers that can look closer.** A staged re-read of fixed regions of the
+  form, or an agent with a zoom tool
+  ([#3](https://github.com/cbizon/difffish/issues/3)).
+- **A second pass.** Send the fields the adjudicator could not settle back to
+  the readers, with each other's readings or an enlarged crop.
+- **Domain lists.** Give readers known collector names or place names, taken
+  from a source other than the records used for scoring.
+
+Things to keep in mind when reading a comparison:
+
+- Twenty documents is a small sample, and an identical rerun does not reproduce
+  exactly. Look at fields gained and lost, not only percentages.
+- The curator's records contain some facts that are not on the scan, so no
+  reader can reach 100%.
+- A comparison is only fair when both runs were scored the same way. `compare`
+  checks this.
+
 ## The graphs
 
 Document graph, one run per WCS ID (`src/difffish/graph.py`):
